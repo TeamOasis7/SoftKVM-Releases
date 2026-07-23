@@ -32,7 +32,7 @@ Normal `Alt` shortcuts and `Esc` are sent to the remote PC when the command wind
 - **Minimize while waiting**: hides the waiting window after a connection is made.
 - **Keyboard control**: sends keyboard input to the waiting PC.
 - **Mouse control**: sends mouse input to the waiting PC.
-- **Block local keyboard**: keeps sending keys remotely while preventing local typing.
+- **Block local key**: keeps sending keys remotely while preventing local typing.
 - **Block local clicks**: keeps sending clicks remotely while preventing clicks outside Soft KVM on the controlling PC.
 - **Game input mode**: uses relative mouse movement for games and 3D applications.
 - **Connection group**: limits discovery to PCs using the same group name.
@@ -42,7 +42,7 @@ Settings are saved for the current Windows user and are not copied to the other 
 
 ## Swap mode
 
-Turn on **Swap mode** on both PCs and select the same **Control swap direction**.
+Turn on **Swap mode** on both PCs and select the same **Control direction**.
 
 The direction is always based on the controlling PC. For example, `Left` means that holding the pointer at the left edge of the controlling PC for one second transfers control to the waiting PC. Move away from the return edge and hold there again for one second to return.
 
