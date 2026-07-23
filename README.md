@@ -25,7 +25,7 @@ Open Settings with the gear button to configure:
 - Mouse control
 - Game input mode (`G` in the `K+M` command window)
 - Connection group
-- Swap mode and swap edge (`Left`, `Right`, or `Top`)
+- Swap mode and control swap direction (`Left`, `Right`, or `Top`)
 
 Settings are stored for the current Windows user. **Keyboard control** enables or disables remote keyboard forwarding. **Block local keyboard** continues sending keys to the waiting PC while suppressing them on the controlling PC. **Block local clicks** continues forwarding clicks while suppressing local clicks outside the Soft KVM window.
 
@@ -35,7 +35,7 @@ Hold `K` and `M` together for one second to open the local command window. After
 
 The game-input protocol is not compatible with older builds. Always use the same latest EXE on both PCs. Soft KVM does not take focus away from the game window on the waiting PC. High-rate relative mouse events are accumulated and rate-limited to avoid overloading the connection.
 
-**Swap mode** must be enabled with the same edge on both PCs. A mismatch causes the protocol v9 handshake to reject the connection and reopen Settings. For example, selecting `Left` transfers control when the pointer remains at the left edge of the controlling PC for one second. To return, move away from and then remain at the corresponding edge of the waiting PC for one second.
+**Swap mode** must be enabled with the same control swap direction on both PCs. The direction is always based on the controlling PC. A mismatch causes the protocol v9 handshake to reject the connection and reopen Settings. For example, selecting `Left` transfers control when the pointer remains at the left edge of the controlling PC for one second. To return, move away from and then remain at the corresponding edge of the waiting PC for one second.
 
 The active edge is marked by a 3-pixel DPI-independent indicator. A colored glow follows the virtual remote cursor. Swap entry and return use acknowledgements, retransmission, and PING/PONG connection monitoring. If communication fails, Soft KVM prioritizes restoring local input on the controlling PC.
 
