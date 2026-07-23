@@ -1,46 +1,54 @@
 # Soft KVM
 
-같은 로컬 네트워크에 있는 Windows PC 사이에서 마우스와 키보드 입력을 전달하는 작은 WinForms 앱입니다.
+**English** | [한국어](README.ko.md)
 
-## 사용법
+Soft KVM is a lightweight WinForms app that forwards mouse and keyboard input between Windows PCs on the same local network.
 
-1. 제어받을 PC에서 **대기**를 누르고, 왼쪽 표시칸에 나타난 2자리 코드를 확인합니다.
-2. 제어할 PC에서 **제어**를 누르고 상대 PC의 2자리 코드를 입력합니다.
-3. **시작**을 누르면 같은 네트워크에서 상대를 자동 검색해 연결합니다.
-4. **정지**를 누르면 연결이 끊기고 초기 화면으로 돌아갑니다. 긴급정지 `ESC`는 입력과 관련 프로세스를 정리한 뒤 Soft KVM을 자동으로 다시 실행합니다.
+## Usage
 
-제어 코드 입력 화면에서 입력칸 오른쪽의 `×`를 누르면 연결을 시작하지 않고 초기 화면으로 돌아갑니다.
+1. On the PC to be controlled, select **Wait** and note the 2-digit code.
+2. On the controlling PC, select **Control** and enter the code shown on the waiting PC.
+3. Select **Start**. Soft KVM discovers and connects to the other PC on the local network.
+4. Select **Stop** to disconnect and return to the initial screen. For emergency recovery, hold `K` and `M` together for one second on the controlling PC, then press `E`.
 
-각 PC에서 선택한 사용 모니터 좌표를 서로 비례 변환합니다. 연결 중 **일시정지** 또는 `Alt+Z`를 사용하면 연결을 유지한 채 입력 전달만 멈출 수 있습니다. 연결되면 양쪽 창은 선택 모니터 우측 상단으로 이동합니다.
+Select `×` beside the code field to cancel control setup without connecting.
 
-톱니바퀴 버튼을 누르면 다음 설정이 아래로 펼쳐집니다.
+Mouse coordinates are scaled proportionally between the monitors selected on each PC. Select **Pause**, or open the `K+M` command window and press `Z`, to stop input forwarding without disconnecting. After connection, both app windows move to the top-right corner of their selected monitors.
 
-- 윈도우 시작 시 자동 시작
-- 대기 모드 시 최소화
-- 제어 클릭 차단 (`Alt+X`로 켜기/끄기)
-- 제어 키보드 차단 (`Alt+K`로 켜기/끄기)
-- 키보드 제어
-- 마우스 제어
-- 게임 입력 모드 (`Alt+G`로 켜기/끄기)
-- 연결 그룹 이름
-- 스왑모드 및 스왑지점 (`좌측`, `우측`, `상단`)
+Open Settings with the gear button to configure:
 
-설정값은 현재 Windows 사용자 계정에 저장됩니다. `키보드 제어`는 대기 PC로 보내는 원격 키보드 기능 자체를 켜고 끕니다. `제어 키보드 차단`은 키보드를 대기 PC에 계속 전달하면서 제어 PC의 로컬 키 입력만 임시로 막습니다. `제어 클릭 차단`도 원격 클릭은 전달하면서 제어 PC의 로컬 클릭을 막되, Soft KVM 창 내부 클릭은 허용합니다. 차단 중에는 본창 아래의 투명 점멸 레이어에 `Alt+X` 또는 `Alt+K` 해제키가 표시됩니다.
+- Start with Windows
+- Minimize while waiting
+- Block local clicks (`X` in the `K+M` command window)
+- Block the local keyboard (`K` in the `K+M` command window)
+- Keyboard control
+- Mouse control
+- Game input mode (`G` in the `K+M` command window)
+- Connection group
+- Swap mode and swap edge (`Left`, `Right`, or `Top`)
 
-`게임 입력 모드`는 키보드 스캔 코드와 상대 마우스 이동을 사용합니다. 제어 PC의 커서를 주 모니터 중앙에 재고정해 화면 끝에서도 게임 시점을 계속 움직일 수 있으며 `Alt+G`로 즉시 해제합니다. 일반 데스크톱과 게임 메뉴의 절대 좌표 클릭에는 게임 입력 모드를 끄고 사용합니다. Windows 합성 입력을 차단하는 안티치트 게임은 지원하지 않습니다.
+Settings are stored for the current Windows user. **Keyboard control** enables or disables remote keyboard forwarding. **Block local keyboard** continues sending keys to the waiting PC while suppressing them on the controlling PC. **Block local clicks** continues forwarding clicks while suppressing local clicks outside the Soft KVM window.
 
-게임 모드 프로토콜은 구버전과 호환되지 않습니다. 대기 PC와 제어 PC 양쪽의 EXE를 같은 최신 파일로 교체해야 하며, 연결 시 대기 PC의 게임 창 포커스를 Soft KVM이 가져오지 않도록 유지합니다. 게임 마우스 이벤트는 누적·속도 제한해 고주사율 마우스에서도 연결이 과부하되지 않게 처리합니다.
+Hold `K` and `M` together for one second to open the local command window. After releasing both keys, press `X`, `K`, `G`, `Z`, or `E` to run a command, or press `Esc` to close the window. Normal `Alt` combinations and `Esc` are otherwise forwarded to the remote PC.
 
-`스왑모드`는 양쪽 PC에서 모두 켜고 같은 스왑지점을 선택해야 활성화됩니다. ON/OFF 또는 스왑지점이 다르면 프로토콜 v9 핸드셰이크가 연결을 거절하고 양쪽 옵션창을 엽니다. 예를 들어 `좌측`을 선택하면 제어 PC의 좌측 경계에 1초간 머물 때 대기 PC의 우측 경계로 입력 소유권이 넘어갑니다. 대기 PC에서 커서를 경계 밖으로 한 번 이동한 뒤 다시 우측 경계에 1초간 머물면 제어 PC 좌측으로 돌아옵니다. 활성 중에는 선택 경계에 DPI 확대가 적용되지 않는 3픽셀 점멸 레이어가 표시되고, 원격 제어 중인 대기 PC의 커서 주변에는 컬러 글로우가 따라다닙니다. 스왑 진입·복귀 ACK와 PING/PONG 연결 감시를 사용하며, 통신 이상 시 제어 PC 로컬 입력을 우선 복구합니다.
+**Game input mode** uses keyboard scan codes and relative mouse movement. It continuously returns the controlling PC cursor to the center of the selected monitor, allowing camera movement beyond the screen edge. Disable it with `G` in the `K+M` command window before using normal desktop or game-menu clicks. Games that block Windows synthetic input through anti-cheat systems are not supported.
 
-설정은 네트워크로 상대 PC에 공유되지 않습니다. 같은 PC의 같은 Windows 계정에서 실행한 인스턴스끼리만 저장값을 공유합니다. `대기 모드 시 최소화`는 대기 역할에만 적용되고, 키보드·마우스·제어 클릭 설정은 제어 역할에만 적용됩니다. 대기 PC가 연결 후 최소화되면 우측 상단에 반투명 컬러 배경이 흐르는 `Soft KVM 연결중...` 표시가 나타납니다. 이 표시를 클릭하면 전달 중인 입력과 연결 및 SYSTEM 보조 프로세스를 정리하고 Soft KVM을 완전히 종료합니다. 정지·일시정지·연결 종료 시 전달 중이던 키와 마우스 버튼은 모두 해제됩니다.
+The game-input protocol is not compatible with older builds. Always use the same latest EXE on both PCs. Soft KVM does not take focus away from the game window on the waiting PC. High-rate relative mouse events are accumulated and rate-limited to avoid overloading the connection.
 
-옵션 하단의 `업데이트 확인`은 공개 [SoftKVM-Releases](https://github.com/TeamOasis7/SoftKVM-Releases) 저장소의 최신 Release를 확인합니다. 새 버전이 있으면 EXE와 SHA-256 파일을 내려받아 무결성을 검사하고, 현재 프로그램의 입력과 연결을 정리한 다음 임시 업데이트 프로세스가 기존 EXE를 교체하고 새 버전을 실행합니다. 업데이트 중에는 실행 파일 이름이나 위치를 변경하지 마세요.
+**Swap mode** must be enabled with the same edge on both PCs. A mismatch causes the protocol v9 handshake to reject the connection and reopen Settings. For example, selecting `Left` transfers control when the pointer remains at the left edge of the controlling PC for one second. To return, move away from and then remain at the corresponding edge of the waiting PC for one second.
 
-Windows Defender 방화벽에서 처음 실행할 때 사설 네트워크 통신을 허용해야 합니다. 검색에는 UDP `45820`, 실제 입력 전송에는 실행 시 선택되는 임의 TCP 포트를 사용합니다.
+The active edge is marked by a 3-pixel DPI-independent indicator. A colored glow follows the virtual remote cursor. Swap entry and return use acknowledgements, retransmission, and PING/PONG connection monitoring. If communication fails, Soft KVM prioritizes restoring local input on the controlling PC.
 
-스왑·게임 모드의 상대 마우스 이동은 양쪽 PC에서 선택한 사용 모니터의 가로·세로 해상도 비율로 보정됩니다. `연결 그룹 이름`을 양쪽 PC에 동일하게 설정하면 같은 그룹의 Soft KVM만 검색하며, 이름 원문 대신 해시값을 네트워크에서 사용합니다. 검색과 스왑 통신은 프로토콜 v9를 사용하므로 두 PC 모두 같은 최신 EXE로 교체해야 합니다. 반복 스왑에서는 매번 새 입력 세대를 사용하고, 대기 PC의 복귀 경계는 게임이 숨기거나 고정할 수 있는 Windows 커서 대신 Soft KVM 내부 가상 좌표로 판정합니다. 검색은 어댑터별 브로드캐스트와 로컬 /24 유니캐스트를 함께 사용하며, UAC 승인 시 모든 네트워크 프로필에서 로컬 서브넷으로 제한된 Soft KVM 방화벽 규칙을 구성합니다.
+Settings are not shared over the network. **Minimize while waiting** applies only to the waiting role, while keyboard, mouse, and local-blocking settings apply only to the controlling role. When the waiting app is minimized after connection, a translucent status indicator appears in the top-right corner. Click it to release input, disconnect, stop helper processes, and exit Soft KVM. Stopping, pausing, or disconnecting releases all forwarded keys and mouse buttons.
 
-설정의 `UAC 화면 제어`가 켜져 있으면 대기를 시작할 때 관리자 승인을 한 번 요청합니다. 승인 후 임시 SYSTEM 브리지가 보안 데스크톱을 따라가므로 UAC 창과 관리자 권한 프로그램에도 키보드·마우스 입력을 보낼 수 있습니다. 임시 Windows 서비스는 SYSTEM 대기 프로세스를 시작한 뒤 바로 삭제되며, 대기를 중지하거나 프로그램을 종료하면 SYSTEM 프로세스도 종료됩니다. 관리자 승인을 원하지 않으면 이 옵션을 끄면 됩니다.
+Select **Check for updates** to query the latest public [SoftKVM-Releases](https://github.com/TeamOasis7/SoftKVM-Releases) release. Soft KVM downloads the EXE and SHA-256 file, verifies integrity, releases active input, replaces the executable, and restarts. Do not rename or move the executable while an update is in progress.
 
-> 이 버전은 같은 신뢰 네트워크 안에서 사용하는 간단한 도구입니다. 트래픽 암호화가 없으므로 공용 Wi-Fi나 인터넷에 직접 노출해서는 안 됩니다.
+The published Windows x64 EXE is self-contained and does not require a separate .NET installation.
+
+Allow Soft KVM on private networks when Windows Defender Firewall prompts. Discovery uses UDP port `45820`; active control uses a dynamically selected TCP port on the waiting PC.
+
+Relative movement in swap and game modes is scaled using the selected monitor dimensions on both PCs. Use the same connection-group name on both PCs; only its hash is sent during discovery. Both PCs must use the same protocol v9 build. Repeated swaps use a new input generation, and the return edge is tracked with Soft KVM's internal virtual cursor rather than a Windows cursor that a game may hide or lock.
+
+When **Control UAC screens** is enabled, starting Wait requests administrator approval once. A temporary SYSTEM bridge follows the secure desktop so UAC dialogs and elevated apps can receive input. The temporary service is deleted immediately after launching the SYSTEM wait process, and the helper process exits when waiting stops or Soft KVM closes.
+
+> Use Soft KVM only on a trusted local network. Input traffic is not encrypted. Do not expose it directly to public Wi-Fi or the internet.
