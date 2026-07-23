@@ -2,53 +2,65 @@
 
 **English** | [한국어](README.ko.md)
 
-Soft KVM is a lightweight WinForms app that forwards mouse and keyboard input between Windows PCs on the same local network.
+Soft KVM lets one Windows PC control another Windows PC on the same local network with one mouse and keyboard.
 
-## Usage
+## Quick start
 
-1. On the PC to be controlled, select **Wait** and note the 2-digit code.
-2. On the controlling PC, select **Control** and enter the code shown on the waiting PC.
-3. Select **Start**. Soft KVM discovers and connects to the other PC on the local network.
-4. Select **Stop** to disconnect and return to the initial screen. For emergency recovery, hold `K` and `M` together for one second on the controlling PC, then press `E`.
+1. On the PC you want to control, select **Wait** and note the 2-digit code.
+2. On the controlling PC, select **Control** and enter that code.
+3. Select **Start** to connect.
+4. Select **Stop** when you want to disconnect.
 
-Select `×` beside the code field to cancel control setup without connecting.
+Select `×` beside the code field to cancel without connecting. Use **Pause** when you want to keep the connection but temporarily stop sending input.
 
-Mouse coordinates are scaled proportionally between the monitors selected on each PC. Select **Pause**, or open the `K+M` command window and press `Z`, to stop input forwarding without disconnecting. After connection, both app windows move to the top-right corner of their selected monitors.
+## Command window
 
-Open Settings with the gear button to configure:
+Hold `K` and `M` together for one second, then release both keys. Press:
 
-- Start with Windows
-- Minimize while waiting
-- Block local clicks (`X` in the `K+M` command window)
-- Block the local keyboard (`K` in the `K+M` command window)
-- Keyboard control
-- Mouse control
-- Game input mode (`G` in the `K+M` command window)
-- Connection group
-- Swap mode and control swap direction (`Left`, `Right`, or `Top`)
+- `X` to turn local click blocking on or off
+- `K` to turn local keyboard blocking on or off
+- `G` to turn game input mode on or off
+- `Z` to pause or resume remote input
+- `E` to stop immediately and recover input
+- `Esc` to close the command window
 
-Settings are stored for the current Windows user. **Keyboard control** enables or disables remote keyboard forwarding. **Block local keyboard** continues sending keys to the waiting PC while suppressing them on the controlling PC. **Block local clicks** continues forwarding clicks while suppressing local clicks outside the Soft KVM window.
+Normal `Alt` shortcuts and `Esc` are sent to the remote PC when the command window is closed.
 
-Hold `K` and `M` together for one second to open the local command window. After releasing both keys, press `X`, `K`, `G`, `Z`, or `E` to run a command, or press `Esc` to close the window. Normal `Alt` combinations and `Esc` are otherwise forwarded to the remote PC.
+## Settings
 
-**Game input mode** uses keyboard scan codes and relative mouse movement. It continuously returns the controlling PC cursor to the center of the selected monitor, allowing camera movement beyond the screen edge. Disable it with `G` in the `K+M` command window before using normal desktop or game-menu clicks. Games that block Windows synthetic input through anti-cheat systems are not supported.
+- **Start with Windows**: starts Soft KVM automatically after Windows sign-in. It stays hidden in the notification area; double-click the tray icon to open it.
+- **Minimize while waiting**: hides the waiting window after a connection is made.
+- **Keyboard control**: sends keyboard input to the waiting PC.
+- **Mouse control**: sends mouse input to the waiting PC.
+- **Block local keyboard**: keeps sending keys remotely while preventing local typing.
+- **Block local clicks**: keeps sending clicks remotely while preventing clicks outside Soft KVM on the controlling PC.
+- **Game input mode**: uses relative mouse movement for games and 3D applications.
+- **Connection group**: limits discovery to PCs using the same group name.
+- **Control UAC screens**: allows input on UAC prompts and elevated applications after administrator approval.
 
-The game-input protocol is not compatible with older builds. Always use the same latest EXE on both PCs. Soft KVM does not take focus away from the game window on the waiting PC. High-rate relative mouse events are accumulated and rate-limited to avoid overloading the connection.
+Settings are saved for the current Windows user and are not copied to the other PC.
 
-**Swap mode** must be enabled with the same control swap direction on both PCs. The direction is always based on the controlling PC. A mismatch causes the protocol v9 handshake to reject the connection and reopen Settings. For example, selecting `Left` transfers control when the pointer remains at the left edge of the controlling PC for one second. To return, move away from and then remain at the corresponding edge of the waiting PC for one second.
+## Swap mode
 
-The active edge is marked by a 3-pixel DPI-independent indicator. A colored glow follows the virtual remote cursor. Swap entry and return use acknowledgements, retransmission, and PING/PONG connection monitoring. If communication fails, Soft KVM prioritizes restoring local input on the controlling PC.
+Turn on **Swap mode** on both PCs and select the same **Control swap direction**.
 
-Settings are not shared over the network. **Minimize while waiting** applies only to the waiting role, while keyboard, mouse, and local-blocking settings apply only to the controlling role. When the waiting app is minimized after connection, a translucent status indicator appears in the top-right corner. Click it to release input, disconnect, stop helper processes, and exit Soft KVM. Stopping, pausing, or disconnecting releases all forwarded keys and mouse buttons.
+The direction is always based on the controlling PC. For example, `Left` means that holding the pointer at the left edge of the controlling PC for one second transfers control to the waiting PC. Move away from the return edge and hold there again for one second to return.
 
-Select **Check for updates** to query the latest public [SoftKVM-Releases](https://github.com/TeamOasis7/SoftKVM-Releases) release. Soft KVM downloads the EXE and SHA-256 file, verifies integrity, releases active input, replaces the executable, and restarts. Do not rename or move the executable while an update is in progress.
+If the two PCs use different directions or only one PC has Swap mode enabled, Soft KVM asks you to correct the settings.
 
-The published Windows x64 EXE is self-contained and does not require a separate .NET installation.
+## Game input mode
 
-Allow Soft KVM on private networks when Windows Defender Firewall prompts. Discovery uses UDP port `45820`; active control uses a dynamically selected TCP port on the waiting PC.
+Use **Game input mode** when a game needs continuous camera movement. Turn it off before using normal desktop controls or game menus that require absolute pointer positions.
 
-Relative movement in swap and game modes is scaled using the selected monitor dimensions on both PCs. Use the same connection-group name on both PCs; only its hash is sent during discovery. Both PCs must use the same protocol v9 build. Repeated swaps use a new input generation, and the return edge is tracked with Soft KVM's internal virtual cursor rather than a Windows cursor that a game may hide or lock.
+Use the same latest Soft KVM EXE on both PCs. Games that reject Windows synthetic input through anti-cheat protection are not supported.
 
-When **Control UAC screens** is enabled, starting Wait requests administrator approval once. A temporary SYSTEM bridge follows the secure desktop so UAC dialogs and elevated apps can receive input. The temporary service is deleted immediately after launching the SYSTEM wait process, and the helper process exits when waiting stops or Soft KVM closes.
+## Updates and connection tips
+
+- Select **Check for updates** in Settings to download and install the latest public release.
+- Allow Soft KVM on private networks when Windows Defender Firewall asks.
+- Both PCs must be on the same trusted local network.
+- If a connection fails, confirm that both PCs use the same version, connection group, and Swap mode settings.
+- Stopping, pausing, disconnecting, or using emergency recovery releases forwarded keys and mouse buttons.
 
 > Use Soft KVM only on a trusted local network. Input traffic is not encrypted. Do not expose it directly to public Wi-Fi or the internet.
+
