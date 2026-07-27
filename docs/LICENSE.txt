@@ -1,0 +1,91 @@
+SOFT KVM SOFTWARE LICENSE TERMS
+Effective date: July 27, 2026
+
+Copyright (c) 2026 SoftKVM. All rights reserved.
+
+1. Acceptance
+
+By installing, copying, or using Soft KVM, you agree to these terms. If you do
+not agree, do not install or use the software.
+
+2. Free personal and non-commercial use
+
+Soft KVM may be used without a license fee by an individual solely for personal,
+non-commercial purposes. This permission does not include work performed for an
+employer, business, organization, institution, customer, or other commercial
+purpose, even when the software is installed on a personally owned computer.
+
+3. Paid business and organizational use
+
+Use by or for a company, institution, public body, non-profit organization, or
+other organization, and any use for work or business purposes, requires a paid
+business license obtained before use. Business license scope, permitted device
+count, term, support, and fees are defined in the applicable quote, order, or
+written agreement. Those written commercial terms control if they conflict with
+this document.
+
+Business license contact: teamoasis78@gmail.com
+
+4. Permitted copies
+
+An eligible personal user may copy Soft KVM to devices they personally use for
+the permitted personal purpose. A business user may install it only on the
+number of devices authorized by its paid license.
+
+5. Restrictions
+
+Except where applicable law expressly permits otherwise, you may not sell,
+rent, sublicense, commercially redistribute, remove proprietary notices from,
+or represent Soft KVM as your own product. You may not use the software to
+violate another person's rights, bypass access controls, or control a computer
+without authorization.
+
+6. Ownership
+
+Soft KVM is licensed, not sold. SoftKVM retains all rights not expressly granted
+under these terms, including all copyright and other intellectual property
+rights in the software and its documentation.
+
+7. Updates and support
+
+Updates, maintenance, and support may be changed or discontinued. Free personal
+use does not include a guaranteed response time or support obligation. Any
+business support commitment must be stated in a separate written agreement.
+
+8. Termination
+
+Your permission to use Soft KVM ends automatically if you materially violate
+these terms. When permission ends, you must stop using and delete all copies of
+the software, unless a separate written agreement states otherwise.
+
+9. Disclaimer
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, SOFT KVM IS PROVIDED "AS IS"
+AND "AS AVAILABLE", WITHOUT WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, NON-INFRINGEMENT, OR UNINTERRUPTED OR ERROR-FREE OPERATION.
+
+10. Limitation of liability
+
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, SOFTKVM WILL NOT BE LIABLE
+FOR INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR
+LOSS OF DATA, PROFITS, BUSINESS, OR USE ARISING FROM THE SOFTWARE. LIABILITY
+THAT CANNOT LEGALLY BE EXCLUDED REMAINS LIMITED AS PERMITTED BY LAW.
+
+11. Changes
+
+Updated terms may accompany a future version. Continuing to use that future
+version after its terms are presented constitutes acceptance of those terms.
+
+12. Contact
+
+License and business inquiries: teamoasis78@gmail.com
+
+KOREAN SUMMARY / 한국어 요약
+
+개인 및 비상업적 사용은 무료입니다. 회사·기관·단체를 위한 사용이나 업무
+목적 사용은 개인 소유 PC에서 실행하더라도 유료 기업 라이선스가 필요합니다.
+기업 라이선스의 허용 PC 수, 기간, 지원 및 비용은 별도 견적서나 계약서에서
+정합니다. 무단 재판매·상업적 재배포·권한 없는 PC 제어는 허용되지 않습니다.
+전체 조건은 위 영문 조항을 확인하십시오.
+
+기업 라이선스 문의: teamoasis78@gmail.com

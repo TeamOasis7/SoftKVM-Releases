@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Soft KVM - Control two Windows PCs with one keyboard and mouse</title>
+  <meta name="description" content="Control two Windows PCs on the same local network with one keyboard and mouse. No account, cloud, or relay server required.">
+  <meta name="theme-color" content="#f5f7f8">
+  <link rel="icon" href="assets/softkvm-icon.ico">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Soft KVM home" data-i18n-aria-label="aria.home">
+      <img src="assets/softkvm-icon.ico" alt="">
+      <span>Soft KVM</span>
+      <span class="version">v1.4b</span>
+    </a>
+
+    <nav aria-label="Main navigation" data-i18n-aria-label="aria.mainNavigation">
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#setup" data-i18n="nav.setup">Setup</a>
+      <a href="#security" data-i18n="nav.security">Security</a>
+      <a href="https://github.com/TeamOasis7/SoftKVM-Releases" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
+
+    <div class="header-actions">
+      <div class="language-switch" role="group" aria-label="Language" data-i18n-aria-label="aria.language">
+        <button type="button" data-lang="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
+      </div>
+      <a class="header-download" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/SoftKVM_1.4b.exe">
+        <span data-i18n="nav.download">Download</span>
+        <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow" data-i18n="hero.eyebrow">ONE DESK. TWO WINDOWS PCS.</p>
+        <h1 data-i18n="hero.title">Your keyboard and mouse, on both PCs.</h1>
+        <p class="lead" data-i18n="hero.lead">Soft KVM moves your input between two Windows PCs over your local network. No account, cloud service, or extra hardware.</p>
+
+        <div class="actions">
+          <a class="button primary" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/SoftKVM_1.4b.exe">
+            <span data-i18n="hero.download">Download for Windows</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+          <a class="button text-button" href="#setup">
+            <span data-i18n="hero.guide">View setup guide</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="release-line">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span data-i18n="hero.release">Latest release v1.4b</span>
+          <span aria-hidden="true">·</span>
+          <span data-i18n="hero.platform">Windows 10/11 x64</span>
+          <span aria-hidden="true">·</span>
+          <span data-i18n="hero.runtime">No .NET install</span>
+        </div>
+      </div>
+
+      <div class="product-capture" data-kvm-scene>
+        <div class="scene-monitor scene-control-monitor">
+          <div class="scene-role">
+            <span class="role-dot"></span>
+            <strong data-i18n="scene.controlPc">CONTROL PC</strong>
+            <small data-i18n="scene.mainPc">Main desk</small>
+          </div>
+          <div class="monitor-frame">
+            <div class="monitor-screen">
+              <span class="desktop-label">PC 01</span>
+              <span class="desktop-window window-a"></span>
+              <span class="desktop-window window-b"></span>
+              <span class="remote-cursor control-cursor"></span>
+              <div class="scene-app-popover">
+                <span class="popover-label" data-i18n="scene.controlMode">CONTROL MODE</span>
+                <div class="softkvm-surface" data-control-surface aria-label="Soft KVM Control interface"></div>
+              </div>
+            </div>
+            <span class="monitor-neck"></span>
+            <span class="monitor-base"></span>
+          </div>
+        </div>
+
+        <div class="scene-connection" aria-hidden="true">
+          <span class="connection-track"></span>
+          <span class="connection-packet packet-one">42</span>
+          <span class="connection-packet packet-two">✓</span>
+          <span class="connection-lock">LAN</span>
+        </div>
+
+        <div class="scene-monitor scene-wait-monitor">
+          <div class="scene-role">
+            <span class="role-dot"></span>
+            <strong data-i18n="scene.waitPc">WAIT PC</strong>
+            <small data-i18n="scene.remotePc">Remote desk</small>
+          </div>
+          <div class="monitor-frame">
+            <div class="monitor-screen">
+              <span class="desktop-label">PC 02</span>
+              <span class="desktop-window window-a"></span>
+              <span class="desktop-window window-b"></span>
+              <span class="remote-cursor wait-cursor"></span>
+              <div class="scene-app-popover">
+                <span class="popover-label" data-i18n="scene.waitMode">WAIT MODE</span>
+                <div class="softkvm-surface" data-wait-surface aria-label="Soft KVM Wait interface"></div>
+              </div>
+            </div>
+            <span class="monitor-neck"></span>
+            <span class="monitor-base"></span>
+          </div>
+        </div>
+
+        <div class="input-device">
+          <div class="input-beam" aria-hidden="true"></div>
+          <div class="input-kit">
+            <div class="scene-keyboard" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <div class="scene-mouse" aria-hidden="true"><i></i></div>
+            <span class="input-hub" aria-hidden="true">K+M</span>
+          </div>
+          <span class="input-label">
+            <b data-i18n="scene.oneInput">ONE KEYBOARD + MOUSE</b>
+            <em data-input-target>LOCAL INPUT → CONTROL PC</em>
+          </span>
+        </div>
+
+        <div class="scene-status">
+          <span class="scene-step" data-scene-step>01</span>
+          <strong data-scene-title>Wait PC is ready</strong>
+          <span data-scene-body>Connection code 42 is shown on the remote PC.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="proof-strip" aria-label="Product highlights" data-i18n-aria-label="aria.highlights">
+      <div>
+        <span class="proof-number">01</span>
+        <strong data-i18n="proof.local.title">Local by design</strong>
+        <p data-i18n="proof.local.body">Traffic stays on your LAN. No relay server.</p>
+      </div>
+      <div>
+        <span class="proof-number">02</span>
+        <strong data-i18n="proof.pair.title">Pair before control</strong>
+        <p data-i18n="proof.pair.body">Confirm the same code on both PCs.</p>
+      </div>
+      <div>
+        <span class="proof-number">03</span>
+        <strong data-i18n="proof.swap.title">Move naturally</strong>
+        <p data-i18n="proof.swap.body">Swap control at the edge of the screen.</p>
+      </div>
+    </section>
+
+    <section class="section product-tour">
+      <div class="tour-copy reveal">
+        <p class="eyebrow" data-i18n="tour.eyebrow">ACTUAL APP</p>
+        <h2 data-i18n="tour.title">Small on your desktop. Clear when you need it.</h2>
+        <p data-i18n="tour.body">The compact bar keeps Wait and Control one click away. Open Settings only when you need pairing, input, Swap mode, or startup options.</p>
+        <div class="shot-switch" role="group" aria-label="Soft KVM screen" data-i18n-aria-label="aria.screen">
+          <button type="button" data-shot="home" aria-pressed="true" data-i18n="tour.quick">Quick bar</button>
+          <button type="button" data-shot="control" aria-pressed="false" data-i18n="tour.control">Control</button>
+          <button type="button" data-shot="settings" aria-pressed="false" data-i18n="tour.settings">Full settings</button>
+        </div>
+        <div class="tour-state">
+          <span class="tour-state-index">01</span>
+          <div>
+            <strong data-tour-title data-i18n="tour.quickTitle">Ready without taking over your screen</strong>
+            <p data-tour-body data-i18n="tour.quickBody">The main window stays compact until you open Settings or start a connection.</p>
+          </div>
+        </div>
+      </div>
+      <figure class="tour-media reveal">
+        <div class="tour-stage">
+          <span class="stage-label" data-i18n="tour.captured">BASED ON THE ACTUAL v1.4b UI</span>
+          <div class="softkvm-surface tour-surface" data-tour-surface aria-label="Soft KVM compact quick bar"></div>
+        </div>
+      </figure>
+    </section>
+
+    <section id="setup" class="section setup-section">
+      <div class="section-intro">
+        <p class="eyebrow" data-i18n="setup.eyebrow">QUICK SETUP</p>
+        <h2 data-i18n="setup.title">Running on both PCs in a few minutes.</h2>
+        <p data-i18n="setup.lead">Use the same release files on both computers. One PC waits; the other controls.</p>
+      </div>
+
+      <ol class="steps">
+        <li>
+          <span class="step-number">1</span>
+          <div>
+            <strong data-i18n="setup.step1.title">Download the release</strong>
+            <p data-i18n="setup.step1.body">Get the EXE, certificate, and setup CMD in the same folder.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-number">2</span>
+          <div>
+            <strong data-i18n="setup.step2.title">Complete trust setup once</strong>
+            <p data-i18n="setup.step2.body">After the first launch, approve the Soft KVM trust setup prompt.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-number">3</span>
+          <div>
+            <strong data-i18n="setup.step3.title">Choose each PC's role</strong>
+            <p data-i18n="setup.step3.body">Select Wait on the remote PC and Control on your main PC.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-number">4</span>
+          <div>
+            <strong data-i18n="setup.step4.title">Confirm and connect</strong>
+            <p data-i18n="setup.step4.body">Check the pairing code on both PCs, then approve the connection.</p>
+          </div>
+        </li>
+      </ol>
+
+      <aside class="download-panel">
+        <div class="download-panel-head">
+          <img src="assets/softkvm-icon.ico" alt="">
+          <div>
+            <span data-i18n="download.label">CURRENT RELEASE</span>
+            <strong>Soft KVM v1.4b</strong>
+          </div>
+        </div>
+
+        <a class="release-main" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/SoftKVM_1.4b.exe">
+          <span>
+            <strong>SoftKVM_1.4b.exe</strong>
+            <small data-i18n="download.exeMeta">Windows x64 · Self-contained</small>
+          </span>
+          <span class="download-mark" aria-hidden="true">↓</span>
+        </a>
+
+        <div class="support-files">
+          <p data-i18n="download.trustFiles">One-time trust setup files</p>
+          <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/SoftKVM-Publisher.cer">
+            <span>SoftKVM-Publisher.cer</span><span aria-hidden="true">↓</span>
+          </a>
+          <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/Install-SoftKVM-Certificate.cmd">
+            <span>Install-SoftKVM-Certificate.cmd</span><span aria-hidden="true">↓</span>
+          </a>
+        </div>
+
+        <a class="all-files" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/tag/v1.4b">
+          <span data-i18n="download.allFiles">View all release files and SHA-256</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </aside>
+    </section>
+
+    <section id="security" class="section security-section">
+      <div class="section-intro">
+        <p class="eyebrow" data-i18n="security.eyebrow">SECURITY</p>
+        <h2 data-i18n="security.title">Direct control without sending your input to the cloud.</h2>
+      </div>
+
+      <div class="security-grid">
+        <article>
+          <span class="security-index">A</span>
+          <h3 data-i18n="security.pair.title">Verified pairing</h3>
+          <p data-i18n="security.pair.body">Both PCs must show and approve the same pairing code before first control.</p>
+        </article>
+        <article>
+          <span class="security-index">B</span>
+          <h3 data-i18n="security.encrypt.title">Encrypted input</h3>
+          <p data-i18n="security.encrypt.body">Keyboard and mouse traffic travels through an authenticated ECDH/AES-GCM channel.</p>
+        </article>
+        <article>
+          <span class="security-index">C</span>
+          <h3 data-i18n="security.update.title">Verified updates</h3>
+          <p data-i18n="security.update.body">Updates must pass SHA-256 and pinned publisher signature checks before installation.</p>
+        </article>
+      </div>
+
+      <div class="security-note">
+        <strong data-i18n="security.note.title">Built for trusted local networks</strong>
+        <p data-i18n="security.note.body">Do not expose Soft KVM discovery or listening ports directly to the internet.</p>
+      </div>
+    </section>
+
+    <section id="license" class="section license-section">
+      <div class="section-intro">
+        <p class="eyebrow" data-i18n="license.eyebrow">LICENSE</p>
+        <h2 data-i18n="license.title">Free for personal use. Licensed for business.</h2>
+        <p data-i18n="license.lead">Soft KVM is free for personal and non-commercial use. Business, organizational, and work-related use requires a paid license.</p>
+      </div>
+      <div class="license-contact">
+        <span data-i18n="license.contactLabel">BUSINESS LICENSE CONTACT</span>
+        <a href="mailto:teamoasis78@gmail.com?subject=Soft%20KVM%20business%20license">teamoasis78@gmail.com</a>
+        <p>© 2026 SoftKVM. All rights reserved.</p>
+      </div>
+      <nav class="license-documents" aria-label="License documents" data-i18n-aria-label="aria.licenseDocuments">
+        <a href="docs/LICENSE.txt">
+          <span data-i18n="license.terms">License terms</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="docs/PRIVACY.txt">
+          <span data-i18n="license.privacy">Privacy notice</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+        <a href="docs/README.txt">
+          <span data-i18n="license.install">Installation guide</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </nav>
+    </section>
+
+    <section class="section faq-section">
+      <div class="section-intro">
+        <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+        <h2 data-i18n="faq.title">Before you download.</h2>
+      </div>
+      <div class="faq-list">
+        <details>
+          <summary data-i18n="faq.internet.q">Can I control a PC over the internet?</summary>
+          <p data-i18n="faq.internet.a">Soft KVM is designed for trusted local networks. Do not expose its ports through your router.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.dotnet.q">Do I need to install .NET?</summary>
+          <p data-i18n="faq.dotnet.a">No. The public Windows x64 build is self-contained.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.game.q">Does it work with games?</summary>
+          <p data-i18n="faq.game.a">Game input mode supports many games and 3D apps. Games that block Windows synthetic input through anti-cheat are not supported.</p>
+        </details>
+        <details>
+          <summary data-i18n="faq.smartscreen.q">Why can Windows SmartScreen appear?</summary>
+          <p data-i18n="faq.smartscreen.a">Soft KVM currently uses a private publisher certificate, not a paid public code-signing certificate. Check the official release source before running it.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <img src="assets/softkvm-icon.ico" alt="">
+      <div>
+        <p class="eyebrow">SOFT KVM v1.4b</p>
+        <h2 data-i18n="final.title">Keep both PCs within reach.</h2>
+      </div>
+      <a class="button primary light" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/SoftKVM_1.4b.exe">
+        <span data-i18n="final.download">Download for Windows</span>
+        <span aria-hidden="true">↓</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-brand">
+      <img src="assets/softkvm-icon.ico" alt="">
+      <span>Soft KVM</span>
+    </div>
+    <p data-i18n="footer.tagline">Local keyboard and mouse sharing for Windows.</p>
+    <div class="footer-links">
+      <a href="mailto:teamoasis78@gmail.com?subject=Soft%20KVM%20inquiry" data-i18n="footer.contact">Contact</a>
+      <a href="docs/LICENSE.txt" data-i18n="footer.license">License</a>
+      <a href="docs/PRIVACY.txt" data-i18n="footer.privacy">Privacy</a>
+      <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/tag/v1.4b" data-i18n="footer.release">Release v1.4b</a>
+    </div>
+  </footer>
+</body>
+</html>
