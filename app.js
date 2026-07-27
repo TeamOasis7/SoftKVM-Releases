@@ -10,6 +10,7 @@ const translations = {
     "aria.licenseDocuments": "License documents",
     "aria.currentRelease": "Current Soft KVM release",
     "aria.sceneStages": "Connection stages",
+    "aria.secureChannel": "Authenticated encrypted channel between both PCs",
     "nav.features": "Features",
     "nav.setup": "Setup",
     "nav.security": "Security",
@@ -23,6 +24,8 @@ const translations = {
     "hero.releaseLabel": "CURRENT RELEASE",
     "hero.releaseFacts": "Windows 10/11 x64 · Single EXE · Private publisher signature",
     "hero.trustHelp": "Trust setup files:",
+    "hero.signatureVerified": "Private publisher signature verified",
+    "hero.hashAvailable": "SHA-256 available",
     "hero.zipDownload": "Download complete ZIP · 44 MB",
     "hero.zipHelp": "EXE and trust files in one folder",
     "hero.recommended": "RECOMMENDED",
@@ -82,7 +85,11 @@ const translations = {
     "download.releaseNotes": "Release notes",
     "download.allFiles": "View all release files",
     "security.eyebrow": "SECURITY",
-    "security.title": "Direct control without sending your input to the cloud.",
+    "security.title": "Local control protected by encryption and mutual verification.",
+    "security.lead": "Captured traffic is designed to remain unreadable, while tampered or replayed messages are rejected.",
+    "security.channel.pair": "PAIR",
+    "security.channel.ecdh": "ECDH",
+    "security.channel.verify": "VERIFY",
     "security.pair.title": "Verified pairing",
     "security.pair.body": "Both PCs must show and approve the same pairing code before first control.",
     "security.encrypt.title": "Encrypted input",
@@ -141,6 +148,7 @@ const translations = {
     "aria.licenseDocuments": "라이선스 문서",
     "aria.currentRelease": "현재 Soft KVM 릴리즈",
     "aria.sceneStages": "연결 단계",
+    "aria.secureChannel": "두 PC 사이의 인증된 암호화 채널",
     "nav.features": "기능",
     "nav.setup": "설치",
     "nav.security": "보안",
@@ -154,6 +162,8 @@ const translations = {
     "hero.releaseLabel": "현재 릴리즈",
     "hero.releaseFacts": "Windows 10/11 x64 · 단일 EXE · 개인 게시자 서명",
     "hero.trustHelp": "신뢰 설정 파일:",
+    "hero.signatureVerified": "개인 게시자 서명 확인",
+    "hero.hashAvailable": "SHA-256 제공",
     "hero.zipDownload": "전체 ZIP 다운로드 · 44MB",
     "hero.zipHelp": "EXE와 신뢰 설정 파일을 한 폴더에 포함",
     "hero.recommended": "권장",
@@ -213,7 +223,11 @@ const translations = {
     "download.releaseNotes": "변경 내역",
     "download.allFiles": "전체 릴리즈 파일 보기",
     "security.eyebrow": "보안",
-    "security.title": "입력을 클라우드로 보내지 않는 직접 제어.",
+    "security.title": "암호화와 상호 인증으로 보호되는 안전한 로컬 제어.",
+    "security.lead": "패킷을 가로채더라도 입력 내용을 읽기 어렵고, 변조되거나 재전송된 메시지는 거부되도록 설계했습니다.",
+    "security.channel.pair": "페어링",
+    "security.channel.ecdh": "키 교환",
+    "security.channel.verify": "검증",
     "security.pair.title": "검증된 페어링",
     "security.pair.body": "최초 제어 전 양쪽 PC에 같은 페어링 코드가 표시되는지 확인하고 승인합니다.",
     "security.encrypt.title": "입력 암호화",
@@ -281,6 +295,24 @@ const tourSurface = document.querySelector("[data-tour-surface]");
 const tourTitle = document.querySelector("[data-tour-title]");
 const tourBody = document.querySelector("[data-tour-body]");
 const hashCopyButton = document.querySelector("[data-copy-hash]");
+
+document.querySelectorAll("[data-technical-grid]").forEach((grid) => {
+  const cells = document.createDocumentFragment();
+  for (let index = 0; index < 96; index += 1) {
+    cells.append(document.createElement("span"));
+  }
+  grid.append(cells);
+});
+
+const heroKeyboard = document.querySelector("[data-hero-keyboard]");
+if (heroKeyboard) {
+  const keys = document.createDocumentFragment();
+  for (let index = 0; index < 43; index += 1) {
+    keys.append(document.createElement("span"));
+  }
+  heroKeyboard.append(keys);
+}
+
 const shotContent = {
   home: {
     titleKey: "tour.quickTitle",
