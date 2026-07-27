@@ -15,10 +15,10 @@
     <a class="brand" href="#top" aria-label="Soft KVM home" data-i18n-aria-label="aria.home">
       <img src="assets/softkvm-icon.ico" alt="">
       <span>Soft KVM</span>
-      <span class="version">v1.4b</span>
+      <span class="version">v1.5b</span>
     </a>
 
-    <nav aria-label="Main navigation" data-i18n-aria-label="aria.mainNavigation">
+    <nav class="desktop-nav" aria-label="Main navigation" data-i18n-aria-label="aria.mainNavigation">
       <a href="#features" data-i18n="nav.features">Features</a>
       <a href="#setup" data-i18n="nav.setup">Setup</a>
       <a href="#security" data-i18n="nav.security">Security</a>
@@ -26,42 +26,84 @@
     </nav>
 
     <div class="header-actions">
+      <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+        <span aria-hidden="true">☰</span>
+        <span class="visually-hidden" data-i18n="nav.menu">Menu</span>
+      </button>
       <div class="language-switch" role="group" aria-label="Language" data-i18n-aria-label="aria.language">
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
       </div>
-      <a class="header-download" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/SoftKVM_1.4b.exe">
+      <a class="header-download" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b.exe">
         <span data-i18n="nav.download">Download</span>
         <span aria-hidden="true">↓</span>
       </a>
     </div>
+
+    <nav id="mobile-menu" class="mobile-nav" aria-label="Mobile navigation" data-i18n-aria-label="aria.mobileNavigation" hidden>
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#setup" data-i18n="nav.setup">Setup</a>
+      <a href="#security" data-i18n="nav.security">Security</a>
+      <a href="#compatibility" data-i18n="nav.compatibility">Compatibility</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="https://github.com/TeamOasis7/SoftKVM-Releases" target="_blank" rel="noreferrer">GitHub</a>
+    </nav>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow" data-i18n="hero.eyebrow">ONE DESK. TWO WINDOWS PCS.</p>
-        <h1 data-i18n="hero.title">Your keyboard and mouse, on both PCs.</h1>
-        <p class="lead" data-i18n="hero.lead">Soft KVM moves your input between two Windows PCs over your local network. No account, cloud service, or extra hardware.</p>
-
-        <div class="actions">
-          <a class="button primary" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/SoftKVM_1.4b.exe">
-            <span data-i18n="hero.download">Download for Windows</span>
-            <span aria-hidden="true">↓</span>
-          </a>
-          <a class="button text-button" href="#setup">
-            <span data-i18n="hero.guide">View setup guide</span>
-            <span aria-hidden="true">→</span>
-          </a>
+      <div class="hero-overview">
+        <div class="hero-heading">
+          <p class="eyebrow" data-i18n="hero.eyebrow">ONE DESK. TWO WINDOWS PCS.</p>
+          <h1 data-i18n="hero.title">Your keyboard and mouse, on both PCs.</h1>
         </div>
 
-        <div class="release-line">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span data-i18n="hero.release">Latest release v1.4b</span>
-          <span aria-hidden="true">·</span>
-          <span data-i18n="hero.platform">Windows 10/11 x64</span>
-          <span aria-hidden="true">·</span>
-          <span data-i18n="hero.runtime">No .NET install</span>
+        <div class="hero-details">
+          <div class="hero-copy">
+            <p class="lead" data-i18n="hero.lead">Soft KVM moves your input between two Windows PCs over your local network. No account, cloud service, or extra hardware.</p>
+            <a class="hero-guide" href="#setup">
+              <span data-i18n="hero.guide">View setup guide</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+
+          <aside class="hero-download-panel" aria-label="Current Soft KVM release" data-i18n-aria-label="aria.currentRelease">
+            <div class="hero-release-head">
+              <span class="status-dot" aria-hidden="true"></span>
+              <div>
+                <small data-i18n="hero.releaseLabel">CURRENT RELEASE</small>
+                <strong>Soft KVM v1.5b</strong>
+              </div>
+            </div>
+
+            <p class="hero-release-facts" data-i18n="hero.releaseFacts">Windows 10/11 x64 · Single EXE · Private publisher signature</p>
+
+            <a class="hero-download-option bundle-option" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b_Windows_x64.zip">
+              <span>
+                <strong data-i18n="hero.zipDownload">Download complete ZIP · 44 MB</strong>
+                <small data-i18n="hero.zipHelp">EXE and trust files in one folder</small>
+              </span>
+              <span aria-hidden="true">↓</span>
+              <em data-i18n="hero.recommended">RECOMMENDED</em>
+            </a>
+
+            <a class="hero-download-option primary-option" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b.exe">
+              <span>
+                <strong data-i18n="download.exeAction">Download EXE · 111 MB</strong>
+                <small>SoftKVM_1.5b.exe</small>
+              </span>
+              <span aria-hidden="true">↓</span>
+            </a>
+
+            <div class="hero-trust-files">
+              <span data-i18n="hero.trustHelp">Trust setup files:</span>
+              <span class="hero-trust-links">
+                <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM-Publisher.cer">CER</a>
+                <span aria-hidden="true">·</span>
+                <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/Install-SoftKVM-Certificate.cmd">CMD</a>
+              </span>
+            </div>
+          </aside>
         </div>
       </div>
 
@@ -134,33 +176,33 @@
           </span>
         </div>
 
-        <div class="scene-status">
-          <span class="scene-step" data-scene-step>01</span>
-          <strong data-scene-title>Wait PC is ready</strong>
-          <span data-scene-body>Connection code 42 is shown on the remote PC.</span>
-        </div>
+      </div>
+
+      <div class="scene-stage-list" role="group" aria-label="Connection stages" data-i18n-aria-label="aria.sceneStages">
+        <button type="button" data-scene-index="0" aria-pressed="true">
+          <span>01</span>
+          <strong data-i18n="scene.wait.title">Wait PC is ready</strong>
+          <small data-i18n="scene.wait.body">Connection code 42 is shown on the remote PC.</small>
+        </button>
+        <button type="button" data-scene-index="1" aria-pressed="false">
+          <span>02</span>
+          <strong data-i18n="scene.code.title">Enter the same code on Control PC</strong>
+          <small data-i18n="scene.code.body">Soft KVM checks that both PCs are in the same connection group.</small>
+        </button>
+        <button type="button" data-scene-index="2" aria-pressed="false">
+          <span>03</span>
+          <strong data-i18n="scene.connect.title">Connected. Input remains on Control PC.</strong>
+          <small data-i18n="scene.connect.body">The LAN channel is ready, but keyboard and mouse control has not moved yet.</small>
+        </button>
+        <button type="button" data-scene-index="3" aria-pressed="false">
+          <span>04</span>
+          <strong data-i18n="scene.remote.title">Input moves to the Wait PC</strong>
+          <small data-i18n="scene.remote.body">The same keyboard and mouse now control the remote desktop.</small>
+        </button>
       </div>
     </section>
 
-    <section id="features" class="proof-strip" aria-label="Product highlights" data-i18n-aria-label="aria.highlights">
-      <div>
-        <span class="proof-number">01</span>
-        <strong data-i18n="proof.local.title">Local by design</strong>
-        <p data-i18n="proof.local.body">Traffic stays on your LAN. No relay server.</p>
-      </div>
-      <div>
-        <span class="proof-number">02</span>
-        <strong data-i18n="proof.pair.title">Pair before control</strong>
-        <p data-i18n="proof.pair.body">Confirm the same code on both PCs.</p>
-      </div>
-      <div>
-        <span class="proof-number">03</span>
-        <strong data-i18n="proof.swap.title">Move naturally</strong>
-        <p data-i18n="proof.swap.body">Swap control at the edge of the screen.</p>
-      </div>
-    </section>
-
-    <section class="section product-tour">
+    <section id="features" class="section product-tour">
       <div class="tour-copy reveal">
         <p class="eyebrow" data-i18n="tour.eyebrow">ACTUAL APP</p>
         <h2 data-i18n="tour.title">Small on your desktop. Clear when you need it.</h2>
@@ -180,7 +222,7 @@
       </div>
       <figure class="tour-media reveal">
         <div class="tour-stage">
-          <span class="stage-label" data-i18n="tour.captured">BASED ON THE ACTUAL v1.4b UI</span>
+          <span class="stage-label" data-i18n="tour.captured">BASED ON THE ACTUAL v1.5b UI</span>
           <div class="softkvm-surface tour-surface" data-tour-surface aria-label="Soft KVM compact quick bar"></div>
         </div>
       </figure>
@@ -198,7 +240,7 @@
           <span class="step-number">1</span>
           <div>
             <strong data-i18n="setup.step1.title">Download the release</strong>
-            <p data-i18n="setup.step1.body">Get the EXE, certificate, and setup CMD in the same folder.</p>
+            <p data-i18n="setup.step1.body">Download the complete ZIP, or keep the EXE, certificate, and setup CMD in the same folder.</p>
           </div>
         </li>
         <li>
@@ -229,30 +271,56 @@
           <img src="assets/softkvm-icon.ico" alt="">
           <div>
             <span data-i18n="download.label">CURRENT RELEASE</span>
-            <strong>Soft KVM v1.4b</strong>
+            <strong>Soft KVM v1.5b</strong>
           </div>
         </div>
 
-        <a class="release-main" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/SoftKVM_1.4b.exe">
+        <p class="release-facts" data-i18n="download.facts">v1.5b · Windows 10/11 x64 · 111 MB · Single EXE · Private publisher signature</p>
+
+        <a class="bundle-download" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b_Windows_x64.zip">
           <span>
-            <strong>SoftKVM_1.4b.exe</strong>
-            <small data-i18n="download.exeMeta">Windows x64 · Self-contained</small>
+            <strong data-i18n="download.bundleAction">Download complete ZIP · 44 MB</strong>
+            <small data-i18n="download.bundleContents">EXE, checksum, trust setup, and documents</small>
+          </span>
+          <span class="download-mark" aria-hidden="true">↓</span>
+        </a>
+
+        <a class="release-main" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b.exe">
+          <span>
+            <strong data-i18n="download.exeAction">Download EXE · 111 MB</strong>
+            <small>SoftKVM_1.5b.exe</small>
           </span>
           <span class="download-mark" aria-hidden="true">↓</span>
         </a>
 
         <div class="support-files">
           <p data-i18n="download.trustFiles">One-time trust setup files</p>
-          <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/SoftKVM-Publisher.cer">
+          <small data-i18n="download.trustHelp">Keep both files in the same folder as the EXE for first launch.</small>
+          <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM-Publisher.cer">
             <span>SoftKVM-Publisher.cer</span><span aria-hidden="true">↓</span>
           </a>
-          <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/Install-SoftKVM-Certificate.cmd">
+          <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/Install-SoftKVM-Certificate.cmd">
             <span>Install-SoftKVM-Certificate.cmd</span><span aria-hidden="true">↓</span>
           </a>
         </div>
 
-        <a class="all-files" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/tag/v1.4b">
-          <span data-i18n="download.allFiles">View all release files and SHA-256</span>
+        <div class="release-verification">
+          <div class="hash-heading">
+            <span>EXE SHA-256</span>
+            <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b.exe.sha256" data-i18n="download.hashFile">Checksum file</a>
+          </div>
+          <button class="hash-copy" type="button" data-copy-hash="9702E477B3A3A2ADC5825BD24C15CA87E48C16AB516D5686E779A1C49D60C10C">
+            <code>9702E477B3A3A2ADC5825BD24C15CA87E48C16AB516D5686E779A1C49D60C10C</code>
+            <span data-copy-label data-i18n="download.copyHash">Copy</span>
+          </button>
+          <div class="release-details">
+            <span><span data-i18n="download.released">Released</span> <time datetime="2026-07-27">2026-07-27</time></span>
+            <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/tag/v1.5b" data-i18n="download.releaseNotes">Release notes</a>
+          </div>
+        </div>
+
+        <a class="all-files" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/tag/v1.5b">
+          <span data-i18n="download.allFiles">View all release files</span>
           <span aria-hidden="true">↗</span>
         </a>
       </aside>
@@ -279,6 +347,11 @@
           <span class="security-index">C</span>
           <h3 data-i18n="security.update.title">Verified updates</h3>
           <p data-i18n="security.update.body">Updates must pass SHA-256 and pinned publisher signature checks before installation.</p>
+        </article>
+        <article>
+          <span class="security-index">D</span>
+          <h3 data-i18n="security.subnet.title">Local-subnet firewall boundary</h3>
+          <p data-i18n="security.subnet.body">Generated firewall rules accept connections only from the Windows LocalSubnet scope.</p>
         </article>
       </div>
 
@@ -315,7 +388,52 @@
       </nav>
     </section>
 
-    <section class="section faq-section">
+    <section id="compatibility" class="section compatibility-section">
+      <div class="section-intro">
+        <p class="eyebrow" data-i18n="compat.eyebrow">COMPATIBILITY</p>
+        <h2 data-i18n="compat.title">Check the environment before connecting.</h2>
+        <p data-i18n="compat.lead">Soft KVM is focused on direct control between two Windows PCs on a trusted local network.</p>
+      </div>
+      <div class="compatibility-list">
+        <article>
+          <span class="compatibility-index">01</span>
+          <div>
+            <h3 data-i18n="compat.network.title">Same local network</h3>
+            <p data-i18n="compat.network.body">Both PCs must be connected to the same trusted LAN. Internet relay and port forwarding are not supported.</p>
+          </div>
+        </article>
+        <article>
+          <span class="compatibility-index">02</span>
+          <div>
+            <h3 data-i18n="compat.windows.title">Windows x64 on both PCs</h3>
+            <p data-i18n="compat.windows.body">Use Windows 10 or 11 x64 and the same Soft KVM version on both computers.</p>
+          </div>
+        </article>
+        <article>
+          <span class="compatibility-index is-limit">03</span>
+          <div>
+            <h3 data-i18n="compat.games.title">Anti-cheat restrictions</h3>
+            <p data-i18n="compat.games.body">Games that block synthetic Windows input through anti-cheat are not supported.</p>
+          </div>
+        </article>
+        <article>
+          <span class="compatibility-index is-limit">04</span>
+          <div>
+            <h3 data-i18n="compat.uac.title">UAC control requires elevation</h3>
+            <p data-i18n="compat.uac.body">Enable Control UAC screens on the Wait PC and approve the Windows elevation prompt.</p>
+          </div>
+        </article>
+        <article>
+          <span class="compatibility-index">05</span>
+          <div>
+            <h3 data-i18n="compat.recovery.title">Firewall and reconnection</h3>
+            <p data-i18n="compat.recovery.body">Allow Windows Defender Firewall access for the local network. After a disconnect, return to Wait and Control, then connect again.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="faq" class="section faq-section">
       <div class="section-intro">
         <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
         <h2 data-i18n="faq.title">Before you download.</h2>
@@ -343,10 +461,10 @@
     <section class="final-cta">
       <img src="assets/softkvm-icon.ico" alt="">
       <div>
-        <p class="eyebrow">SOFT KVM v1.4b</p>
+        <p class="eyebrow">SOFT KVM v1.5b</p>
         <h2 data-i18n="final.title">Keep both PCs within reach.</h2>
       </div>
-      <a class="button primary light" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.4b/SoftKVM_1.4b.exe">
+      <a class="button primary light" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b.exe">
         <span data-i18n="final.download">Download for Windows</span>
         <span aria-hidden="true">↓</span>
       </a>
@@ -363,7 +481,7 @@
       <a href="mailto:teamoasis78@gmail.com?subject=Soft%20KVM%20inquiry" data-i18n="footer.contact">Contact</a>
       <a href="docs/LICENSE.txt" data-i18n="footer.license">License</a>
       <a href="docs/PRIVACY.txt" data-i18n="footer.privacy">Privacy</a>
-      <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/tag/v1.4b" data-i18n="footer.release">Release v1.4b</a>
+      <a href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/tag/v1.5b" data-i18n="footer.release">Release v1.5b</a>
     </div>
   </footer>
 </body>

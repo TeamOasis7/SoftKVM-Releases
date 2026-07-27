@@ -5,7 +5,7 @@ This folder is a static download page for Soft KVM.
 English is the default language. The EN / 한국어 switch stores the visitor's
 choice in local browser storage. Add future languages to `app.js`.
 
-The product demo is rendered as HTML/CSS from the v1.4b desktop app layout and
+The product demo is rendered as HTML/CSS from the v1.5b desktop app layout and
 color values. It includes the compact bar, Control entry, and Settings without
 upscaling low-resolution screenshots. Keep public demos free of connection-group
 and paired-device identifiers.
@@ -16,6 +16,9 @@ and remote input transfer in order.
 The license, privacy, and installation links use the copies in `website/docs/`.
 Those files must remain byte-for-byte identical to the canonical files in the
 repository root. The release publishing script rejects a package if they differ.
+
+The ZIP links point to the complete public Windows x64 release package. Keep the
+EXE and trust setup files available as individual release assets as well.
 
 ## Local preview
 
@@ -29,15 +32,17 @@ Use `website/` as the Pages source folder, or copy its contents to a `gh-pages` 
 
 When publishing a new public release:
 
-1. Update every `v1.4b` and `SoftKVM_1.4b.exe` reference in `index.html`.
-2. Update the SHA-256 value.
-3. Confirm that the release contains all seven assets:
+1. Update every version and versioned asset reference in `index.html`.
+2. Update the EXE size, SHA-256 value, release date, and release-notes link.
+3. Update the direct `SoftKVM_<version>_Windows_x64.zip` download links.
+4. Confirm that the release contains all eight assets:
    - EXE
    - SHA-256
+   - complete Windows x64 ZIP package
    - `SoftKVM-Publisher.cer`
    - `Install-SoftKVM-Certificate.cmd`
    - `LICENSE.txt`
    - `PRIVACY.txt`
    - `README.txt`
-4. Verify the website download, publisher-trust, release, and local document
+5. Verify the website download, ZIP, publisher-trust, release, and local document
    links against those assets.

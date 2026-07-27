@@ -4,27 +4,29 @@ const translations = {
   en: {
     "aria.home": "Soft KVM home",
     "aria.mainNavigation": "Main navigation",
+    "aria.mobileNavigation": "Mobile navigation",
     "aria.language": "Language",
-    "aria.highlights": "Product highlights",
     "aria.screen": "Soft KVM screen",
     "aria.licenseDocuments": "License documents",
+    "aria.currentRelease": "Current Soft KVM release",
+    "aria.sceneStages": "Connection stages",
     "nav.features": "Features",
     "nav.setup": "Setup",
     "nav.security": "Security",
+    "nav.compatibility": "Compatibility",
+    "nav.faq": "FAQ",
+    "nav.menu": "Menu",
     "nav.download": "Download",
     "hero.eyebrow": "ONE DESK. TWO WINDOWS PCS.",
     "hero.title": "Your keyboard and mouse, on both PCs.",
     "hero.lead": "Soft KVM moves your input between two Windows PCs over your local network. No account, cloud service, or extra hardware.",
-    "hero.download": "Download for Windows",
+    "hero.releaseLabel": "CURRENT RELEASE",
+    "hero.releaseFacts": "Windows 10/11 x64 · Single EXE · Private publisher signature",
+    "hero.trustHelp": "Trust setup files:",
+    "hero.zipDownload": "Download complete ZIP · 44 MB",
+    "hero.zipHelp": "EXE and trust files in one folder",
+    "hero.recommended": "RECOMMENDED",
     "hero.guide": "View setup guide",
-    "hero.release": "Latest release v1.4b",
-    "hero.platform": "Windows 10/11 x64",
-    "hero.runtime": "No .NET install",
-    "capture.wait": "WAIT",
-    "capture.control": "CONTROL",
-    "capture.actual": "Interface recreated from the actual v1.4b app",
-    "capture.waitCallout": "Wait on the remote PC",
-    "capture.controlCallout": "Control from your main PC",
     "scene.controlPc": "CONTROL PC",
     "scene.waitPc": "WAIT PC",
     "scene.mainPc": "Main desk",
@@ -42,19 +44,13 @@ const translations = {
     "scene.connect.body": "The LAN channel is ready, but keyboard and mouse control has not moved yet.",
     "scene.remote.title": "Input moves to the Wait PC",
     "scene.remote.body": "The same keyboard and mouse now control the remote desktop.",
-    "proof.local.title": "Local by design",
-    "proof.local.body": "Traffic stays on your LAN. No relay server.",
-    "proof.pair.title": "Pair before control",
-    "proof.pair.body": "Confirm the same code on both PCs.",
-    "proof.swap.title": "Move naturally",
-    "proof.swap.body": "Swap control at the edge of the screen.",
     "tour.eyebrow": "ACTUAL APP",
     "tour.title": "Small on your desktop. Clear when you need it.",
     "tour.body": "The compact bar keeps Wait and Control one click away. Open Settings only when you need pairing, input, Swap mode, or startup options.",
     "tour.quick": "Quick bar",
     "tour.control": "Control",
     "tour.settings": "Full settings",
-    "tour.captured": "BASED ON THE ACTUAL v1.4b UI",
+    "tour.captured": "BASED ON THE ACTUAL v1.5b UI",
     "tour.quickTitle": "Ready without taking over your screen",
     "tour.quickBody": "The main window stays compact until you open Settings or start a connection.",
     "tour.controlTitle": "Enter the remote PC's code and start",
@@ -65,7 +61,7 @@ const translations = {
     "setup.title": "Running on both PCs in a few minutes.",
     "setup.lead": "Use the same release files on both computers. One PC waits; the other controls.",
     "setup.step1.title": "Download the release",
-    "setup.step1.body": "Get the EXE, certificate, and setup CMD in the same folder.",
+    "setup.step1.body": "Download the complete ZIP, or keep the EXE, certificate, and setup CMD in the same folder.",
     "setup.step2.title": "Complete trust setup once",
     "setup.step2.body": "After the first launch, approve the Soft KVM trust setup prompt.",
     "setup.step3.title": "Choose each PC's role",
@@ -73,9 +69,18 @@ const translations = {
     "setup.step4.title": "Confirm and connect",
     "setup.step4.body": "Check the pairing code on both PCs, then approve the connection.",
     "download.label": "CURRENT RELEASE",
-    "download.exeMeta": "Windows x64 · Self-contained",
+    "download.facts": "v1.5b · Windows 10/11 x64 · 111 MB · Single EXE · Private publisher signature",
+    "download.exeAction": "Download EXE · 111 MB",
     "download.trustFiles": "One-time trust setup files",
-    "download.allFiles": "View all release files and SHA-256",
+    "download.trustHelp": "Keep both files in the same folder as the EXE for first launch.",
+    "download.bundleAction": "Download complete ZIP · 44 MB",
+    "download.bundleContents": "EXE, checksum, trust setup, and documents",
+    "download.hashFile": "Checksum file",
+    "download.copyHash": "Copy",
+    "download.copiedHash": "Copied",
+    "download.released": "Released",
+    "download.releaseNotes": "Release notes",
+    "download.allFiles": "View all release files",
     "security.eyebrow": "SECURITY",
     "security.title": "Direct control without sending your input to the cloud.",
     "security.pair.title": "Verified pairing",
@@ -84,6 +89,8 @@ const translations = {
     "security.encrypt.body": "Keyboard and mouse traffic travels through an authenticated ECDH/AES-GCM channel.",
     "security.update.title": "Verified updates",
     "security.update.body": "Updates must pass SHA-256 and pinned publisher signature checks before installation.",
+    "security.subnet.title": "Local-subnet firewall boundary",
+    "security.subnet.body": "Generated firewall rules accept connections only from the Windows LocalSubnet scope.",
     "security.note.title": "Built for trusted local networks",
     "security.note.body": "Do not expose Soft KVM discovery or listening ports directly to the internet.",
     "security.note.link": "Read the security model",
@@ -94,6 +101,19 @@ const translations = {
     "license.terms": "License terms",
     "license.privacy": "Privacy notice",
     "license.install": "Installation guide",
+    "compat.eyebrow": "COMPATIBILITY",
+    "compat.title": "Check the environment before connecting.",
+    "compat.lead": "Soft KVM is focused on direct control between two Windows PCs on a trusted local network.",
+    "compat.network.title": "Same local network",
+    "compat.network.body": "Both PCs must be connected to the same trusted LAN. Internet relay and port forwarding are not supported.",
+    "compat.windows.title": "Windows x64 on both PCs",
+    "compat.windows.body": "Use Windows 10 or 11 x64 and the same Soft KVM version on both computers.",
+    "compat.games.title": "Anti-cheat restrictions",
+    "compat.games.body": "Games that block synthetic Windows input through anti-cheat are not supported.",
+    "compat.uac.title": "UAC control requires elevation",
+    "compat.uac.body": "Enable Control UAC screens on the Wait PC and approve the Windows elevation prompt.",
+    "compat.recovery.title": "Firewall and reconnection",
+    "compat.recovery.body": "Allow Windows Defender Firewall access for the local network. After a disconnect, return to Wait and Control, then connect again.",
     "faq.eyebrow": "FAQ",
     "faq.title": "Before you download.",
     "faq.internet.q": "Can I control a PC over the internet?",
@@ -110,32 +130,34 @@ const translations = {
     "footer.contact": "Contact",
     "footer.license": "License",
     "footer.privacy": "Privacy",
-    "footer.release": "Release v1.4b"
+    "footer.release": "Release v1.5b"
   },
   ko: {
     "aria.home": "Soft KVM 홈",
     "aria.mainNavigation": "주요 메뉴",
+    "aria.mobileNavigation": "모바일 메뉴",
     "aria.language": "언어",
-    "aria.highlights": "제품 주요 기능",
     "aria.screen": "Soft KVM 화면",
     "aria.licenseDocuments": "라이선스 문서",
+    "aria.currentRelease": "현재 Soft KVM 릴리즈",
+    "aria.sceneStages": "연결 단계",
     "nav.features": "기능",
     "nav.setup": "설치",
     "nav.security": "보안",
+    "nav.compatibility": "호환성",
+    "nav.faq": "FAQ",
+    "nav.menu": "메뉴",
     "nav.download": "다운로드",
     "hero.eyebrow": "책상 하나, WINDOWS PC 두 대",
     "hero.title": "키보드와 마우스 하나로 두 PC를 제어하세요.",
     "hero.lead": "Soft KVM은 같은 로컬 네트워크의 Windows PC 두 대 사이에서 키보드와 마우스 입력을 전환합니다. 계정, 클라우드 서비스, 추가 장비가 필요하지 않습니다.",
-    "hero.download": "Windows용 다운로드",
+    "hero.releaseLabel": "현재 릴리즈",
+    "hero.releaseFacts": "Windows 10/11 x64 · 단일 EXE · 개인 게시자 서명",
+    "hero.trustHelp": "신뢰 설정 파일:",
+    "hero.zipDownload": "전체 ZIP 다운로드 · 44MB",
+    "hero.zipHelp": "EXE와 신뢰 설정 파일을 한 폴더에 포함",
+    "hero.recommended": "권장",
     "hero.guide": "설치 방법 보기",
-    "hero.release": "최신 릴리즈 v1.4b",
-    "hero.platform": "Windows 10/11 x64",
-    "hero.runtime": ".NET 별도 설치 불필요",
-    "capture.wait": "WAIT",
-    "capture.control": "CONTROL",
-    "capture.actual": "실제 v1.4b 화면을 그대로 재구성",
-    "capture.waitCallout": "제어받을 PC에서 Wait",
-    "capture.controlCallout": "주 PC에서 Control",
     "scene.controlPc": "CONTROL PC",
     "scene.waitPc": "WAIT PC",
     "scene.mainPc": "주 작업 PC",
@@ -153,19 +175,13 @@ const translations = {
     "scene.connect.body": "LAN 채널만 준비된 상태이며 키보드와 마우스 제어는 아직 이동하지 않았습니다.",
     "scene.remote.title": "입력이 Wait PC로 이동합니다",
     "scene.remote.body": "같은 키보드와 마우스로 원격 화면을 제어합니다.",
-    "proof.local.title": "LAN 안에서만 연결",
-    "proof.local.body": "입력은 로컬 네트워크에 머물며 중계 서버를 거치지 않습니다.",
-    "proof.pair.title": "확인 후 제어",
-    "proof.pair.body": "양쪽 PC에 표시된 같은 코드를 확인합니다.",
-    "proof.swap.title": "자연스러운 전환",
-    "proof.swap.body": "화면 가장자리에서 다른 PC로 제어를 넘깁니다.",
     "tour.eyebrow": "실제 앱 화면",
     "tour.title": "평소에는 작게, 필요할 때는 명확하게.",
     "tour.body": "작은 바에서 Wait와 Control을 바로 선택합니다. 페어링, 입력, Swap mode, 시작 옵션이 필요할 때만 Settings를 엽니다.",
     "tour.quick": "빠른 실행 바",
     "tour.control": "Control",
     "tour.settings": "전체 설정",
-    "tour.captured": "실제 v1.4b UI 기반",
+    "tour.captured": "실제 v1.5b UI 기반",
     "tour.quickTitle": "화면을 차지하지 않는 준비 상태",
     "tour.quickBody": "Settings를 열거나 연결을 시작하기 전까지 메인 창은 작게 유지됩니다.",
     "tour.controlTitle": "상대 PC 코드를 입력하고 시작",
@@ -176,7 +192,7 @@ const translations = {
     "setup.title": "몇 분이면 두 PC에서 사용할 수 있습니다.",
     "setup.lead": "두 컴퓨터에서 같은 릴리즈 파일을 사용합니다. 한쪽은 대기하고, 다른 쪽에서 제어합니다.",
     "setup.step1.title": "릴리즈 파일 다운로드",
-    "setup.step1.body": "EXE, 인증서, 설치 CMD를 같은 폴더에 받습니다.",
+    "setup.step1.body": "전체 ZIP을 받거나 EXE, 인증서, 설치 CMD를 같은 폴더에 둡니다.",
     "setup.step2.title": "신뢰 설정 1회 완료",
     "setup.step2.body": "최초 실행 후 Soft KVM 신뢰 설정 안내를 승인합니다.",
     "setup.step3.title": "각 PC 역할 선택",
@@ -184,9 +200,18 @@ const translations = {
     "setup.step4.title": "확인 후 연결",
     "setup.step4.body": "양쪽 PC의 페어링 코드를 확인하고 연결을 승인합니다.",
     "download.label": "현재 릴리즈",
-    "download.exeMeta": "Windows x64 · 단일 실행 파일",
+    "download.facts": "v1.5b · Windows 10/11 x64 · 111MB · 단일 EXE · 개인 게시자 서명",
+    "download.exeAction": "EXE 다운로드 · 111MB",
     "download.trustFiles": "최초 1회 신뢰 설정 파일",
-    "download.allFiles": "전체 릴리즈 파일 및 SHA-256 보기",
+    "download.trustHelp": "최초 실행을 위해 두 파일을 EXE와 같은 폴더에 두세요.",
+    "download.bundleAction": "전체 ZIP 다운로드 · 44MB",
+    "download.bundleContents": "EXE, 체크섬, 신뢰 설정, 문서 포함",
+    "download.hashFile": "체크섬 파일",
+    "download.copyHash": "복사",
+    "download.copiedHash": "복사됨",
+    "download.released": "릴리즈",
+    "download.releaseNotes": "변경 내역",
+    "download.allFiles": "전체 릴리즈 파일 보기",
     "security.eyebrow": "보안",
     "security.title": "입력을 클라우드로 보내지 않는 직접 제어.",
     "security.pair.title": "검증된 페어링",
@@ -195,6 +220,8 @@ const translations = {
     "security.encrypt.body": "키보드와 마우스 입력은 인증된 ECDH/AES-GCM 채널로 전송됩니다.",
     "security.update.title": "업데이트 검증",
     "security.update.body": "업데이트는 SHA-256과 고정된 게시자 서명 검증을 통과해야 설치됩니다.",
+    "security.subnet.title": "로컬 서브넷 방화벽 경계",
+    "security.subnet.body": "생성되는 방화벽 규칙은 Windows LocalSubnet 범위의 연결만 허용합니다.",
     "security.note.title": "신뢰할 수 있는 로컬 네트워크용",
     "security.note.body": "Soft KVM 검색 및 수신 포트를 인터넷에 직접 노출하지 마십시오.",
     "security.note.link": "보안 모델 보기",
@@ -205,6 +232,19 @@ const translations = {
     "license.terms": "라이선스 이용 조건",
     "license.privacy": "개인정보 안내",
     "license.install": "설치 안내",
+    "compat.eyebrow": "호환성 및 알려진 제한",
+    "compat.title": "연결 전에 사용 환경을 확인하세요.",
+    "compat.lead": "Soft KVM은 신뢰할 수 있는 로컬 네트워크에서 Windows PC 두 대를 직접 제어하는 용도에 맞춰져 있습니다.",
+    "compat.network.title": "같은 로컬 네트워크",
+    "compat.network.body": "두 PC가 같은 신뢰할 수 있는 LAN에 연결되어 있어야 합니다. 인터넷 중계와 포트 포워딩은 지원하지 않습니다.",
+    "compat.windows.title": "두 PC 모두 Windows x64",
+    "compat.windows.body": "Windows 10 또는 11 x64와 동일한 Soft KVM 버전을 두 컴퓨터에서 사용하세요.",
+    "compat.games.title": "안티치트 제한",
+    "compat.games.body": "Windows 합성 입력을 차단하는 안티치트 게임은 지원하지 않습니다.",
+    "compat.uac.title": "UAC 제어에는 권한 상승 필요",
+    "compat.uac.body": "Wait PC에서 UAC 화면 제어를 켜고 Windows 권한 상승 요청을 승인해야 합니다.",
+    "compat.recovery.title": "방화벽 및 재연결",
+    "compat.recovery.body": "Windows Defender 방화벽의 로컬 네트워크 접근을 허용하세요. 연결이 끊기면 Wait와 Control 상태로 돌아가 다시 연결합니다.",
     "faq.eyebrow": "자주 묻는 질문",
     "faq.title": "다운로드 전 확인하세요.",
     "faq.internet.q": "인터넷을 거쳐 제어할 수 있나요?",
@@ -221,11 +261,13 @@ const translations = {
     "footer.contact": "문의",
     "footer.license": "라이선스",
     "footer.privacy": "개인정보",
-    "footer.release": "릴리즈 v1.4b"
+    "footer.release": "릴리즈 v1.5b"
   }
 };
 
 const languageButtons = document.querySelectorAll("[data-lang]");
+const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
+const mobileMenu = document.querySelector("#mobile-menu");
 const translatableElements = document.querySelectorAll("[data-i18n]");
 const translatableAriaElements = document.querySelectorAll("[data-i18n-aria-label]");
 const description = document.querySelector('meta[name="description"]');
@@ -233,13 +275,12 @@ const shotButtons = document.querySelectorAll("[data-shot]");
 const kvmScene = document.querySelector("[data-kvm-scene]");
 const controlSurface = document.querySelector("[data-control-surface]");
 const waitSurface = document.querySelector("[data-wait-surface]");
-const sceneStep = document.querySelector("[data-scene-step]");
-const sceneTitle = document.querySelector("[data-scene-title]");
-const sceneBody = document.querySelector("[data-scene-body]");
+const sceneButtons = document.querySelectorAll("[data-scene-index]");
 const inputTarget = document.querySelector("[data-input-target]");
 const tourSurface = document.querySelector("[data-tour-surface]");
 const tourTitle = document.querySelector("[data-tour-title]");
 const tourBody = document.querySelector("[data-tour-body]");
+const hashCopyButton = document.querySelector("[data-copy-hash]");
 const shotContent = {
   home: {
     titleKey: "tour.quickTitle",
@@ -294,12 +335,12 @@ function createSoftKvmMarkup(state) {
         ${isWaiting
           ? `<span class="demo-code-display">42</span>`
           : `<span class="demo-settings-button" aria-label="Settings">⚙</span>`}
-        ${isControl
-          ? `<span class="demo-code-entry"><b>42</b><i>×</i></span>`
-          : isConnected
-            ? `<span class="demo-pause-button">Pause</span>`
+        ${isConnected
+          ? `<span class="demo-control-button">Stop</span><span class="demo-pause-button">Pause</span>`
+          : `${isControl
+            ? `<span class="demo-code-entry"><b>42</b><i>×</i></span>`
             : `<span class="demo-wait-button">${isWaiting ? "Stop" : "Wait"}</span>`}
-        <span class="demo-control-button ${isWaiting ? "is-disabled" : ""}">${isControl ? "Start" : isConnected ? "Stop" : "Control"}</span>
+            <span class="demo-control-button ${isWaiting ? "is-disabled" : ""}">${isControl ? "Start" : "Control"}</span>`}
       </div>
       ${showSettings ? `
         <div class="demo-settings-body">
@@ -330,7 +371,7 @@ function createSoftKvmMarkup(state) {
           <div class="demo-footer">
             <span>Manual</span>
             <span class="demo-action">Check for updates</span>
-            <small>Soft KVM v1.4b</small>
+            <small>Soft KVM v1.5b</small>
           </div>
         </div>
       ` : ""}
@@ -374,6 +415,7 @@ const sceneStates = [
   }
 ];
 let currentSceneIndex = 0;
+let sceneTimerId = null;
 
 function renderHeroScene(index) {
   const scene = sceneStates[index];
@@ -382,11 +424,11 @@ function renderHeroScene(index) {
   kvmScene.dataset.stage = scene.id;
   renderSoftKvmSurface(controlSurface, scene.control);
   renderSoftKvmSurface(waitSurface, scene.wait);
-  sceneStep.textContent = String(index + 1).padStart(2, "0");
-  sceneTitle.textContent = dictionary[scene.titleKey];
-  sceneBody.textContent = dictionary[scene.bodyKey];
+  sceneButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(Number(button.dataset.sceneIndex) === index));
+  });
   inputTarget.textContent = dictionary[scene.id === "remote" ? "scene.remoteInput" : "scene.localInput"];
-  kvmScene.setAttribute("aria-label", `${sceneTitle.textContent}. ${sceneBody.textContent}`);
+  kvmScene.setAttribute("aria-label", `${dictionary[scene.titleKey]}. ${dictionary[scene.bodyKey]}`);
 }
 
 function updateTourCopy() {
@@ -432,8 +474,75 @@ function setLanguage(language) {
   localStorage.setItem("softkvm-language", language);
 }
 
+async function copyText(text) {
+  if (navigator.clipboard?.writeText) {
+    await navigator.clipboard.writeText(text);
+    return;
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = text;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.opacity = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  document.execCommand("copy");
+  textarea.remove();
+}
+
+hashCopyButton.addEventListener("click", async () => {
+  const label = hashCopyButton.querySelector("[data-copy-label]");
+  const dictionary = translations[currentLanguage] || translations.en;
+
+  try {
+    await copyText(hashCopyButton.dataset.copyHash);
+    label.textContent = dictionary["download.copiedHash"];
+    window.setTimeout(() => {
+      label.textContent = (translations[currentLanguage] || translations.en)["download.copyHash"];
+    }, 1600);
+  }
+  catch {
+    label.textContent = dictionary["download.copyHash"];
+  }
+});
+
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));
+});
+
+function closeMobileMenu() {
+  mobileMenu.hidden = true;
+  mobileMenuToggle.setAttribute("aria-expanded", "false");
+}
+
+mobileMenuToggle.addEventListener("click", () => {
+  const willOpen = mobileMenu.hidden;
+  mobileMenu.hidden = !willOpen;
+  mobileMenuToggle.setAttribute("aria-expanded", String(willOpen));
+});
+
+mobileMenu.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", closeMobileMenu);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && !mobileMenu.hidden) {
+    closeMobileMenu();
+    mobileMenuToggle.focus();
+  }
+});
+
+document.addEventListener("pointerdown", (event) => {
+  if (!mobileMenu.hidden && !mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
+    closeMobileMenu();
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1120) {
+    closeMobileMenu();
+  }
 });
 
 shotButtons.forEach((button) => {
@@ -457,6 +566,18 @@ shotButtons.forEach((button) => {
   });
 });
 
+sceneButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    if (sceneTimerId !== null) {
+      window.clearInterval(sceneTimerId);
+      sceneTimerId = null;
+    }
+
+    currentSceneIndex = Number(button.dataset.sceneIndex);
+    renderHeroScene(currentSceneIndex);
+  });
+});
+
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -472,7 +593,7 @@ renderSoftKvmSurface(tourSurface, "home");
 renderHeroScene(currentSceneIndex);
 
 if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-  window.setInterval(() => {
+  sceneTimerId = window.setInterval(() => {
     currentSceneIndex = (currentSceneIndex + 1) % sceneStates.length;
     renderHeroScene(currentSceneIndex);
   }, 3200);
