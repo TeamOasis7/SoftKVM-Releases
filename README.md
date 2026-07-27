@@ -31,8 +31,13 @@ When publishing a new public release:
 
 1. Update every `v1.4b` and `SoftKVM_1.4b.exe` reference in `index.html`.
 2. Update the SHA-256 value.
-3. Check the four release links:
+3. Confirm that the release contains all seven assets:
    - EXE
    - SHA-256
    - `SoftKVM-Publisher.cer`
    - `Install-SoftKVM-Certificate.cmd`
+   - `LICENSE.txt`
+   - `PRIVACY.txt`
+   - `README.txt`
+4. Verify the website download, publisher-trust, release, and local document
+   links against those assets.
