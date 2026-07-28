@@ -2388,16 +2388,82 @@ html[lang="ko"] .security-section .section-intro > p:last-child {
   border-top: 1px solid #465059;
 }
 
-.license-documents a {
+.license-documents button {
   display: flex;
   justify-content: space-between;
   gap: 16px;
   padding: 14px 0;
   color: white;
+  border: 0;
   border-bottom: 1px solid #465059;
+  background: transparent;
+  cursor: pointer;
   font-size: 13px;
   font-weight: 700;
-  text-decoration: none;
+  text-align: left;
+}
+
+.license-documents button span:first-child {
+  min-width: 0;
+}
+
+.license-documents button span:last-child {
+  color: var(--cyan);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.license-documents button[aria-expanded="true"] span:last-child {
+  color: white;
+}
+
+.license-document-panel {
+  grid-column: 1 / -1;
+  border: 1px solid #465059;
+  border-radius: 6px;
+  background: #20262b;
+  overflow: hidden;
+}
+
+.license-document-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 48px;
+  padding: 13px 16px;
+  border-bottom: 1px solid #465059;
+}
+
+.license-document-head strong {
+  font-size: 13px;
+}
+
+.license-document-head button {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  color: var(--cyan);
+  border: 1px solid #465059;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.license-document-panel pre {
+  max-height: 360px;
+  margin: 0;
+  padding: 18px 16px 20px;
+  overflow: auto;
+  color: #d6dde2;
+  background: #20262b;
+  font: 12px/1.55 Consolas, "SFMono-Regular", monospace;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .compatibility-section {

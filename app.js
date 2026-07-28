@@ -108,6 +108,8 @@ const translations = {
     "license.terms": "License terms",
     "license.privacy": "Privacy notice",
     "license.install": "Installation guide",
+    "license.loading": "Loading document...",
+    "license.loadError": "Could not load this document. Use the complete ZIP or release files to read it.",
     "compat.eyebrow": "COMPATIBILITY",
     "compat.title": "Check the environment before connecting.",
     "compat.lead": "Soft KVM is focused on direct control between two Windows PCs on a trusted local network.",
@@ -246,6 +248,8 @@ const translations = {
     "license.terms": "라이선스 이용 조건",
     "license.privacy": "개인정보 안내",
     "license.install": "설치 안내",
+    "license.loading": "문서를 불러오는 중...",
+    "license.loadError": "문서를 불러오지 못했습니다. 전체 ZIP 또는 릴리즈 파일에서 확인하세요.",
     "compat.eyebrow": "호환성 및 알려진 제한",
     "compat.title": "연결 전에 사용 환경을 확인하세요.",
     "compat.lead": "Soft KVM은 신뢰할 수 있는 로컬 네트워크에서 Windows PC 두 대를 직접 제어하는 용도에 맞춰져 있습니다.",
@@ -295,6 +299,13 @@ const tourSurface = document.querySelector("[data-tour-surface]");
 const tourTitle = document.querySelector("[data-tour-title]");
 const tourBody = document.querySelector("[data-tour-body]");
 const hashCopyButton = document.querySelector("[data-copy-hash]");
+const documentButtons = document.querySelectorAll("[data-doc-trigger]");
+const documentPanel = document.querySelector("[data-doc-panel]");
+const documentPanelWrap = document.querySelector("#license-document-panel");
+const documentPanelTitle = document.querySelector("[data-doc-title]");
+const documentPanelClose = document.querySelector("[data-doc-close]");
+const documentCache = new Map();
+let currentDocumentKey = "";
 
 document.querySelectorAll("[data-technical-grid]").forEach((grid) => {
   const cells = document.createDocumentFragment();
@@ -478,6 +489,10 @@ function setLanguage(language) {
 
   document.documentElement.lang = language;
   translatableElements.forEach((element) => {
+    if (element.matches("[data-doc-panel]") && currentDocumentKey) {
+      return;
+    }
+
     const value = dictionary[element.dataset.i18n];
     if (value) {
       element.textContent = value;
@@ -503,6 +518,10 @@ function setLanguage(language) {
 
   renderHeroScene(currentSceneIndex);
   updateTourCopy();
+  if (currentDocumentKey) {
+    const activeButton = document.querySelector(`[data-doc-trigger="${currentDocumentKey}"]`);
+    documentPanelTitle.textContent = dictionary[activeButton.dataset.docTitleKey];
+  }
   localStorage.setItem("softkvm-language", language);
 }
 
@@ -538,6 +557,57 @@ hashCopyButton.addEventListener("click", async () => {
     label.textContent = dictionary["download.copyHash"];
   }
 });
+
+function closeLicenseDocument() {
+  currentDocumentKey = "";
+  documentPanelWrap.hidden = true;
+  documentButtons.forEach((button) => {
+    button.setAttribute("aria-expanded", "false");
+    button.lastElementChild.textContent = "+";
+  });
+}
+
+async function openLicenseDocument(button) {
+  const dictionary = translations[currentLanguage] || translations.en;
+  const documentKey = button.dataset.docTrigger;
+
+  if (currentDocumentKey === documentKey && !documentPanelWrap.hidden) {
+    closeLicenseDocument();
+    return;
+  }
+
+  currentDocumentKey = documentKey;
+  documentPanelWrap.hidden = false;
+  documentPanelTitle.textContent = dictionary[button.dataset.docTitleKey];
+  documentPanel.textContent = dictionary["license.loading"];
+  documentButtons.forEach((item) => {
+    const isActive = item === button;
+    item.setAttribute("aria-expanded", String(isActive));
+    item.lastElementChild.textContent = isActive ? "-" : "+";
+  });
+
+  try {
+    if (!documentCache.has(documentKey)) {
+      const response = await fetch(button.dataset.docSource);
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      documentCache.set(documentKey, await response.text());
+    }
+    documentPanel.textContent = documentCache.get(documentKey);
+  }
+  catch {
+    documentPanel.textContent = dictionary["license.loadError"];
+  }
+}
+
+documentButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    openLicenseDocument(button);
+  });
+});
+
+documentPanelClose.addEventListener("click", closeLicenseDocument);
 
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => setLanguage(button.dataset.lang));

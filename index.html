@@ -432,19 +432,26 @@
         <p>© 2026 SoftKVM. All rights reserved.</p>
       </div>
       <nav class="license-documents" aria-label="License documents" data-i18n-aria-label="aria.licenseDocuments">
-        <a href="docs/LICENSE.txt" target="_blank" rel="noopener noreferrer">
+        <button type="button" data-doc-trigger="license" data-doc-source="docs/LICENSE.txt" data-doc-title-key="license.terms" aria-expanded="false" aria-controls="license-document-panel">
           <span data-i18n="license.terms">License terms</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-        <a href="docs/PRIVACY.txt" target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">+</span>
+        </button>
+        <button type="button" data-doc-trigger="privacy" data-doc-source="docs/PRIVACY.txt" data-doc-title-key="license.privacy" aria-expanded="false" aria-controls="license-document-panel">
           <span data-i18n="license.privacy">Privacy notice</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-        <a href="docs/README.txt" target="_blank" rel="noopener noreferrer">
+          <span aria-hidden="true">+</span>
+        </button>
+        <button type="button" data-doc-trigger="install" data-doc-source="docs/README.txt" data-doc-title-key="license.install" aria-expanded="false" aria-controls="license-document-panel">
           <span data-i18n="license.install">Installation guide</span>
-          <span aria-hidden="true">↗</span>
-        </a>
+          <span aria-hidden="true">+</span>
+        </button>
       </nav>
+      <div id="license-document-panel" class="license-document-panel" hidden>
+        <div class="license-document-head">
+          <strong data-doc-title></strong>
+          <button type="button" data-doc-close aria-label="Close document">×</button>
+        </div>
+        <pre data-doc-panel data-i18n="license.loading">Loading document...</pre>
+      </div>
     </section>
 
     <section id="compatibility" class="section compatibility-section">
