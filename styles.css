@@ -214,16 +214,17 @@ a {
 }
 
 .language-switch {
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
+  display: inline-flex;
+  align-items: center;
   padding: 3px;
   border: 1px solid var(--line);
   border-radius: 6px;
   background: var(--surface);
+  white-space: nowrap;
 }
 
 .language-switch button {
-  min-width: 38px;
+  min-width: 44px;
   height: 30px;
   padding: 0 8px;
   color: var(--muted);
@@ -233,6 +234,7 @@ a {
   cursor: pointer;
   font-size: 12px;
   font-weight: 700;
+  line-height: 1;
 }
 
 .language-switch button[aria-pressed="true"] {
@@ -3205,7 +3207,8 @@ footer p {
   }
 
   .language-switch button {
-    min-width: 36px;
+    min-width: 42px;
+    padding: 0 7px;
   }
 
   .hero {
