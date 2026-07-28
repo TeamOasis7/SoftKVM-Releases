@@ -2,6 +2,11 @@
 
 This folder is a static download page for Soft KVM.
 
+Public URL: https://teamoasis7.github.io/SoftKVM-Releases/
+
+Sitemap URL for Google Search Console and Bing Webmaster Tools:
+https://teamoasis7.github.io/SoftKVM-Releases/sitemap.xml
+
 English is the default language. The EN / 한국어 switch stores the visitor's
 choice in local browser storage. Add future languages to `app.js`.
 
@@ -27,6 +32,10 @@ Open `website/index.html` directly in a browser.
 ## GitHub Pages
 
 Use `website/` as the Pages source folder, or copy its contents to a `gh-pages` branch.
+
+Keep `robots.txt`, `sitemap.xml`, canonical metadata, Open Graph/Twitter card
+metadata, and the JSON-LD `SoftwareApplication` block aligned with the public
+GitHub Pages URL after each public release.
 
 ## Release updates
 

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://teamoasis7.github.io/SoftKVM-Releases/sitemap.xml
