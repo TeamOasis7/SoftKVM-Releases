@@ -11,6 +11,7 @@ const translations = {
     "aria.currentRelease": "Current Soft KVM release",
     "aria.sceneStages": "Connection stages",
     "aria.secureChannel": "Authenticated encrypted channel between both PCs",
+    "aria.sharePage": "Share this page",
     "nav.features": "Features",
     "nav.setup": "Setup",
     "nav.security": "Security",
@@ -30,6 +31,8 @@ const translations = {
     "hero.zipHelp": "EXE and trust files in one folder",
     "hero.recommended": "RECOMMENDED",
     "hero.guide": "View setup guide",
+    "hero.share": "Share page",
+    "hero.linkCopied": "Link copied",
     "scene.controlPc": "CONTROL PC",
     "scene.waitPc": "WAIT PC",
     "scene.mainPc": "Main desk",
@@ -151,6 +154,7 @@ const translations = {
     "aria.currentRelease": "현재 Soft KVM 릴리즈",
     "aria.sceneStages": "연결 단계",
     "aria.secureChannel": "두 PC 사이의 인증된 암호화 채널",
+    "aria.sharePage": "이 페이지 공유",
     "nav.features": "기능",
     "nav.setup": "설치",
     "nav.security": "보안",
@@ -170,6 +174,8 @@ const translations = {
     "hero.zipHelp": "EXE와 신뢰 설정 파일을 한 폴더에 포함",
     "hero.recommended": "권장",
     "hero.guide": "설치 방법 보기",
+    "hero.share": "공유",
+    "hero.linkCopied": "링크 복사됨",
     "scene.controlPc": "CONTROL PC",
     "scene.waitPc": "WAIT PC",
     "scene.mainPc": "주 작업 PC",
@@ -299,6 +305,7 @@ const tourSurface = document.querySelector("[data-tour-surface]");
 const tourTitle = document.querySelector("[data-tour-title]");
 const tourBody = document.querySelector("[data-tour-body]");
 const hashCopyButton = document.querySelector("[data-copy-hash]");
+const sharePageButtons = document.querySelectorAll("[data-share-page]");
 const documentButtons = document.querySelectorAll("[data-doc-trigger]");
 const documentPanel = document.querySelector("[data-doc-panel]");
 const documentPanelWrap = document.querySelector("#license-document-panel");
@@ -368,11 +375,44 @@ function createSoftKvmMarkup(state) {
   const isConnected = state === "connected";
   const showSettings = state === "settings";
 
+  if (state === "wait-flow" || state === "control-flow") {
+    const settingsButton = `<span class="demo-settings-button" aria-label="Settings">⚙</span>`;
+    const defaultToolbar = `
+      ${settingsButton}
+      <span class="demo-wait-button">Wait</span>
+      <span class="demo-control-button">Control</span>
+    `;
+    const resultToolbar = state === "wait-flow"
+      ? `
+        <span class="demo-code-display">42</span>
+        <span class="demo-wait-button">Stop</span>
+        <span class="demo-control-button is-disabled">Control</span>
+      `
+      : `
+        ${settingsButton}
+        <span class="demo-code-entry demo-code-entry-flow"><b><span>42</span></b><i>x</i></span>
+        <span class="demo-control-button">Start</span>
+      `;
+
+    return `
+      <div class="softkvm-demo state-${state}">
+        <div class="demo-titlebar">
+          <span class="demo-app-title"><img src="assets/softkvm-icon.ico" alt="">Soft KVM</span>
+          <span class="demo-window-actions" aria-hidden="true"><i></i><i></i><i></i></span>
+        </div>
+        <div class="demo-toolbar demo-flow-toolbar">
+          <div class="demo-flow-step flow-default">${defaultToolbar}</div>
+          <div class="demo-flow-step flow-result">${resultToolbar}</div>
+        </div>
+      </div>
+    `;
+  }
+
   return `
     <div class="softkvm-demo state-${state} ${showSettings ? "show-settings" : ""}">
       <div class="demo-titlebar">
         <span class="demo-app-title"><img src="assets/softkvm-icon.ico" alt="">Soft KVM</span>
-        <span class="demo-window-actions" aria-hidden="true"><i>−</i><i>□</i><i>×</i></span>
+        <span class="demo-window-actions" aria-hidden="true"><i></i><i></i><i></i></span>
       </div>
       <div class="demo-toolbar">
         ${isWaiting
@@ -431,13 +471,13 @@ const sceneStates = [
   {
     id: "wait",
     control: "home",
-    wait: "wait",
+    wait: "wait-flow",
     titleKey: "scene.wait.title",
     bodyKey: "scene.wait.body"
   },
   {
     id: "code",
-    control: "control",
+    control: "control-flow",
     wait: "wait",
     titleKey: "scene.code.title",
     bodyKey: "scene.code.body"
@@ -556,6 +596,36 @@ hashCopyButton.addEventListener("click", async () => {
   catch {
     label.textContent = dictionary["download.copyHash"];
   }
+});
+
+sharePageButtons.forEach((sharePageButton) => {
+  sharePageButton.addEventListener("click", async () => {
+    const label = sharePageButton.querySelector("[data-share-label]");
+    const defaultLabelKey = label.dataset.i18n;
+    const dictionary = translations[currentLanguage] || translations.en;
+    const shareData = {
+      title: document.title,
+      text: dictionary["hero.lead"],
+      url: window.location.href.split("#")[0]
+    };
+
+    try {
+      if (navigator.share) {
+        await navigator.share(shareData);
+        return;
+      }
+
+      await copyText(shareData.url);
+      label.textContent = dictionary["hero.linkCopied"];
+      window.setTimeout(() => {
+        const currentDictionary = translations[currentLanguage] || translations.en;
+        label.textContent = currentDictionary[defaultLabelKey];
+      }, 1600);
+    }
+    catch {
+      label.textContent = dictionary[defaultLabelKey];
+    }
+  });
 });
 
 function closeLicenseDocument() {

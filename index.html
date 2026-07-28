@@ -7,8 +7,8 @@
   <meta name="description" content="Control two Windows PCs on the same local network with one keyboard and mouse. No account, cloud, or relay server required.">
   <meta name="theme-color" content="#f5f7f8">
   <link rel="icon" href="assets/softkvm-icon.ico">
-  <link rel="stylesheet" href="styles.css?v=20260728-license-panel">
-  <script src="app.js?v=20260728-license-panel" defer></script>
+  <link rel="stylesheet" href="styles.css?v=20260728-scene-flow-35">
+  <script src="app.js?v=20260728-scene-flow-35" defer></script>
 </head>
 <body>
   <svg class="icon-sprite" aria-hidden="true">
@@ -24,6 +24,13 @@
     <symbol id="icon-circle-check" viewBox="0 0 24 24">
       <circle cx="12" cy="12" r="10"></circle>
       <path d="m9 12 2 2 4-4"></path>
+    </symbol>
+    <symbol id="icon-share" viewBox="0 0 24 24">
+      <circle cx="18" cy="5" r="3"></circle>
+      <circle cx="6" cy="12" r="3"></circle>
+      <circle cx="18" cy="19" r="3"></circle>
+      <path d="m8.59 13.51 6.83 3.98"></path>
+      <path d="m15.41 6.51-6.82 3.98"></path>
     </symbol>
   </svg>
   <header class="topbar">
@@ -49,7 +56,7 @@
         <button type="button" data-lang="en" aria-pressed="true">EN</button>
         <button type="button" data-lang="ko" aria-pressed="false">한국어</button>
       </div>
-      <a class="header-download" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b.exe" target="_blank" rel="noopener noreferrer">
+      <a class="header-download" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b_Windows_x64.zip" target="_blank" rel="noopener noreferrer">
         <span data-i18n="nav.download">Download</span>
         <svg class="download-icon" aria-hidden="true"><use href="#icon-download"></use></svg>
       </a>
@@ -81,10 +88,15 @@
         <div class="hero-details">
           <div class="hero-copy">
             <p class="lead" data-i18n="hero.lead">Soft KVM moves your input between two Windows PCs over your local network. No account, cloud service, or extra hardware.</p>
-            <a class="hero-guide" href="#setup">
-              <span data-i18n="hero.guide">View setup guide</span>
-              <span aria-hidden="true">→</span>
-            </a>
+            <div class="hero-actions">
+              <a class="hero-guide" href="#setup">
+                <span data-i18n="hero.guide">View setup guide</span>
+              </a>
+              <button class="hero-share" type="button" data-share-page aria-label="Share this page" data-i18n-aria-label="aria.sharePage">
+                <svg aria-hidden="true"><use href="#icon-share"></use></svg>
+                <span data-share-label data-i18n="hero.share">Share page</span>
+              </button>
+            </div>
           </div>
 
           <aside class="hero-download-panel" aria-label="Current Soft KVM release" data-i18n-aria-label="aria.currentRelease">
@@ -134,35 +146,6 @@
       </div>
 
       <div class="product-capture" data-kvm-scene>
-        <div class="scene-monitor scene-control-monitor">
-          <div class="scene-role">
-            <span class="role-dot"></span>
-            <strong data-i18n="scene.controlPc">CONTROL PC</strong>
-            <small data-i18n="scene.mainPc">Main desk</small>
-          </div>
-          <div class="monitor-frame">
-            <div class="monitor-screen">
-              <span class="desktop-label">PC 01</span>
-              <span class="desktop-window window-a"></span>
-              <span class="desktop-window window-b"></span>
-              <span class="remote-cursor control-cursor"></span>
-              <div class="scene-app-popover">
-                <span class="popover-label" data-i18n="scene.controlMode">CONTROL MODE</span>
-                <div class="softkvm-surface" data-control-surface aria-label="Soft KVM Control interface"></div>
-              </div>
-            </div>
-            <span class="monitor-neck"></span>
-            <span class="monitor-base"></span>
-          </div>
-        </div>
-
-        <div class="scene-connection" aria-hidden="true">
-          <span class="connection-track"></span>
-          <span class="connection-packet packet-one">42</span>
-          <span class="connection-packet packet-two">✓</span>
-          <span class="connection-lock">LAN</span>
-        </div>
-
         <div class="scene-monitor scene-wait-monitor">
           <div class="scene-role">
             <span class="role-dot"></span>
@@ -174,10 +157,40 @@
               <span class="desktop-label">PC 02</span>
               <span class="desktop-window window-a"></span>
               <span class="desktop-window window-b"></span>
-              <span class="remote-cursor wait-cursor"></span>
               <div class="scene-app-popover">
                 <span class="popover-label" data-i18n="scene.waitMode">WAIT MODE</span>
+                <span class="remote-cursor wait-cursor"></span>
                 <div class="softkvm-surface" data-wait-surface aria-label="Soft KVM Wait interface"></div>
+              </div>
+            </div>
+            <span class="monitor-neck"></span>
+            <span class="monitor-base"></span>
+          </div>
+        </div>
+
+        <div class="scene-connection" aria-hidden="true">
+          <span class="connection-track"></span>
+          <span class="connection-joined"></span>
+          <span class="connection-packet packet-one">42</span>
+          <span class="connection-packet packet-two">✓</span>
+          <span class="connection-lock">LAN</span>
+        </div>
+
+        <div class="scene-monitor scene-control-monitor">
+          <div class="scene-role">
+            <span class="role-dot"></span>
+            <strong data-i18n="scene.controlPc">CONTROL PC</strong>
+            <small data-i18n="scene.mainPc">Main desk</small>
+          </div>
+          <div class="monitor-frame">
+            <div class="monitor-screen">
+              <span class="desktop-label">PC 01</span>
+              <span class="desktop-window window-a"></span>
+              <span class="desktop-window window-b"></span>
+              <div class="scene-app-popover">
+                <span class="popover-label" data-i18n="scene.controlMode">CONTROL MODE</span>
+                <span class="remote-cursor control-cursor"></span>
+                <div class="softkvm-surface" data-control-surface aria-label="Soft KVM Control interface"></div>
               </div>
             </div>
             <span class="monitor-neck"></span>
@@ -187,6 +200,7 @@
 
         <div class="input-device">
           <div class="input-beam" aria-hidden="true"></div>
+          <div class="input-cable" aria-hidden="true"></div>
           <div class="input-kit">
             <div class="scene-keyboard" aria-hidden="true">
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
@@ -353,10 +367,16 @@
           </div>
         </div>
 
-        <a class="all-files" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/tag/v1.5b" target="_blank" rel="noopener noreferrer">
-          <span data-i18n="download.allFiles">View all release files</span>
-          <span aria-hidden="true">↗</span>
-        </a>
+        <div class="download-panel-actions">
+          <a class="all-files" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/tag/v1.5b" target="_blank" rel="noopener noreferrer">
+            <span data-i18n="download.allFiles">View all release files</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <button class="panel-share" type="button" data-share-page aria-label="Share this page" data-i18n-aria-label="aria.sharePage">
+            <span data-share-label data-i18n="hero.share">Share page</span>
+            <svg aria-hidden="true"><use href="#icon-share"></use></svg>
+          </button>
+        </div>
       </aside>
     </section>
 
@@ -530,7 +550,7 @@
         <p class="eyebrow">SOFT KVM v1.5b</p>
         <h2 data-i18n="final.title">Keep both PCs within reach.</h2>
       </div>
-      <a class="button primary light" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b.exe" target="_blank" rel="noopener noreferrer">
+      <a class="button primary light" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b_Windows_x64.zip" target="_blank" rel="noopener noreferrer">
         <span data-i18n="final.download">Download for Windows</span>
         <svg class="download-icon" aria-hidden="true"><use href="#icon-download"></use></svg>
       </a>
