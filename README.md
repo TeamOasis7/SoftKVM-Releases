@@ -6,11 +6,17 @@ network.
 
 Public URL: https://teamoasis7.github.io/SoftKVM-Releases/
 
+Korean URL: https://teamoasis7.github.io/SoftKVM-Releases/ko/
+
+Japanese URL: https://teamoasis7.github.io/SoftKVM-Releases/ja/
+
 Sitemap URL for Google Search Console and Bing Webmaster Tools:
 https://teamoasis7.github.io/SoftKVM-Releases/sitemap.xml
 
-English is the default language. The EN / 한국어 switch stores the visitor's
-choice in local browser storage. Add future languages to `app.js`.
+English is the default language at `/`. Korean has a static `/ko/` page and
+Japanese has a static `/ja/` page for language-specific SEO. The language switch
+navigates between those URLs. Add future languages to `app.js` and create
+matching static language pages.
 
 The product demo is rendered as HTML/CSS from the v1.5b desktop app layout and
 color values. It includes the compact bar, Control entry, and Settings without

@@ -1,4 +1,6 @@
 document.documentElement.classList.add("js");
+const configuredPageLanguage = document.documentElement.dataset.pageLang || "";
+const softKvmIconPath = document.documentElement.dataset.iconPath || "assets/softkvm-icon.ico";
 
 const translations = {
   en: {
@@ -155,13 +157,175 @@ const translations = {
     "faq.alternative.a": "It can be an alternative when you only need two Windows PCs, local network control, verified pairing, and no cloud account.",
     "faq.cloud.q": "Does Soft KVM need the internet or a cloud relay?",
     "faq.cloud.a": "No. Discovery and input transfer are designed for the local network. Internet relay, account sign-in, and port forwarding are not required.",
-    "final.title": "Keep both PCs within reach.",
+    "final.title": "Control two Windows PCs with one keyboard and mouse.",
     "final.download": "Download for Windows",
     "footer.tagline": "Local keyboard and mouse sharing for Windows.",
     "footer.contact": "Contact",
     "footer.license": "License",
     "footer.privacy": "Privacy",
     "footer.release": "Release v1.5b"
+  },
+  ja: {
+    "aria.home": "Soft KVM ホーム",
+    "aria.mainNavigation": "メインナビゲーション",
+    "aria.mobileNavigation": "モバイルナビゲーション",
+    "aria.language": "言語",
+    "aria.screen": "Soft KVM の画面",
+    "aria.licenseDocuments": "ライセンス文書",
+    "aria.currentRelease": "現在の Soft KVM リリース",
+    "aria.sceneStages": "接続ステージ",
+    "aria.secureChannel": "2台のPC間の認証済み暗号化チャネル",
+    "aria.sharePage": "このページを共有",
+    "nav.features": "機能",
+    "nav.setup": "セットアップ",
+    "nav.security": "セキュリティ",
+    "nav.compare": "比較",
+    "nav.compatibility": "互換性",
+    "nav.faq": "FAQ",
+    "nav.menu": "メニュー",
+    "nav.download": "ダウンロード",
+    "hero.eyebrow": "ひとつのデスク。2台の WINDOWS PC。",
+    "hero.title": "キーボードとマウス1組で、2台のWindows PCを操作。",
+    "hero.lead": "Soft KVMは、同じローカルネットワーク上の2台のWindows PC間でキーボードとマウス入力を切り替えるソフトウェアKVMです。アカウント、クラウドサービス、追加のハードウェアは不要です。",
+    "hero.releaseLabel": "現在のリリース",
+    "hero.releaseFacts": "Windows 10/11 x64 · 単一EXE · プライベート発行者証明書で署名",
+    "hero.trustNote": "初回ダウンロード時にWindows SmartScreenが表示される場合があります。実行前に公式GitHubリリースとSHA-256を確認してください。",
+    "hero.trustHelp": "信頼設定ファイル:",
+    "hero.signatureVerified": "プライベート発行者証明書の署名を確認済み",
+    "hero.hashAvailable": "SHA-256を提供",
+    "hero.zipDownload": "一式ZIPをダウンロード · 44 MB",
+    "hero.zipHelp": "EXEと信頼設定ファイルを同じフォルダーに同梱",
+    "hero.recommended": "推奨",
+    "hero.guide": "セットアップを見る",
+    "hero.share": "共有",
+    "hero.linkCopied": "リンクをコピーしました",
+    "scene.controlPc": "CONTROL PC",
+    "scene.waitPc": "WAIT PC",
+    "scene.mainPc": "メインPC",
+    "scene.remotePc": "相手側PC",
+    "scene.controlMode": "CONTROL MODE",
+    "scene.waitMode": "WAIT MODE",
+    "scene.oneInput": "キーボード + マウス 1組",
+    "scene.localInput": "ローカル入力 → CONTROL PC",
+    "scene.remoteInput": "リモート入力 → WAIT PC",
+    "scene.wait.title": "Wait PC が待機します",
+    "scene.wait.body": "操作対象のPCに接続コード42が表示されます。",
+    "scene.code.title": "Control PC に同じコードを入力",
+    "scene.code.body": "Soft KVMが2台のPCの接続グループとコードを確認します。",
+    "scene.connect.title": "接続済み。入力はまだ Control PC 側です。",
+    "scene.connect.body": "LANチャネルは準備済みですが、キーボードとマウスの操作はまだ移動していません。",
+    "scene.remote.title": "入力が Wait PC に移動します",
+    "scene.remote.body": "同じキーボードとマウスで相手側のデスクトップを操作します。",
+    "tour.eyebrow": "実際のアプリ",
+    "tour.title": "クラウドアカウントなしでキーボードとマウスを共有。",
+    "tour.body": "小さなバーから Wait と Control をすぐ選べます。ペアリング、入力、Swap mode、起動オプションが必要な時だけ Settings を開きます。",
+    "tour.quick": "クイックバー",
+    "tour.control": "Control",
+    "tour.settings": "全設定",
+    "tour.captured": "実際の v1.5b UI をベースに表示",
+    "tour.quickTitle": "画面を占有しない準備状態",
+    "tour.quickBody": "Settings を開くか接続を開始するまで、メインウィンドウは小さく保たれます。",
+    "tour.controlTitle": "相手PCのコードを入力して開始",
+    "tour.controlBody": "Control modeでは、小さなバーの中央がコード入力欄になり、Startを押して接続できます。",
+    "tour.settingsTitle": "接続オプションを1か所に集約",
+    "tour.settingsBody": "ペアリング、モニター選択、入力制御、Swap mode、自動起動、マニュアル、アップデートをまとめて管理できます。",
+    "setup.eyebrow": "クイックセットアップ",
+    "setup.title": "数分でローカルWindows PC操作を始められます。",
+    "setup.lead": "2台のPCで同じリリースファイルを使います。一方を待機側、もう一方を操作側にします。",
+    "setup.step1.title": "リリースをダウンロード",
+    "setup.step1.body": "一式ZIPをダウンロードするか、EXE、証明書、セットアップCMDを同じフォルダーに置きます。",
+    "setup.step2.title": "信頼設定を一度だけ完了",
+    "setup.step2.body": "初回起動後、Soft KVMの信頼設定プロンプトを承認します。",
+    "setup.step3.title": "各PCの役割を選択",
+    "setup.step3.body": "操作対象のPCでは Wait、メインPCでは Control を選択します。",
+    "setup.step4.title": "確認して接続",
+    "setup.step4.body": "両方のPCに表示されるペアリングコードを確認して、接続を承認します。",
+    "download.label": "現在のリリース",
+    "download.facts": "v1.5b · Windows 10/11 x64 · 111 MB · 単一EXE · プライベート発行者証明書で署名",
+    "download.exeAction": "EXEをダウンロード · 111 MB",
+    "download.trustFiles": "初回のみ必要な信頼設定ファイル",
+    "download.trustHelp": "初回起動のため、これらのファイルをEXEと同じフォルダーに置いてください。",
+    "download.bundleAction": "一式ZIPをダウンロード · 44 MB",
+    "download.bundleContents": "EXE、チェックサム、信頼設定、文書を同梱",
+    "download.hashFile": "チェックサムファイル",
+    "download.copyHash": "コピー",
+    "download.copiedHash": "コピーしました",
+    "download.released": "リリース",
+    "download.releaseNotes": "リリースノート",
+    "download.allFiles": "すべてのリリースファイルを見る",
+    "security.eyebrow": "セキュリティ",
+    "security.title": "相互確認で保護された暗号化キーボード・マウス入力。",
+    "security.lead": "通信を取得されても入力内容を読み取りにくくし、改ざんまたは再送されたメッセージは拒否されるよう設計しています。",
+    "security.channel.pair": "PAIR",
+    "security.channel.ecdh": "ECDH",
+    "security.channel.verify": "VERIFY",
+    "security.pair.title": "確認付きペアリング",
+    "security.pair.body": "初回操作の前に、両方のPCで同じペアリングコードを確認して承認します。",
+    "security.encrypt.title": "入力を暗号化",
+    "security.encrypt.body": "キーボードとマウスの入力は、認証済みのECDH/AES-GCMチャネルで送信されます。",
+    "security.update.title": "検証済みアップデート",
+    "security.update.body": "アップデートはSHA-256と固定された発行者署名の検証を通過した場合のみインストールされます。",
+    "security.subnet.title": "ローカルサブネット境界",
+    "security.subnet.body": "生成されるファイアウォール規則は、Windows LocalSubnet範囲からの接続だけを許可します。",
+    "security.note.title": "信頼できるローカルネットワーク向け",
+    "security.note.body": "Soft KVMの検索ポートや待受ポートをインターネットへ直接公開しないでください。",
+    "security.note.link": "セキュリティモデルを見る",
+    "compare.eyebrow": "比較",
+    "compare.title": "ローカルWindowsデスク向けのソフトウェアKVM。",
+    "compare.lead": "Soft KVMは、ハードウェアスイッチ、リモートデスクトップセッション、クラウド中継、アカウントなしで、近くにある2台のWindows PCをキーボードとマウス1組で使いたい人のためのツールです。",
+    "compare.hardware.title": "ハードウェアKVMとの比較",
+    "compare.hardware.body": "USBやHDMIの切替器は不要です。2台のPCはネットワーク上に残したまま、Soft KVMはキーボードとマウス入力だけを移動します。",
+    "compare.remote.title": "リモートデスクトップとの比較",
+    "compare.remote.body": "Soft KVMは画面をストリーミングしたり、リモートセッションにログインしたりしません。それぞれのPCの実際のモニターを使い続けます。",
+    "compare.synergy.title": "Synergy / Barrierとの比較",
+    "compare.synergy.body": "Soft KVMは、2台のWindows PC、ローカルサブネット検索、確認付きペアリング、暗号化入力、小さなWinForms UIに重点を置いています。",
+    "compare.mouse.title": "Mouse Without Bordersとの比較",
+    "compare.mouse.body": "Soft KVMは、明確な役割選択、明示的なペアリング確認、アカウントやクラウドサービスを必要としない流れを中心に設計しています。",
+    "license.eyebrow": "ライセンス",
+    "license.title": "個人利用は無料。業務利用にはライセンスが必要です。",
+    "license.lead": "Soft KVMは個人および非商用利用では無料です。企業、組織、業務目的での利用には有料ライセンスが必要です。",
+    "license.contactLabel": "業務利用ライセンスのお問い合わせ",
+    "license.terms": "ライセンス条件",
+    "license.privacy": "プライバシー通知",
+    "license.install": "インストール案内",
+    "license.loading": "文書を読み込んでいます...",
+    "license.loadError": "この文書を読み込めませんでした。一式ZIPまたはリリースファイルで確認してください。",
+    "compat.eyebrow": "互換性",
+    "compat.title": "信頼できるローカルネットワーク上のWindows 10/11 x64で動作します。",
+    "compat.lead": "Soft KVMは、信頼できるローカルネットワーク上で2台のWindows PCを直接操作する用途に合わせています。",
+    "compat.network.title": "同じローカルネットワーク",
+    "compat.network.body": "2台のPCは同じ信頼できるLANに接続されている必要があります。インターネット中継やポートフォワーディングは不要です。",
+    "compat.windows.title": "Windows 10/11 x64",
+    "compat.windows.body": "両方のPCでWindows 10または11 x64と同じSoft KVMバージョンを使用してください。",
+    "compat.games.title": "アンチチートの制限",
+    "compat.games.body": "Windowsの合成入力をブロックするアンチチート採用ゲームはサポートしていません。",
+    "compat.uac.title": "UACには昇格が必要",
+    "compat.uac.body": "Wait PCでUAC画面の操作を有効にし、Windowsの昇格プロンプトを承認してください。",
+    "compat.recovery.title": "ファイアウォールと再接続",
+    "compat.recovery.body": "Windows Defenderファイアウォールでローカルネットワークアクセスを許可してください。切断後はWaitとControlに戻して再接続します。",
+    "faq.eyebrow": "よくある質問",
+    "faq.title": "ダウンロード前に確認してください。",
+    "faq.internet.q": "インターネット越しにPCを操作できますか？",
+    "faq.internet.a": "Soft KVMは信頼できるローカルネットワーク向けです。ルーター越しにポートを外部公開しないでください。",
+    "faq.dotnet.q": ".NETを別途インストールする必要がありますか？",
+    "faq.dotnet.a": "いいえ。公開Windows x64ビルドには必要なランタイムが含まれています。",
+    "faq.game.q": "ゲームでも使えますか？",
+    "faq.game.a": "Game input modeで多くのゲームや3Dアプリに対応します。Windowsの合成入力をブロックするアンチチート採用ゲームはサポートしていません。",
+    "faq.smartscreen.q": "Windows SmartScreenが表示されるのはなぜですか？",
+    "faq.smartscreen.a": "現在のSoft KVMは、有料の公的コード署名証明書ではなくプライベート発行者証明書を使用しています。実行前に公式リリース元を確認してください。",
+    "faq.share.q": "2台のWindows PCでマウスとキーボードを共有できますか？",
+    "faq.share.a": "はい。Soft KVMは、同じ信頼できるローカルネットワーク上の2台のWindows 10/11 x64 PC間でキーボードとマウスを共有するために作られています。",
+    "faq.alternative.q": "Soft KVMはWindows向けSynergyやBarrierの代替になりますか？",
+    "faq.alternative.a": "2台のWindows PC、ローカルネットワーク操作、確認付きペアリング、クラウドアカウント不要の流れが必要な場合は代替になり得ます。",
+    "faq.cloud.q": "Soft KVMにインターネットやクラウド中継は必要ですか？",
+    "faq.cloud.a": "いいえ。検索と入力転送はローカルネットワーク向けに設計されています。インターネット中継、アカウントログイン、ポートフォワーディングは不要です。",
+    "final.title": "キーボードとマウス1組で、2台のPCを操作。",
+    "final.download": "Windows版をダウンロード",
+    "footer.tagline": "Windows向けローカルキーボード・マウス共有ツール。",
+    "footer.contact": "お問い合わせ",
+    "footer.license": "ライセンス",
+    "footer.privacy": "プライバシー",
+    "footer.release": "リリース v1.5b"
   },
   ko: {
     "aria.home": "Soft KVM 홈",
@@ -317,7 +481,7 @@ const translations = {
     "faq.alternative.a": "Windows PC 두 대, 로컬 네트워크 제어, 검증된 페어링, 클라우드 계정 없는 흐름이 필요하다면 대안이 될 수 있습니다.",
     "faq.cloud.q": "Soft KVM에 인터넷이나 클라우드 중계가 필요한가요?",
     "faq.cloud.a": "아니요. 검색과 입력 전송은 로컬 네트워크용으로 설계했습니다. 인터넷 중계, 계정 로그인, 포트 포워딩이 필요하지 않습니다.",
-    "final.title": "두 PC를 손끝에 두세요.",
+    "final.title": "키보드와 마우스 하나로 두 PC를 제어하세요.",
     "final.download": "Windows용 다운로드",
     "footer.tagline": "Windows용 로컬 키보드·마우스 공유 도구.",
     "footer.contact": "문의",
@@ -375,6 +539,7 @@ const shotContent = {
     bodyKey: "tour.quickBody",
     label: {
       en: "Soft KVM compact quick bar",
+      ja: "Soft KVM クイックバー",
       ko: "Soft KVM 빠른 실행 바"
     }
   },
@@ -383,6 +548,7 @@ const shotContent = {
     bodyKey: "tour.controlBody",
     label: {
       en: "Soft KVM Control code entry",
+      ja: "Soft KVM Control コード入力画面",
       ko: "Soft KVM Control 코드 입력 화면"
     }
   },
@@ -391,6 +557,7 @@ const shotContent = {
     bodyKey: "tour.settingsBody",
     label: {
       en: "Soft KVM full settings panel",
+      ja: "Soft KVM 全設定パネル",
       ko: "Soft KVM 전체 설정 화면"
     }
   }
@@ -435,7 +602,7 @@ function createSoftKvmMarkup(state) {
     return `
       <div class="softkvm-demo state-${state}">
         <div class="demo-titlebar">
-          <span class="demo-app-title"><img src="assets/softkvm-icon.ico" alt="">Soft KVM</span>
+          <span class="demo-app-title"><img src="${softKvmIconPath}" alt="">Soft KVM</span>
           <span class="demo-window-actions" aria-hidden="true"><i></i><i></i><i></i></span>
         </div>
         <div class="demo-toolbar demo-flow-toolbar">
@@ -449,7 +616,7 @@ function createSoftKvmMarkup(state) {
   return `
     <div class="softkvm-demo state-${state} ${showSettings ? "show-settings" : ""}">
       <div class="demo-titlebar">
-        <span class="demo-app-title"><img src="assets/softkvm-icon.ico" alt="">Soft KVM</span>
+        <span class="demo-app-title"><img src="${softKvmIconPath}" alt="">Soft KVM</span>
         <span class="demo-window-actions" aria-hidden="true"><i></i><i></i><i></i></span>
       </div>
       <div class="demo-toolbar">
@@ -587,12 +754,18 @@ function setLanguage(language) {
     button.setAttribute("aria-pressed", String(button.dataset.lang === language));
   });
 
-  document.title = language === "ko"
-    ? "Soft KVM - Windows PC 두 대를 위한 소프트웨어 KVM"
-    : "Soft KVM - Windows software KVM for one keyboard and mouse";
-  description.content = language === "ko"
-    ? "Soft KVM은 같은 로컬 네트워크에서 Windows PC 두 대를 키보드와 마우스 하나로 제어하는 소프트웨어 KVM입니다. 계정, 클라우드, 중계 서버가 필요하지 않습니다."
-    : "Soft KVM is a Windows software KVM for sharing one keyboard and mouse between two PCs on the same local network. No account, cloud, or relay server required.";
+  if (language === "ko") {
+    document.title = "Soft KVM - Windows PC 두 대를 위한 소프트웨어 KVM";
+    description.content = "Soft KVM은 같은 로컬 네트워크에서 Windows PC 두 대를 키보드와 마우스 하나로 제어하는 소프트웨어 KVM입니다. 계정, 클라우드, 중계 서버가 필요하지 않습니다.";
+  }
+  else if (language === "ja") {
+    document.title = "Soft KVM - 2台のWindows PC向けのソフトウェアKVM";
+    description.content = "Soft KVMは、同じローカルネットワーク上の2台のWindows PCをキーボードとマウス1組で操作するソフトウェアKVMです。アカウント、クラウド、中継サーバーは不要です。";
+  }
+  else {
+    document.title = "Soft KVM - Windows software KVM for one keyboard and mouse";
+    description.content = "Soft KVM is a Windows software KVM for sharing one keyboard and mouse between two PCs on the same local network. No account, cloud, or relay server required.";
+  }
 
   renderHeroScene(currentSceneIndex);
   updateTourCopy();
@@ -718,7 +891,14 @@ documentButtons.forEach((button) => {
 documentPanelClose.addEventListener("click", closeLicenseDocument);
 
 languageButtons.forEach((button) => {
-  button.addEventListener("click", () => setLanguage(button.dataset.lang));
+  button.addEventListener("click", () => {
+    if (button.dataset.langUrl) {
+      window.location.href = button.dataset.langUrl;
+      return;
+    }
+
+    setLanguage(button.dataset.lang);
+  });
 });
 
 function closeMobileMenu() {
@@ -809,4 +989,4 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   }, 3200);
 }
 
-setLanguage(localStorage.getItem("softkvm-language") || "en");
+setLanguage(configuredPageLanguage || localStorage.getItem("softkvm-language") || "en");
