@@ -2,7 +2,11 @@
 
 **English** | [한국어](README.ko.md)
 
-Soft KVM lets one Windows PC control another Windows PC on the same local network with one mouse and keyboard.
+Soft KVM is a Windows software KVM for sharing one keyboard and mouse between two Windows PCs on the same trusted local network. It requires no account, cloud service, relay server, or hardware KVM switch.
+
+Official download page: https://teamoasis7.github.io/SoftKVM-Releases/
+
+Latest public release: https://github.com/TeamOasis7/SoftKVM-Releases/releases/tag/v1.5b
 
 ## Quick start
 
@@ -62,5 +66,6 @@ Use the same latest Soft KVM EXE on both PCs. Games that reject Windows syntheti
 - If a connection fails, confirm that both PCs use the same version, connection group, and Swap mode settings.
 - Stopping, pausing, disconnecting, or using emergency recovery releases forwarded keys and mouse buttons.
 
-> Use Soft KVM only on a trusted local network. Input traffic is not encrypted. Do not expose it directly to public Wi-Fi or the internet.
+> Use Soft KVM only on a trusted local network. Keyboard and mouse traffic is protected by authenticated ECDH/AES-GCM after verified pairing, but Soft KVM discovery and listening ports should not be exposed directly to public Wi-Fi or the internet.
+
 

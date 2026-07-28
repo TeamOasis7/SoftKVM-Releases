@@ -2,7 +2,11 @@
 
 [English](README.md) | **한국어**
 
-Soft KVM은 같은 로컬 네트워크의 Windows PC를 하나의 마우스와 키보드로 제어하는 프로그램입니다.
+Soft KVM은 같은 신뢰할 수 있는 로컬 네트워크의 Windows PC 두 대를 키보드와 마우스 하나로 제어하는 Windows 소프트웨어 KVM입니다. 계정, 클라우드 서비스, 중계 서버, 하드웨어 KVM 스위치가 필요하지 않습니다.
+
+공식 다운로드 페이지: https://teamoasis7.github.io/SoftKVM-Releases/
+
+최신 공개 릴리즈: https://github.com/TeamOasis7/SoftKVM-Releases/releases/tag/v1.5b
 
 ## 빠른 시작
 
@@ -62,5 +66,6 @@ Soft KVM은 같은 로컬 네트워크의 Windows PC를 하나의 마우스와 �
 - 연결되지 않으면 양쪽 버전, Connection group, Swap mode 설정이 같은지 확인합니다.
 - Stop, Pause, 연결 종료 또는 긴급 복구를 실행하면 전달 중인 키와 마우스 버튼이 해제됩니다.
 
-> Soft KVM은 신뢰할 수 있는 로컬 네트워크에서만 사용하세요. 입력 트래픽은 암호화되지 않으므로 공용 Wi-Fi나 인터넷에 직접 노출하면 안 됩니다.
+> Soft KVM은 신뢰할 수 있는 로컬 네트워크에서만 사용하세요. 키보드와 마우스 트래픽은 검증된 페어링 후 인증된 ECDH/AES-GCM으로 보호되지만, Soft KVM 검색 및 수신 포트는 공용 Wi-Fi나 인터넷에 직접 노출하면 안 됩니다.
+
 
