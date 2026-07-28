@@ -1,6 +1,8 @@
 # Soft KVM website
 
-This folder is a static download page for Soft KVM.
+This folder is a static download page for Soft KVM, a Windows software KVM for
+sharing one keyboard and mouse between two Windows PCs on the same trusted local
+network.
 
 Public URL: https://teamoasis7.github.io/SoftKVM-Releases/
 
