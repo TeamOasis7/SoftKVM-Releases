@@ -154,7 +154,7 @@ const translations = {
     "faq.share.q": "Can I share one mouse and keyboard between two Windows PCs?",
     "faq.share.a": "Yes. Soft KVM is built for keyboard and mouse sharing between two Windows 10/11 x64 PCs on the same trusted local network.",
     "faq.alternative.q": "Is Soft KVM a Synergy or Barrier alternative for Windows?",
-    "faq.alternative.a": "It can be an alternative when you only need two Windows PCs, local network control, verified pairing, and no cloud account.",
+    "faq.alternative.a": "It is a practical alternative for controlling two Windows PCs over a local network with verified pairing and no cloud account.",
     "faq.cloud.q": "Does Soft KVM need the internet or a cloud relay?",
     "faq.cloud.a": "No. Discovery and input transfer are designed for the local network. Internet relay, account sign-in, and port forwarding are not required.",
     "final.title": "Control two Windows PCs with one keyboard and mouse.",
@@ -202,7 +202,7 @@ const translations = {
     "scene.controlPc": "CONTROL PC",
     "scene.waitPc": "WAIT PC",
     "scene.mainPc": "メインPC",
-    "scene.remotePc": "相手側PC",
+    "scene.remotePc": "リモートPC",
     "scene.controlMode": "CONTROL MODE",
     "scene.waitMode": "WAIT MODE",
     "scene.oneInput": "キーボード + マウス 1組",
@@ -215,7 +215,7 @@ const translations = {
     "scene.connect.title": "接続済み。入力はまだ Control PC 側です。",
     "scene.connect.body": "LANチャネルは準備済みですが、キーボードとマウスの操作はまだ移動していません。",
     "scene.remote.title": "入力が Wait PC に移動します",
-    "scene.remote.body": "同じキーボードとマウスで相手側のデスクトップを操作します。",
+    "scene.remote.body": "同じキーボードとマウスでリモートPCのデスクトップを操作します。",
     "tour.eyebrow": "実際のアプリ",
     "tour.title": "クラウドアカウントなしでキーボードとマウスを共有。",
     "tour.body": "小さなバーから Wait と Control をすぐ選べます。ペアリング、入力、Swap mode、起動オプションが必要な時だけ Settings を開きます。",
@@ -225,19 +225,19 @@ const translations = {
     "tour.captured": "実際の v1.5b UI をベースに表示",
     "tour.quickTitle": "画面を占有しない準備状態",
     "tour.quickBody": "Settings を開くか接続を開始するまで、メインウィンドウは小さく保たれます。",
-    "tour.controlTitle": "相手PCのコードを入力して開始",
+    "tour.controlTitle": "リモートPCのコードを入力して開始",
     "tour.controlBody": "Control modeでは、小さなバーの中央がコード入力欄になり、Startを押して接続できます。",
     "tour.settingsTitle": "接続オプションを1か所に集約",
     "tour.settingsBody": "ペアリング、モニター選択、入力制御、Swap mode、自動起動、マニュアル、アップデートをまとめて管理できます。",
     "setup.eyebrow": "クイックセットアップ",
-    "setup.title": "数分でローカルWindows PC操作を始められます。",
+    "setup.title": "数分で、ローカルのWindows PCの操作を始められます。",
     "setup.lead": "2台のPCで同じリリースファイルを使います。一方を待機側、もう一方を操作側にします。",
     "setup.step1.title": "リリースをダウンロード",
     "setup.step1.body": "一式ZIPをダウンロードするか、EXE、証明書、セットアップCMDを同じフォルダーに置きます。",
     "setup.step2.title": "信頼設定を一度だけ完了",
     "setup.step2.body": "初回起動後、Soft KVMの信頼設定プロンプトを承認します。",
     "setup.step3.title": "各PCの役割を選択",
-    "setup.step3.body": "操作対象のPCでは Wait、メインPCでは Control を選択します。",
+    "setup.step3.body": "リモートPCでは Wait、メインPCでは Control を選択します。",
     "setup.step4.title": "確認して接続",
     "setup.step4.body": "両方のPCに表示されるペアリングコードを確認して、接続を承認します。",
     "download.label": "現在のリリース",
@@ -254,7 +254,7 @@ const translations = {
     "download.releaseNotes": "リリースノート",
     "download.allFiles": "すべてのリリースファイルを見る",
     "security.eyebrow": "セキュリティ",
-    "security.title": "相互確認で保護された暗号化キーボード・マウス入力。",
+    "security.title": "相互確認で保護された、暗号化されたキーボードとマウス入力。",
     "security.lead": "通信を取得されても入力内容を読み取りにくくし、改ざんまたは再送されたメッセージは拒否されるよう設計しています。",
     "security.channel.pair": "PAIR",
     "security.channel.ecdh": "ECDH",
@@ -268,19 +268,19 @@ const translations = {
     "security.subnet.title": "ローカルサブネット境界",
     "security.subnet.body": "生成されるファイアウォール規則は、Windows LocalSubnet範囲からの接続だけを許可します。",
     "security.note.title": "信頼できるローカルネットワーク向け",
-    "security.note.body": "Soft KVMの検索ポートや待受ポートをインターネットへ直接公開しないでください。",
+    "security.note.body": "Soft KVMの検出ポートや待ち受けポートをインターネットに直接公開しないでください。",
     "security.note.link": "セキュリティモデルを見る",
     "compare.eyebrow": "比較",
-    "compare.title": "ローカルWindowsデスク向けのソフトウェアKVM。",
+    "compare.title": "ローカルのWindows環境向けソフトウェアKVM。",
     "compare.lead": "Soft KVMは、ハードウェアスイッチ、リモートデスクトップセッション、クラウド中継、アカウントなしで、近くにある2台のWindows PCをキーボードとマウス1組で使いたい人のためのツールです。",
     "compare.hardware.title": "ハードウェアKVMとの比較",
     "compare.hardware.body": "USBやHDMIの切替器は不要です。2台のPCはネットワーク上に残したまま、Soft KVMはキーボードとマウス入力だけを移動します。",
     "compare.remote.title": "リモートデスクトップとの比較",
     "compare.remote.body": "Soft KVMは画面をストリーミングしたり、リモートセッションにログインしたりしません。それぞれのPCの実際のモニターを使い続けます。",
     "compare.synergy.title": "Synergy / Barrierとの比較",
-    "compare.synergy.body": "Soft KVMは、2台のWindows PC、ローカルサブネット検索、確認付きペアリング、暗号化入力、小さなWinForms UIに重点を置いています。",
+    "compare.synergy.body": "Soft KVMは、2台のWindows PC、ローカルサブネット検出、確認付きペアリング、暗号化入力、小さなWinForms UIに重点を置いています。",
     "compare.mouse.title": "Mouse Without Bordersとの比較",
-    "compare.mouse.body": "Soft KVMは、明確な役割選択、明示的なペアリング確認、アカウントやクラウドサービスを必要としない流れを中心に設計しています。",
+    "compare.mouse.body": "Soft KVMは、明確な役割選択、明示的なペアリング確認、アカウントやクラウドサービスを必要としない利用を前提に設計しています。",
     "license.eyebrow": "ライセンス",
     "license.title": "個人利用は無料。業務利用にはライセンスが必要です。",
     "license.lead": "Soft KVMは個人および非商用利用では無料です。企業、組織、業務目的での利用には有料ライセンスが必要です。",
@@ -316,10 +316,10 @@ const translations = {
     "faq.share.q": "2台のWindows PCでマウスとキーボードを共有できますか？",
     "faq.share.a": "はい。Soft KVMは、同じ信頼できるローカルネットワーク上の2台のWindows 10/11 x64 PC間でキーボードとマウスを共有するために作られています。",
     "faq.alternative.q": "Soft KVMはWindows向けSynergyやBarrierの代替になりますか？",
-    "faq.alternative.a": "2台のWindows PC、ローカルネットワーク操作、確認付きペアリング、クラウドアカウント不要の流れが必要な場合は代替になり得ます。",
+    "faq.alternative.a": "ローカルネットワーク上で2台のWindows PCを操作し、確認済みのペアリングとクラウドアカウントなしの接続が必要な場合に、実用的な代替になります。",
     "faq.cloud.q": "Soft KVMにインターネットやクラウド中継は必要ですか？",
-    "faq.cloud.a": "いいえ。検索と入力転送はローカルネットワーク向けに設計されています。インターネット中継、アカウントログイン、ポートフォワーディングは不要です。",
-    "final.title": "キーボードとマウス1組で、2台のPCを操作。",
+    "faq.cloud.a": "いいえ。検出と入力転送はローカルネットワーク向けに設計されています。インターネット中継、アカウントログイン、ポートフォワーディングは不要です。",
+    "final.title": "キーボードとマウス1組で、2台のPCを操作できます。",
     "final.download": "Windows版をダウンロード",
     "footer.tagline": "Windows向けローカルキーボード・マウス共有ツール。",
     "footer.contact": "お問い合わせ",
@@ -442,7 +442,7 @@ const translations = {
     "compare.synergy.title": "Synergy 또는 Barrier와 비교",
     "compare.synergy.body": "Soft KVM은 Windows PC 두 대, 로컬 서브넷 검색, 검증된 페어링, 암호화 입력, 작은 WinForms 인터페이스에 집중합니다.",
     "compare.mouse.title": "Mouse Without Borders와 비교",
-    "compare.mouse.body": "Soft KVM은 직접적인 역할 선택, 명시적 페어링 확인, 계정과 클라우드 서비스가 필요 없는 흐름을 중심으로 설계했습니다.",
+    "compare.mouse.body": "Soft KVM은 직접적인 역할 선택, 명시적 페어링 확인, 계정과 클라우드 서비스가 필요 없는 사용 방식을 중심으로 설계했습니다.",
     "license.eyebrow": "라이선스",
     "license.title": "개인 사용은 무료, 기업·업무용 사용은 유료입니다.",
     "license.lead": "Soft KVM은 개인 및 비상업적 사용에 무료입니다. 기업·기관 및 업무 목적 사용에는 유료 라이선스가 필요합니다.",
@@ -478,7 +478,7 @@ const translations = {
     "faq.share.q": "Windows PC 두 대를 마우스와 키보드 하나로 쓸 수 있나요?",
     "faq.share.a": "예. Soft KVM은 같은 신뢰할 수 있는 로컬 네트워크의 Windows 10/11 x64 PC 두 대 사이에서 키보드와 마우스를 공유하도록 만들었습니다.",
     "faq.alternative.q": "Soft KVM은 Windows용 Synergy 또는 Barrier 대안인가요?",
-    "faq.alternative.a": "Windows PC 두 대, 로컬 네트워크 제어, 검증된 페어링, 클라우드 계정 없는 흐름이 필요하다면 대안이 될 수 있습니다.",
+    "faq.alternative.a": "Windows PC 두 대를 로컬 네트워크에서 직접 제어하고, 검증된 페어링과 클라우드 계정 없는 연결이 필요하다면 좋은 대안이 될 수 있습니다.",
     "faq.cloud.q": "Soft KVM에 인터넷이나 클라우드 중계가 필요한가요?",
     "faq.cloud.a": "아니요. 검색과 입력 전송은 로컬 네트워크용으로 설계했습니다. 인터넷 중계, 계정 로그인, 포트 포워딩이 필요하지 않습니다.",
     "final.title": "키보드와 마우스 하나로 두 PC를 제어하세요.",
@@ -492,6 +492,9 @@ const translations = {
 };
 
 const languageButtons = document.querySelectorAll("[data-lang]");
+const languageToggle = document.querySelector(".language-toggle");
+const languageMenu = document.querySelector(".language-menu");
+const languageCurrent = document.querySelector("[data-lang-current]");
 const mobileMenuToggle = document.querySelector(".mobile-menu-toggle");
 const mobileMenu = document.querySelector("#mobile-menu");
 const translatableElements = document.querySelectorAll("[data-i18n]");
@@ -751,8 +754,14 @@ function setLanguage(language) {
   });
 
   languageButtons.forEach((button) => {
-    button.setAttribute("aria-pressed", String(button.dataset.lang === language));
+    const isCurrent = button.dataset.lang === language;
+    button.setAttribute("aria-checked", String(isCurrent));
+    button.setAttribute("aria-pressed", String(isCurrent));
   });
+
+  if (languageCurrent) {
+    languageCurrent.textContent = language.toUpperCase();
+  }
 
   if (language === "ko") {
     document.title = "Soft KVM - Windows PC 두 대를 위한 소프트웨어 KVM";
@@ -890,6 +899,25 @@ documentButtons.forEach((button) => {
 
 documentPanelClose.addEventListener("click", closeLicenseDocument);
 
+function closeLanguageMenu() {
+  if (!languageMenu || !languageToggle) {
+    return;
+  }
+
+  languageMenu.hidden = true;
+  languageToggle.setAttribute("aria-expanded", "false");
+}
+
+languageToggle?.addEventListener("click", () => {
+  const willOpen = languageMenu.hidden;
+  languageMenu.hidden = !willOpen;
+  languageToggle.setAttribute("aria-expanded", String(willOpen));
+
+  if (willOpen) {
+    closeMobileMenu();
+  }
+});
+
 languageButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.dataset.langUrl) {
@@ -898,6 +926,7 @@ languageButtons.forEach((button) => {
     }
 
     setLanguage(button.dataset.lang);
+    closeLanguageMenu();
   });
 });
 
@@ -910,6 +939,10 @@ mobileMenuToggle.addEventListener("click", () => {
   const willOpen = mobileMenu.hidden;
   mobileMenu.hidden = !willOpen;
   mobileMenuToggle.setAttribute("aria-expanded", String(willOpen));
+
+  if (willOpen) {
+    closeLanguageMenu();
+  }
 });
 
 mobileMenu.querySelectorAll("a").forEach((link) => {
@@ -917,13 +950,32 @@ mobileMenu.querySelectorAll("a").forEach((link) => {
 });
 
 document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && !mobileMenu.hidden) {
+  if (event.key !== "Escape") {
+    return;
+  }
+
+  if (languageMenu && !languageMenu.hidden) {
+    closeLanguageMenu();
+    languageToggle.focus();
+    return;
+  }
+
+  if (!mobileMenu.hidden) {
     closeMobileMenu();
     mobileMenuToggle.focus();
   }
 });
 
 document.addEventListener("pointerdown", (event) => {
+  if (
+    languageMenu &&
+    !languageMenu.hidden &&
+    !languageMenu.contains(event.target) &&
+    !languageToggle.contains(event.target)
+  ) {
+    closeLanguageMenu();
+  }
+
   if (!mobileMenu.hidden && !mobileMenu.contains(event.target) && !mobileMenuToggle.contains(event.target)) {
     closeMobileMenu();
   }

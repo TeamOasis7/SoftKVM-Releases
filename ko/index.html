@@ -78,6 +78,11 @@
       <path d="m8.59 13.51 6.83 3.98"></path>
       <path d="m15.41 6.51-6.82 3.98"></path>
     </symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M2 12h20"></path>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+    </symbol>
   </svg>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Soft KVM 홈" data-i18n-aria-label="aria.home">
@@ -99,10 +104,16 @@
         <span aria-hidden="true">☰</span>
         <span class="visually-hidden" data-i18n="nav.menu">메뉴</span>
       </button>
-      <div class="language-switch" role="group" aria-label="언어" data-i18n-aria-label="aria.language">
-        <button type="button" data-lang="en" data-lang-url="../" aria-pressed="false">EN</button>
-        <button type="button" data-lang="ko" aria-pressed="true">한국어</button>
-        <button type="button" data-lang="ja" data-lang-url="../ja/" aria-pressed="false">日本語</button>
+      <div class="language-switch" aria-label="언어" data-i18n-aria-label="aria.language">
+        <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-menu">
+          <svg aria-hidden="true"><use href="#icon-globe"></use></svg>
+          <span data-lang-current>KO</span>
+        </button>
+        <div id="language-menu" class="language-menu" role="menu" hidden>
+          <button type="button" role="menuitemradio" data-lang="en" data-lang-url="../" aria-checked="false">English</button>
+          <button type="button" role="menuitemradio" data-lang="ko" aria-checked="true">한국어</button>
+          <button type="button" role="menuitemradio" data-lang="ja" data-lang-url="../ja/" aria-checked="false">日本語</button>
+        </div>
       </div>
       <a class="header-download" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b_Windows_x64.zip" target="_blank" rel="noopener noreferrer">
         <span data-i18n="nav.download">다운로드</span>
@@ -556,7 +567,7 @@
           <span class="compatibility-index">04</span>
           <div>
             <h3 data-i18n="compare.mouse.title">Mouse Without Borders와 비교</h3>
-            <p data-i18n="compare.mouse.body">Soft KVM은 직접적인 역할 선택, 명시적 페어링 확인, 계정과 클라우드 서비스가 필요 없는 흐름을 중심으로 설계했습니다.</p>
+            <p data-i18n="compare.mouse.body">Soft KVM은 직접적인 역할 선택, 명시적 페어링 확인, 계정과 클라우드 서비스가 필요 없는 사용 방식을 중심으로 설계했습니다.</p>
           </div>
         </article>
       </div>
@@ -635,7 +646,7 @@
         </details>
         <details>
           <summary data-i18n="faq.alternative.q">Soft KVM은 Windows용 Synergy 또는 Barrier 대안인가요?</summary>
-          <p data-i18n="faq.alternative.a">Windows PC 두 대, 로컬 네트워크 제어, 검증된 페어링, 클라우드 계정 없는 흐름이 필요하다면 대안이 될 수 있습니다.</p>
+          <p data-i18n="faq.alternative.a">Windows PC 두 대를 로컬 네트워크에서 직접 제어하고, 검증된 페어링과 클라우드 계정 없는 연결이 필요하다면 좋은 대안이 될 수 있습니다.</p>
         </details>
         <details>
           <summary data-i18n="faq.cloud.q">Soft KVM에 인터넷이나 클라우드 중계가 필요한가요?</summary>

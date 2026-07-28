@@ -78,6 +78,11 @@
       <path d="m8.59 13.51 6.83 3.98"></path>
       <path d="m15.41 6.51-6.82 3.98"></path>
     </symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M2 12h20"></path>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+    </symbol>
   </svg>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Soft KVM ホーム" data-i18n-aria-label="aria.home">
@@ -99,10 +104,16 @@
         <span aria-hidden="true">☰</span>
         <span class="visually-hidden" data-i18n="nav.menu">メニュー</span>
       </button>
-      <div class="language-switch" role="group" aria-label="言語" data-i18n-aria-label="aria.language">
-        <button type="button" data-lang="en" data-lang-url="../" aria-pressed="false">EN</button>
-        <button type="button" data-lang="ko" data-lang-url="../ko/" aria-pressed="false">한국어</button>
-        <button type="button" data-lang="ja" aria-pressed="true">日本語</button>
+      <div class="language-switch" aria-label="言語" data-i18n-aria-label="aria.language">
+        <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-menu">
+          <svg aria-hidden="true"><use href="#icon-globe"></use></svg>
+          <span data-lang-current>JA</span>
+        </button>
+        <div id="language-menu" class="language-menu" role="menu" hidden>
+          <button type="button" role="menuitemradio" data-lang="en" data-lang-url="../" aria-checked="false">English</button>
+          <button type="button" role="menuitemradio" data-lang="ko" data-lang-url="../ko/" aria-checked="false">한국어</button>
+          <button type="button" role="menuitemradio" data-lang="ja" aria-checked="true">日本語</button>
+        </div>
       </div>
       <a class="header-download" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b_Windows_x64.zip" target="_blank" rel="noopener noreferrer">
         <span data-i18n="nav.download">ダウンロード</span>
@@ -200,7 +211,7 @@
           <div class="scene-role">
             <span class="role-dot"></span>
             <strong data-i18n="scene.waitPc">WAIT PC</strong>
-            <small data-i18n="scene.remotePc">相手側PC</small>
+            <small data-i18n="scene.remotePc">リモートPC</small>
           </div>
           <div class="monitor-frame">
             <div class="monitor-screen">
@@ -287,7 +298,7 @@
         <button type="button" data-scene-index="3" aria-pressed="false">
           <span>04</span>
           <strong data-i18n="scene.remote.title">入力が Wait PC に移動します</strong>
-          <small data-i18n="scene.remote.body">同じキーボードとマウスで相手側のデスクトップを操作します。</small>
+          <small data-i18n="scene.remote.body">同じキーボードとマウスでリモートPCのデスクトップを操作します。</small>
         </button>
       </div>
     </section>
@@ -323,7 +334,7 @@
     <section id="setup" class="section setup-section">
       <div class="section-intro">
         <p class="eyebrow" data-i18n="setup.eyebrow">クイックセットアップ</p>
-        <h2 data-i18n="setup.title">数分でローカルWindows PC操作を始められます。</h2>
+        <h2 data-i18n="setup.title">数分で、ローカルのWindows PCの操作を始められます。</h2>
         <p data-i18n="setup.lead">2台のPCで同じリリースファイルを使います。一方を待機側、もう一方を操作側にします。</p>
       </div>
 
@@ -346,7 +357,7 @@
           <span class="step-number">3</span>
           <div>
             <strong data-i18n="setup.step3.title">各PCの役割を選択</strong>
-            <p data-i18n="setup.step3.body">操作対象のPCでは Wait、メインPCでは Control を選択します。</p>
+            <p data-i18n="setup.step3.body">リモートPCでは Wait、メインPCでは Control を選択します。</p>
           </div>
         </li>
         <li>
@@ -433,7 +444,7 @@
     <section id="security" class="section security-section">
       <div class="section-intro">
         <p class="eyebrow" data-i18n="security.eyebrow">セキュリティ</p>
-        <h2 data-i18n="security.title">相互確認で保護された暗号化キーボード・マウス入力。</h2>
+        <h2 data-i18n="security.title">相互確認で保護された、暗号化されたキーボードとマウス入力。</h2>
         <p data-i18n="security.lead">通信を取得されても入力内容を読み取りにくくし、改ざんまたは再送されたメッセージは拒否されるよう設計しています。</p>
       </div>
 
@@ -486,7 +497,7 @@
 
       <div class="security-note">
         <strong data-i18n="security.note.title">信頼できるローカルネットワーク向け</strong>
-        <p data-i18n="security.note.body">Soft KVMの検索ポートや待受ポートをインターネットへ直接公開しないでください。</p>
+        <p data-i18n="security.note.body">Soft KVMの検出ポートや待ち受けポートをインターネットに直接公開しないでください。</p>
       </div>
     </section>
 
@@ -527,7 +538,7 @@
     <section id="compare" class="section compatibility-section comparison-section">
       <div class="section-intro">
         <p class="eyebrow" data-i18n="compare.eyebrow">比較</p>
-        <h2 data-i18n="compare.title">ローカルWindowsデスク向けのソフトウェアKVM。</h2>
+        <h2 data-i18n="compare.title">ローカルのWindows環境向けソフトウェアKVM。</h2>
         <p data-i18n="compare.lead">Soft KVMは、ハードウェアスイッチ、リモートデスクトップセッション、クラウド中継、アカウントなしで、近くにある2台のWindows PCをキーボードとマウス1組で使いたい人のためのツールです。</p>
       </div>
       <div class="compatibility-list comparison-list">
@@ -549,14 +560,14 @@
           <span class="compatibility-index">03</span>
           <div>
             <h3 data-i18n="compare.synergy.title">Synergy / Barrierとの比較</h3>
-            <p data-i18n="compare.synergy.body">Soft KVMは、2台のWindows PC、ローカルサブネット検索、確認付きペアリング、暗号化入力、小さなWinForms UIに重点を置いています。</p>
+            <p data-i18n="compare.synergy.body">Soft KVMは、2台のWindows PC、ローカルサブネット検出、確認付きペアリング、暗号化入力、小さなWinForms UIに重点を置いています。</p>
           </div>
         </article>
         <article>
           <span class="compatibility-index">04</span>
           <div>
             <h3 data-i18n="compare.mouse.title">Mouse Without Bordersとの比較</h3>
-            <p data-i18n="compare.mouse.body">Soft KVMは、明確な役割選択、明示的なペアリング確認、アカウントやクラウドサービスを必要としない流れを中心に設計しています。</p>
+            <p data-i18n="compare.mouse.body">Soft KVMは、明確な役割選択、明示的なペアリング確認、アカウントやクラウドサービスを必要としない利用を前提に設計しています。</p>
           </div>
         </article>
       </div>
@@ -635,11 +646,11 @@
         </details>
         <details>
           <summary data-i18n="faq.alternative.q">Soft KVMはWindows向けSynergyやBarrierの代替になりますか？</summary>
-          <p data-i18n="faq.alternative.a">2台のWindows PC、ローカルネットワーク操作、確認付きペアリング、クラウドアカウント不要の流れが必要な場合は代替になり得ます。</p>
+          <p data-i18n="faq.alternative.a">ローカルネットワーク上で2台のWindows PCを操作し、確認済みのペアリングとクラウドアカウントなしの接続が必要な場合に、実用的な代替になります。</p>
         </details>
         <details>
           <summary data-i18n="faq.cloud.q">Soft KVMにインターネットやクラウド中継は必要ですか？</summary>
-          <p data-i18n="faq.cloud.a">いいえ。検索と入力転送はローカルネットワーク向けに設計されています。インターネット中継、アカウントログイン、ポートフォワーディングは不要です。</p>
+          <p data-i18n="faq.cloud.a">いいえ。検出と入力転送はローカルネットワーク向けに設計されています。インターネット中継、アカウントログイン、ポートフォワーディングは不要です。</p>
         </details>
       </div>
     </section>
@@ -648,7 +659,7 @@
       <img src="../assets/softkvm-icon.ico" alt="">
       <div>
         <p class="eyebrow">SOFT KVM v1.5b</p>
-        <h2 data-i18n="final.title">キーボードとマウス1組で、2台のPCを操作。</h2>
+        <h2 data-i18n="final.title">キーボードとマウス1組で、2台のPCを操作できます。</h2>
       </div>
       <a class="button primary light" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b_Windows_x64.zip" target="_blank" rel="noopener noreferrer">
         <span data-i18n="final.download">Windows版をダウンロード</span>

@@ -78,6 +78,11 @@
       <path d="m8.59 13.51 6.83 3.98"></path>
       <path d="m15.41 6.51-6.82 3.98"></path>
     </symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24">
+      <circle cx="12" cy="12" r="10"></circle>
+      <path d="M2 12h20"></path>
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+    </symbol>
   </svg>
   <header class="topbar">
     <a class="brand" href="#top" aria-label="Soft KVM home" data-i18n-aria-label="aria.home">
@@ -99,10 +104,16 @@
         <span aria-hidden="true">☰</span>
         <span class="visually-hidden" data-i18n="nav.menu">Menu</span>
       </button>
-      <div class="language-switch" role="group" aria-label="Language" data-i18n-aria-label="aria.language">
-        <button type="button" data-lang="en" aria-pressed="true">EN</button>
-        <button type="button" data-lang="ko" data-lang-url="ko/" aria-pressed="false">한국어</button>
-        <button type="button" data-lang="ja" data-lang-url="ja/" aria-pressed="false">日本語</button>
+      <div class="language-switch" aria-label="Language" data-i18n-aria-label="aria.language">
+        <button class="language-toggle" type="button" aria-expanded="false" aria-controls="language-menu">
+          <svg aria-hidden="true"><use href="#icon-globe"></use></svg>
+          <span data-lang-current>EN</span>
+        </button>
+        <div id="language-menu" class="language-menu" role="menu" hidden>
+          <button type="button" role="menuitemradio" data-lang="en" aria-checked="true">English</button>
+          <button type="button" role="menuitemradio" data-lang="ko" data-lang-url="ko/" aria-checked="false">한국어</button>
+          <button type="button" role="menuitemradio" data-lang="ja" data-lang-url="ja/" aria-checked="false">日本語</button>
+        </div>
       </div>
       <a class="header-download" href="https://github.com/TeamOasis7/SoftKVM-Releases/releases/download/v1.5b/SoftKVM_1.5b_Windows_x64.zip" target="_blank" rel="noopener noreferrer">
         <span data-i18n="nav.download">Download</span>
@@ -635,7 +646,7 @@
         </details>
         <details>
           <summary data-i18n="faq.alternative.q">Is Soft KVM a Synergy or Barrier alternative for Windows?</summary>
-          <p data-i18n="faq.alternative.a">It can be an alternative when you only need two Windows PCs, local network control, verified pairing, and no cloud account.</p>
+          <p data-i18n="faq.alternative.a">It is a practical alternative for controlling two Windows PCs over a local network with verified pairing and no cloud account.</p>
         </details>
         <details>
           <summary data-i18n="faq.cloud.q">Does Soft KVM need the internet or a cloud relay?</summary>
