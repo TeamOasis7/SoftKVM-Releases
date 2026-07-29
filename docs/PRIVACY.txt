@@ -20,11 +20,9 @@ a relay server for this traffic.
 3. Internet communication
 
 When the user checks for updates, Soft KVM contacts the public GitHub API and
-GitHub release download service. When the user opens or refreshes the online
-manual, Soft KVM requests the manual from GitHub. These services may receive
-standard network information such as an IP address under their own privacy
-policies. Soft KVM does not add a user identifier or usage-statistics payload to
-these requests.
+GitHub release download service. These services may receive standard network
+information such as an IP address under their own privacy policies. Soft KVM
+does not add a user identifier or usage-statistics payload to these requests.
 
 4. Business inquiries and feedback
 
@@ -47,9 +45,8 @@ Soft KVM은 계정, 광고, 분석 도구, 텔레메트리 또는 사용 통계 
 키보드와 마우스 입력은 사용자가 연결한 로컬 네트워크의 두 PC 사이에서만
 암호화되어 전송됩니다.
 
-사용자가 업데이트 확인을 누르거나 온라인 설명서를 열면 GitHub에 요청을
-보냅니다. Soft KVM은 이 요청에 별도의 사용자 식별자나 사용 통계를 추가하지
-않습니다. 문의 메일로 자발적으로 제공한 정보는 문의 답변과 처리 목적으로
-사용됩니다.
+사용자가 업데이트 확인을 누르면 GitHub에 요청을 보냅니다. Soft KVM은 이
+요청에 별도의 사용자 식별자나 사용 통계를 추가하지 않습니다. 문의 메일로
+자발적으로 제공한 정보는 문의 답변과 처리 목적으로 사용됩니다.
 
 개인정보 문의: teamoasis78@gmail.com

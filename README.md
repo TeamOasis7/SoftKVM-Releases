@@ -1,4 +1,4 @@
-# Soft KVM website
+﻿# Soft KVM website
 
 This folder is a static download page for Soft KVM, a Windows software KVM for
 sharing one keyboard and mouse between two Windows PCs on the same trusted local
@@ -18,7 +18,7 @@ Japanese has a static `/ja/` page for language-specific SEO. The language switch
 navigates between those URLs. Add future languages to `app.js` and create
 matching static language pages.
 
-The product demo is rendered as HTML/CSS from the v1.5b desktop app layout and
+The product demo is rendered as HTML/CSS from the current development desktop app layout and
 color values. It includes the compact bar, Control entry, and Settings without
 upscaling low-resolution screenshots. Keep public demos free of connection-group
 and paired-device identifiers.
@@ -39,7 +39,8 @@ Open `website/index.html` directly in a browser.
 
 ## GitHub Pages
 
-Use `website/` as the Pages source folder, or copy its contents to a `gh-pages` branch.
+The signed release workflow renders this folder with the new package metadata
+and publishes the result to the release repository's `gh-pages` branch.
 
 Keep `robots.txt`, `sitemap.xml`, canonical metadata, Open Graph/Twitter card
 metadata, and the JSON-LD `SoftwareApplication` block aligned with the public
@@ -49,9 +50,13 @@ GitHub Pages URL after each public release.
 
 When publishing a new public release:
 
-1. Update every version and versioned asset reference in `index.html`.
-2. Update the EXE size, SHA-256 value, release date, and release-notes link.
-3. Update the direct `SoftKVM_<version>_Windows_x64.zip` download links.
+1. Run `publish-release.ps1 -UploadGitHubRelease` only after the selected public
+   version and numeric assembly versions are committed.
+2. The workflow calculates and renders the version, asset names and URLs, EXE
+   and ZIP sizes, SHA-256, release date, and translated version strings from the
+   completed signed package.
+3. The workflow synchronizes the English, Korean, and Japanese root README files
+   to the release repository and pushes this rendered folder to `gh-pages`.
 4. Confirm that the release contains all eight assets:
    - EXE
    - SHA-256
@@ -61,5 +66,9 @@ When publishing a new public release:
    - `LICENSE.txt`
    - `PRIVACY.txt`
    - `README.txt`
-5. Verify the website download, ZIP, publisher-trust, release, and local document
-   links against those assets.
+5. Verify the public README language links and the website download, ZIP,
+   publisher-trust, release, and local document links against those assets.
+
+If only the public-content step needs recovery, rerun
+`sync-public-release-content.ps1` with the existing version and signed release
+directory. Do not recreate or replace the GitHub release.
