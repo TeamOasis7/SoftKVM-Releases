@@ -1,4 +1,4 @@
-﻿# Soft KVM website
+# Soft KVM website
 
 This folder is a static download page for Soft KVM, a Windows software KVM for
 sharing one keyboard and mouse between two Windows PCs on the same trusted local
@@ -55,9 +55,11 @@ When publishing a new public release:
 2. The workflow calculates and renders the version, asset names and URLs, EXE
    and ZIP sizes, SHA-256, release date, and translated version strings from the
    completed signed package.
-3. The workflow synchronizes the English, Korean, and Japanese root README files
+3. The workflow validates strict UTF-8, required HTML structure, and the
+   rendered `app.js` syntax with Node.js before it can push.
+4. The workflow synchronizes the English, Korean, and Japanese root README files
    to the release repository and pushes this rendered folder to `gh-pages`.
-4. Confirm that the release contains all eight assets:
+5. Confirm that the release contains all eight assets:
    - EXE
    - SHA-256
    - complete Windows x64 ZIP package
@@ -66,9 +68,12 @@ When publishing a new public release:
    - `LICENSE.txt`
    - `PRIVACY.txt`
    - `README.txt`
-5. Verify the public README language links and the website download, ZIP,
+6. Verify the public README language links and the website download, ZIP,
    publisher-trust, release, and local document links against those assets.
 
 If only the public-content step needs recovery, rerun
 `sync-public-release-content.ps1` with the existing version and signed release
 directory. Do not recreate or replace the GitHub release.
+
+Use `-ValidateOnly` first to run the same render and validation steps without
+committing or pushing either public repository branch.
