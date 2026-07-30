@@ -2036,6 +2036,324 @@ h2 {
   font-size: 18px;
 }
 
+.security-gates-section {
+  position: relative;
+  padding-top: 72px;
+  padding-inline: var(--content-gutter);
+  padding-bottom: 72px;
+  background: var(--canvas);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+
+.security-gates-intro {
+  max-width: 860px;
+}
+
+.security-gates-intro h2 {
+  max-width: 780px;
+}
+
+.security-gates-intro > p:last-child {
+  max-width: 760px;
+  margin-bottom: 0;
+  color: #4f5863;
+  font-size: 19px;
+}
+
+.security-gates {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 36px;
+  margin: 44px 0 0;
+  padding: 0;
+  list-style: none;
+  overflow: visible;
+}
+
+.security-gates::before,
+.security-gates::after {
+  content: "";
+  position: absolute;
+  top: 157px;
+  width: var(--content-gutter);
+  height: 3px;
+  background: var(--blue);
+}
+
+.security-gates::before {
+  left: calc(0px - var(--content-gutter));
+}
+
+.security-gates::after {
+  right: calc(0px - var(--content-gutter));
+}
+
+.security-gate {
+  position: relative;
+  min-width: 0;
+  min-height: 364px;
+  padding: 27px 32px 32px;
+  border: 1px solid var(--line);
+  border-top: 5px solid var(--blue);
+  border-radius: 7px;
+  background: white;
+  box-shadow: 0 18px 42px rgba(26, 34, 39, 0.1);
+}
+
+.security-gate:nth-child(1) {
+  z-index: 3;
+}
+
+.security-gate:nth-child(2) {
+  z-index: 2;
+}
+
+.security-gate:nth-child(3) {
+  z-index: 1;
+}
+
+.security-gate:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  z-index: 3;
+  top: 156px;
+  right: -37px;
+  width: 36px;
+  height: 3px;
+  background: var(--blue);
+}
+
+.gate-heading {
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  align-items: center;
+  gap: 10px;
+}
+
+.gate-number {
+  color: var(--blue);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.gate-technical {
+  grid-column: 2;
+  color: #4a515b;
+  font-size: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.gate-visual {
+  display: block;
+  width: 200px;
+  height: 120px;
+  margin: 22px auto 20px;
+  fill: none;
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gate-code-visual,
+.gate-pair-visual {
+  margin-top: 50px;
+  margin-bottom: -8px;
+  transform: translateY(-27px);
+}
+
+.gate-pair-visual {
+  width: min(280px, 100%);
+}
+
+.gate-accent,
+.gate-pair-link {
+  stroke: var(--blue);
+}
+
+.gate-node {
+  fill: white;
+  stroke: var(--ink);
+}
+
+.gate-code-visual .gate-ink,
+.gate-pair-visual .gate-ink {
+  stroke: var(--ink);
+}
+
+.gate-code-frame {
+  fill: #f7f9fd;
+  stroke: #cbd6e8;
+}
+
+.gate-code-visual text {
+  fill: var(--blue);
+  stroke: none;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  font-size: 31px;
+  font-weight: 850;
+  letter-spacing: 2px;
+}
+
+.gate-pair-link {
+  stroke-dasharray: 5 6;
+}
+
+.gate-pair-shield {
+  fill: white;
+  stroke: var(--blue);
+}
+
+.gate-pair-check {
+  stroke: var(--blue);
+  stroke-width: 3.5;
+}
+
+.gate-shield {
+  position: absolute;
+  z-index: 5;
+  top: 130px;
+  right: -41px;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 54px;
+  background: transparent;
+}
+
+.gate-shield svg {
+  width: 46px;
+  height: 54px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gate-shield-fill {
+  fill: var(--blue);
+  stroke: var(--blue);
+  stroke-width: 2;
+}
+
+.gate-shield-inset {
+  fill: none;
+  stroke: white;
+  stroke-width: 2.5;
+}
+
+.security-gate h3 {
+  margin: 0 0 12px;
+  font-size: 23px;
+  line-height: 1.25;
+  text-align: center;
+}
+
+.security-gate p {
+  max-width: 300px;
+  margin: 0;
+  margin-inline: auto;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.security-gates-channel {
+  margin-top: 21px;
+  margin-inline: 0;
+  padding: 22px 0 20px;
+  color: white;
+  background: #10161d;
+  border-radius: 2px;
+}
+
+.gate-channel-facts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  column-gap: 36px;
+  align-items: center;
+}
+
+.gate-channel-facts > * {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  min-height: 50px;
+  padding: 0 18px;
+  text-align: center;
+}
+
+.gate-channel-facts > *:first-child {
+  color: white;
+}
+
+.gate-channel-facts > *:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  right: -19px;
+  width: 1px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.gate-channel-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  min-width: 0;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.gate-channel-item > span {
+  min-width: 0;
+}
+
+.gate-channel-icon {
+  flex: 0 0 auto;
+  width: 48px;
+  height: 54px;
+  fill: none;
+  stroke: var(--blue);
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.gate-handshake-icon {
+  width: 50px;
+  height: 44px;
+  stroke-width: 1.25;
+}
+
+.security-gates-channel p {
+  margin: 14px 0 0;
+  color: #aeb7bd;
+  font-size: 15px;
+  text-align: center;
+}
+
+html[lang="ko"] .security-gates-intro,
+html[lang="ko"] .security-gate {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+html[lang="ja"] .gate-channel-item {
+  font-size: 15px;
+}
+
+html[lang="ja"] .security-gates-intro h2 {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+}
+
 .product-tour {
   display: grid;
   grid-template-columns: minmax(380px, 548px) minmax(420px, 500px);
@@ -3197,6 +3515,81 @@ footer p {
     width: 100%;
   }
 
+  .security-gates {
+    grid-template-columns: 1fr;
+  }
+
+  .security-gates::before,
+  .security-gates::after {
+    content: none;
+  }
+
+  .security-gate {
+    display: grid;
+    grid-template-columns: 100px minmax(0, 1fr);
+    grid-template-areas:
+      "heading heading"
+      "visual title"
+      "visual body";
+    column-gap: 22px;
+    min-height: 0;
+  }
+
+  .security-gate:not(:last-child)::after {
+    top: auto;
+    right: auto;
+    bottom: -21px;
+    left: 75px;
+    width: 2px;
+    height: 20px;
+  }
+
+  .gate-shield {
+    top: auto;
+    right: auto;
+    bottom: -43px;
+    left: 54px;
+    width: 42px;
+    height: 44px;
+    background: var(--canvas);
+  }
+
+  .gate-shield svg {
+    width: 34px;
+    height: 40px;
+  }
+
+  .gate-heading {
+    grid-area: heading;
+  }
+
+  .gate-visual {
+    grid-area: visual;
+    align-self: center;
+    width: 104px;
+    height: 72px;
+    margin: 18px 0 0;
+  }
+
+  .gate-code-visual,
+  .gate-pair-visual {
+    transform: none;
+  }
+
+  .security-gate h3 {
+    grid-area: title;
+    align-self: end;
+    margin-top: 18px;
+    text-align: left;
+  }
+
+  .security-gate p {
+    grid-area: body;
+    align-self: start;
+    margin-inline: 0;
+    text-align: left;
+  }
+
   .product-tour,
   .license-section,
   .compatibility-section,
@@ -3401,6 +3794,80 @@ footer p {
 
   .scene-stage-list button > small {
     font-size: 14px;
+  }
+
+  .security-gates-section {
+    padding-top: 68px;
+    padding-inline: 20px;
+    padding-bottom: 68px;
+  }
+
+  .security-gates {
+    margin-top: 34px;
+  }
+
+  .security-gate {
+    grid-template-columns: 76px minmax(0, 1fr);
+    column-gap: 16px;
+    padding: 20px;
+  }
+
+  .security-gate:not(:last-child)::after {
+    left: 57px;
+  }
+
+  .gate-shield {
+    left: 36px;
+  }
+
+  .gate-technical {
+    font-size: 12px;
+  }
+
+  .gate-visual {
+    width: 76px;
+    height: 68px;
+  }
+
+  .security-gate h3 {
+    font-size: 18px;
+  }
+
+  .gate-channel-facts {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .gate-channel-facts > * {
+    padding: 10px 0;
+  }
+
+  .gate-channel-facts > * + * {
+    border-top: 1px solid #47515a;
+    border-left: 0;
+  }
+
+  .gate-channel-facts > *::after {
+    content: none;
+  }
+
+  .security-gates-channel {
+    margin-inline: 0;
+    padding: 18px 20px;
+  }
+
+  .gate-channel-item {
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  .gate-channel-icon {
+    width: 34px;
+    height: 40px;
+  }
+
+  .security-gates-channel p {
+    line-height: 1.45;
   }
 
   .security-grid {
