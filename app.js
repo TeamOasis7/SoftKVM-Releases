@@ -526,7 +526,7 @@ const translations = {
     "faq.dotnet.q": ".NET을 별도로 설치해야 하나요?",
     "faq.dotnet.a": "아니요. 공개 Windows x64 빌드는 필요한 런타임을 포함합니다.",
     "faq.game.q": "게임에서도 사용할 수 있나요?",
-    "faq.game.a": "게임 정밀 모드로 여러 게임과 3D 앱을 지원합니다. Windows 합성 입력을 차단하는 안티치트 게임은 지원하지 않습니다.",
+    "faq.game.a": "Game precision mode로 여러 게임과 3D 앱을 지원합니다. Windows 합성 입력을 차단하는 안티치트 게임은 지원하지 않습니다.",
     "faq.smartscreen.q": "Windows SmartScreen이 왜 표시될 수 있나요?",
     "faq.smartscreen.a": "현재 Soft KVM은 유료 공인 코드서명 인증서가 아닌 개인 게시자 인증서를 사용합니다. 실행 전 공식 릴리즈 출처를 확인하십시오.",
     "faq.share.q": "Windows PC 두 대를 마우스와 키보드 하나로 쓸 수 있나요?",
