@@ -45,12 +45,13 @@ Soft KVM은 같은 신뢰할 수 있는 로컬 네트워크의 Windows PC 두 �
 - **Mouse control**: 마우스 입력을 대기 PC로 보냅니다.
 - **Block local key**: 키를 원격으로 보내면서 제어 PC의 로컬 입력을 막습니다.
 - **Block local clicks**: 클릭을 원격으로 보내면서 제어 PC의 로컬 클릭을 막습니다.
-- **Game precision mode**: 게임과 3D 프로그램용 상대 마우스 이동을 사용합니다.
+- **Game precision mode**: 게임과 3D 프로그램용 Raw Input 마우스 이동량을 사용합니다.
 - **Connection group**: 같은 그룹 이름을 사용하는 PC만 검색합니다.
 - **Pairing**: 현재 그룹에 등록된 PC를 표시합니다. **Unpair**를 누르면 등록을 지우며 다음 연결에서 최초 페어링을 다시 진행합니다.
 - **Monitor**: 입력과 Swap 경계의 기준으로 사용할 모니터를 선택합니다.
 - **Control UAC screens**: 관리자 승인 후 UAC 화면과 관리자 권한 프로그램을 제어합니다.
 - **Block macro / automated input**: 매크로나 자동화 도구가 만든 입력을 전송 대상에서 제외합니다. 신뢰할 수 있는 자동화 입력을 의도적으로 전송할 때만 끄십시오.
+- **Indicator over**: 제어창의 보라색 Swap 또는 초록색 동시제어 띠를 독립적으로 드래그할 수 있는 최상위 인디케이터로 분리합니다. 붙은 띠를 더블 클릭하면 분리되고, 분리된 띠를 더블 클릭하면 제어창을 복원해 다시 결합합니다. 대기 PC 미니모드는 별도로 유지됩니다.
 
 설정은 현재 Windows 사용자 계정에 저장되며 다른 PC로 자동 복사되지 않습니다.
 
@@ -69,7 +70,7 @@ Soft KVM은 같은 신뢰할 수 있는 로컬 네트워크의 Windows PC 두 �
 
 ## Game precision mode
 
-게임에서 연속적인 카메라 이동이 필요할 때 **Game precision mode**를 사용합니다. 일반 데스크톱 조작이나 절대 포인터 위치가 필요한 게임 메뉴를 사용하기 전에는 끄십시오. Windows 합성 입력을 차단하는 안티치트 게임은 지원되지 않습니다.
+**Game precision mode**는 제어 PC에서만 설정하며 대기 PC와 값을 맞출 필요가 없습니다. Swap mode에서는 ON이 Raw Input 이동량을, OFF가 일반 저수준 마우스 훅 이동량을 사용하며 전환 로직은 바뀌지 않습니다. Swap mode를 끈 동시제어에서는 이 옵션을 끄면 일반 절대 포인터 전달로 돌아갑니다. Windows 합성 입력을 차단하는 안티치트 게임은 지원되지 않습니다.
 
 ## 연결과 보안
 
