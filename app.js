@@ -79,7 +79,7 @@ const translations = {
     "setup.step4.title": "Confirm and connect",
     "setup.step4.body": "Check the pairing code on both PCs, then approve the connection.",
     "download.label": "CURRENT RELEASE",
-    "download.facts": "v1.6b · Windows 10/11 x64 · 111 MB · Single EXE · Private publisher signature",
+    "download.facts": "v1.7b · Windows 10/11 x64 · 111 MB · Single EXE · Private publisher signature",
     "download.exeAction": "Download EXE · 111 MB",
     "download.trustFiles": "One-time trust setup files",
     "download.trustHelp": "Keep both files in the same folder as the EXE for first launch.",
@@ -181,7 +181,7 @@ const translations = {
     "footer.contact": "Contact",
     "footer.license": "License",
     "footer.privacy": "Privacy",
-    "footer.release": "Release v1.6b"
+    "footer.release": "Release v1.7b"
   },
   ja: {
     "aria.home": "Soft KVM ホーム",
@@ -259,7 +259,7 @@ const translations = {
     "setup.step4.title": "確認して接続",
     "setup.step4.body": "両方のPCに表示されるペアリングコードを確認して、接続を承認します。",
     "download.label": "現在のリリース",
-    "download.facts": "v1.6b · Windows 10/11 x64 · 111 MB · 単一EXE · プライベート発行者証明書で署名",
+    "download.facts": "v1.7b · Windows 10/11 x64 · 111 MB · 単一EXE · プライベート発行者証明書で署名",
     "download.exeAction": "EXEをダウンロード · 111 MB",
     "download.trustFiles": "初回のみ必要な信頼設定ファイル",
     "download.trustHelp": "初回起動のため、これらのファイルをEXEと同じフォルダーに置いてください。",
@@ -361,7 +361,7 @@ const translations = {
     "footer.contact": "お問い合わせ",
     "footer.license": "ライセンス",
     "footer.privacy": "プライバシー",
-    "footer.release": "リリース v1.6b"
+    "footer.release": "リリース v1.7b"
   },
   ko: {
     "aria.home": "Soft KVM 홈",
@@ -439,7 +439,7 @@ const translations = {
     "setup.step4.title": "확인 후 연결",
     "setup.step4.body": "양쪽 PC의 페어링 코드를 확인하고 연결을 승인합니다.",
     "download.label": "현재 릴리즈",
-    "download.facts": "v1.6b · Windows 10/11 x64 · 111 MB · 단일 EXE · 개인 게시자 서명",
+    "download.facts": "v1.7b · Windows 10/11 x64 · 111 MB · 단일 EXE · 개인 게시자 서명",
     "download.exeAction": "EXE 다운로드 · 111 MB",
     "download.trustFiles": "최초 1회 신뢰 설정 파일",
     "download.trustHelp": "최초 실행을 위해 두 파일을 EXE와 같은 폴더에 두세요.",
@@ -541,7 +541,7 @@ const translations = {
     "footer.contact": "문의",
     "footer.license": "라이선스",
     "footer.privacy": "개인정보",
-    "footer.release": "릴리즈 v1.6b"
+    "footer.release": "릴리즈 v1.7b"
   }
 };
 
