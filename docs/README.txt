@@ -23,7 +23,8 @@ INSTALLATION
 3. If Windows SmartScreen appears, confirm that the file came from the official
    Soft KVM release before choosing to run it.
 4. When Soft KVM shows the one-time publisher trust setup prompt, approve it to
-   run Install-SoftKVM-Certificate.cmd.
+   install SoftKVM-Publisher.cer for the current Windows user. If only the CMD
+   helper is available, Soft KVM can run Install-SoftKVM-Certificate.cmd instead.
 5. If the prompt does not appear, run Install-SoftKVM-Certificate.cmd manually.
 6. Use the same Soft KVM version on both PCs and allow the Windows Defender
    Firewall prompt for trusted local network communication.
@@ -50,8 +51,10 @@ QUICK START
    폴더에 둡니다.
 2. Soft KVM EXE를 실행합니다.
 3. SmartScreen이 나타나면 공식 배포 파일인지 확인한 뒤 실행합니다.
-4. 최초 게시자 신뢰 설정 안내가 나타나면 승인하여 인증서 설치 CMD를
-   실행합니다. 안내가 나타나지 않으면 CMD를 직접 한 번 실행합니다.
+4. 최초 게시자 신뢰 설정 안내가 나타나면 승인하여 현재 Windows 사용자에
+   SoftKVM-Publisher.cer를 설치합니다. CER 직접 설치가 불가능한 경우에는
+   인증서 설치 CMD를 실행할 수 있습니다. 안내가 나타나지 않으면 CMD를
+   직접 한 번 실행합니다.
 5. 두 PC에서 같은 버전을 사용하고 Windows 방화벽의 로컬 네트워크 통신을
    허용합니다.
 6. 제어받을 PC에서 Wait, 제어할 PC에서 Control을 선택하고 코드를 입력합니다.

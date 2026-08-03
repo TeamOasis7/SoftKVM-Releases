@@ -166,7 +166,7 @@ const translations = {
     "faq.dotnet.q": "Do I need to install .NET?",
     "faq.dotnet.a": "No. The public Windows x64 build is self-contained.",
     "faq.game.q": "Does it work with games?",
-    "faq.game.a": "Game input mode supports many games and 3D apps. Games that block Windows synthetic input through anti-cheat are not supported.",
+    "faq.game.a": "Game precision mode supports many games and 3D apps. Games that block Windows synthetic input through anti-cheat are not supported.",
     "faq.smartscreen.q": "Why can Windows SmartScreen appear?",
     "faq.smartscreen.a": "Soft KVM currently uses a private publisher certificate, not a paid public code-signing certificate. Check the official release source before running it.",
     "faq.share.q": "Can I share one mouse and keyboard between two Windows PCs?",
@@ -346,7 +346,7 @@ const translations = {
     "faq.dotnet.q": ".NETを別途インストールする必要がありますか？",
     "faq.dotnet.a": "いいえ。公開Windows x64ビルドには必要なランタイムが含まれています。",
     "faq.game.q": "ゲームでも使えますか？",
-    "faq.game.a": "Game input modeで多くのゲームや3Dアプリに対応します。Windowsの合成入力をブロックするアンチチート採用ゲームはサポートしていません。",
+    "faq.game.a": "Game precision modeで多くのゲームや3Dアプリに対応します。Windowsの合成入力をブロックするアンチチート採用ゲームはサポートしていません。",
     "faq.smartscreen.q": "Windows SmartScreenが表示されるのはなぜですか？",
     "faq.smartscreen.a": "現在のSoft KVMは、有料の公的コード署名証明書ではなくプライベート発行者証明書を使用しています。実行前に公式リリース元を確認してください。",
     "faq.share.q": "2台のWindows PCでマウスとキーボードを共有できますか？",
@@ -526,7 +526,7 @@ const translations = {
     "faq.dotnet.q": ".NET을 별도로 설치해야 하나요?",
     "faq.dotnet.a": "아니요. 공개 Windows x64 빌드는 필요한 런타임을 포함합니다.",
     "faq.game.q": "게임에서도 사용할 수 있나요?",
-    "faq.game.a": "Game input mode로 여러 게임과 3D 앱을 지원합니다. Windows 합성 입력을 차단하는 안티치트 게임은 지원하지 않습니다.",
+    "faq.game.a": "게임 정밀 모드로 여러 게임과 3D 앱을 지원합니다. Windows 합성 입력을 차단하는 안티치트 게임은 지원하지 않습니다.",
     "faq.smartscreen.q": "Windows SmartScreen이 왜 표시될 수 있나요?",
     "faq.smartscreen.a": "현재 Soft KVM은 유료 공인 코드서명 인증서가 아닌 개인 게시자 인증서를 사용합니다. 실행 전 공식 릴리즈 출처를 확인하십시오.",
     "faq.share.q": "Windows PC 두 대를 마우스와 키보드 하나로 쓸 수 있나요?",
@@ -700,7 +700,7 @@ function createSoftKvmMarkup(state) {
             <div>${toggleMarkup("Block local key", false)}${toggleMarkup("Block local clicks", false)}</div>
           </section>
           <div class="demo-inline-options">
-            ${toggleMarkup("Game input mode", true, true)}
+            ${toggleMarkup("Game precision mode", true, true)}
             <span class="demo-check"><i>✓</i>Control UAC screens</span>
           </div>
           <section class="demo-group demo-swap">

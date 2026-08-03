@@ -1,14 +1,16 @@
 SOFT KVM PRIVACY NOTICE
-Effective date: July 27, 2026
+Effective date: July 31, 2026
 
-Soft KVM does not require an account and does not include advertising,
-analytics, telemetry, or a central service that collects usage statistics.
+Soft KVM does not require a user account and does not include advertising.
+Personal Free users may optionally share the limited usage statistics described
+in section 4. Declining this option does not restrict Personal Free use.
 
 1. Local data
 
-Soft KVM stores settings, pairing identity, and trusted peer information on the
-Windows PC where it runs. This local data is used to operate the application and
-is not sent to SoftKVM.
+Soft KVM stores settings, pairing identity, trusted peer information, and
+license state on the Windows PC where it runs. Private pairing and license-device
+keys are protected for the current Windows user. This local data is used to
+operate the application.
 
 2. Local network communication
 
@@ -17,36 +19,118 @@ local network. Connection discovery, pairing, and encrypted keyboard and mouse
 traffic are sent between the PCs selected by the user. SoftKVM does not operate
 a relay server for this traffic.
 
-3. Internet communication
+3. Business Pro activation
+
+Business Pro activation sends the entered license key, a license-device public
+key and proof, a device identifier derived from that public key, the Windows
+device name, and the app version to the Soft KVM licensing service hosted on
+Cloudflare. The service stores a keyed hash of the license key and device
+identifier. Customer and device labels stored for license administration are
+encrypted. The license-device private key never leaves the PC.
+
+An activated app checks its license status on startup no more than once every
+24 hours. Network failure alone does not disable a perpetual license.
+
+4. Optional Personal Free usage statistics
+
+The first-run notice offers an unchecked option to share minimal usage
+statistics. If enabled, Personal Free sends the following no more than once
+every 30 days:
+
+- a random installation identifier generated after consent;
+- the app version;
+- the app interface language; and
+- a two-letter country code determined by Cloudflare from the request.
+
+SoftKVM does not store the request IP address, hardware serial numbers, Windows
+user name, computer name, email address, or exact location for this purpose.
+The server immediately converts the random installation identifier to a keyed
+hash and stores only that hash. Records are deleted after 400 days without a
+new report. Country information can be inaccurate when a VPN, proxy, or
+corporate network is used.
+
+The option can be changed in the License screen. Turning it off stops future
+reports and deletes the local statistics identifier and schedule. The
+previously stored pseudonymous server record cannot be linked back to a named
+user by SoftKVM and expires under the retention rule.
+
+5. Updates and service providers
 
 When the user checks for updates, Soft KVM contacts the public GitHub API and
-GitHub release download service. These services may receive standard network
-information such as an IP address under their own privacy policies. Soft KVM
-does not add a user identifier or usage-statistics payload to these requests.
+GitHub release download service. GitHub and Cloudflare may receive standard
+network information, including an IP address, under their own privacy policies.
+SoftKVM does not add usage statistics to update requests.
 
-4. Business inquiries and feedback
+6. Business inquiries and contact
 
-Information voluntarily sent to teamoasis78@gmail.com is used to respond to the
-inquiry, evaluate a report or request, and maintain necessary business records.
-Do not send passwords, private keys, pairing secrets, or other unnecessary
-sensitive information.
+Information voluntarily sent to teamoasis78@gmail.com is used to answer the
+inquiry and maintain necessary business records. Do not send passwords, private
+keys, pairing secrets, or other unnecessary sensitive information.
 
-5. Changes and contact
-
-This notice will be updated before Soft KVM adds account, activation, telemetry,
-or other central data collection. Privacy questions may be sent to:
+Privacy questions may be sent to:
 
 teamoasis78@gmail.com
 
 한국어 안내
+시행일: 2026년 7월 31일
 
-Soft KVM은 계정, 광고, 분석 도구, 텔레메트리 또는 사용 통계 수집 서버를
-사용하지 않습니다. 설정과 페어링 정보는 실행 중인 Windows PC에 저장됩니다.
-키보드와 마우스 입력은 사용자가 연결한 로컬 네트워크의 두 PC 사이에서만
-암호화되어 전송됩니다.
+Soft KVM은 사용자 계정을 요구하지 않으며 광고를 포함하지 않습니다.
+Personal Free 사용자는 아래의 최소 사용 통계를 선택적으로 제공할 수
+있습니다. 동의하지 않아도 Personal Free 사용은 제한되지 않습니다.
 
-사용자가 업데이트 확인을 누르면 GitHub에 요청을 보냅니다. Soft KVM은 이
-요청에 별도의 사용자 식별자나 사용 통계를 추가하지 않습니다. 문의 메일로
-자발적으로 제공한 정보는 문의 답변과 처리 목적으로 사용됩니다.
+1. 로컬 데이터
+
+설정, 페어링 신원, 신뢰한 상대 PC 정보와 라이선스 상태는 Soft KVM이 실행되는
+Windows PC에 저장됩니다. 페어링 및 라이선스 장치 개인 키는 현재 Windows
+사용자용으로 보호되며 PC 밖으로 전송되지 않습니다.
+
+2. 로컬 네트워크 통신
+
+검색, 페어링, 암호화된 키보드·마우스 입력은 사용자가 선택한 로컬 네트워크의
+두 PC 사이에서 전송됩니다. SoftKVM은 입력 중계 서버를 운영하지 않습니다.
+
+3. Business Pro 활성화
+
+Business Pro 활성화 시 입력한 라이선스 키, 라이선스 장치 공개 키와 서명,
+공개 키에서 파생된 장치 식별자, Windows 장치 이름 및 앱 버전을 Cloudflare에
+호스팅된 Soft KVM 라이선스 서비스로 전송합니다. 서버는 라이선스 키와 장치
+식별자의 키 기반 해시를 저장하며, 관리자용 고객명과 장치명은 암호화하여
+저장합니다. 활성화된 앱은 시작 시 24시간에 한 번 이하로 상태를 확인하며,
+네트워크 오류만으로 영구 라이선스를 해제하지 않습니다.
+
+4. 선택적 Personal Free 사용 통계
+
+최초 실행 안내창에는 기본적으로 체크되지 않은 최소 통계 공유 항목이
+표시됩니다. 사용자가 선택하면 Personal Free는 30일에 한 번 이하로 다음
+정보를 전송합니다.
+
+- 동의 후 생성되는 무작위 설치 식별자
+- 앱 버전
+- 앱 표시 언어
+- Cloudflare가 요청에서 판별한 두 글자 국가 코드
+
+SoftKVM은 이 목적으로 IP 주소 원문, 하드웨어 시리얼, Windows 사용자 이름,
+컴퓨터 이름, 이메일 또는 정확한 위치를 저장하지 않습니다. 서버는 무작위
+설치 식별자를 즉시 키 기반 해시로 변환해 해시만 저장합니다. 마지막 통계
+전송 후 400일이 지난 기록은 삭제됩니다. VPN, 프록시 또는 회사 네트워크를
+사용하면 국가 정보가 정확하지 않을 수 있습니다.
+
+License 화면에서 언제든 설정을 변경할 수 있습니다. 체크를 해제하면 이후
+전송이 중단되고 로컬 통계 식별자와 전송 일정이 삭제됩니다. 서버에 먼저
+저장된 가명 기록은 SoftKVM이 특정 사용자 이름과 연결할 수 없으며 보관
+기간이 지나면 삭제됩니다.
+
+5. 업데이트와 서비스 제공자
+
+업데이트 확인 시 GitHub API와 릴리스 다운로드 서비스에 연결합니다.
+GitHub와 Cloudflare는 각자의 개인정보 처리방침에 따라 IP 주소 등 표준
+네트워크 정보를 처리할 수 있습니다. 업데이트 요청에는 사용 통계를
+추가하지 않습니다.
+
+6. 문의
+
+teamoasis78@gmail.com 으로 자발적으로 보낸 정보는 문의 답변과 필요한 업무
+기록 유지에 사용됩니다. 비밀번호, 개인 키, 페어링 비밀정보 등 불필요한
+민감정보를 보내지 마십시오.
 
 개인정보 문의: teamoasis78@gmail.com
