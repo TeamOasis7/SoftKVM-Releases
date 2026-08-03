@@ -28,7 +28,7 @@ After pressing either `K` or `M`, press the other key within 250 milliseconds. H
 
 - `X` to turn local click blocking on or off
 - `K` to turn local keyboard blocking on or off
-- `G` to turn game input mode on or off
+- `G` to turn game precision mode on or off
 - `Z` to pause or resume remote input
 - `E` to stop immediately and recover input
 - `Esc` to close the command window
@@ -45,7 +45,7 @@ When the command window is closed, `Esc` is treated as a normal key according to
 - **Mouse control**: sends mouse input to the waiting PC.
 - **Block local key**: keeps sending keys remotely while preventing local typing.
 - **Block local clicks**: keeps sending clicks remotely while preventing clicks outside Soft KVM on the controlling PC.
-- **Game input mode**: uses relative mouse movement for games and 3D applications.
+- **Game precision mode**: uses relative mouse movement for games and 3D applications.
 - **Connection group**: limits discovery to PCs using the same group name.
 - **Pairing**: shows the PC paired with the current connection group. Select **Unpair** to remove it and require first-time pairing on the next connection.
 - **Monitor**: selects the monitor used for input and Swap edges.
@@ -67,9 +67,9 @@ The direction is always based on the controlling PC. For example, `Left` means t
 
 If the two PCs use different directions or only one PC has Swap mode enabled, Soft KVM asks you to correct the settings.
 
-## Game input mode
+## Game precision mode
 
-Use **Game input mode** when a game needs continuous camera movement. Turn it off before using normal desktop controls or game menus that require absolute pointer positions.
+Use **Game precision mode** when a game needs continuous camera movement. Turn it off before using normal desktop controls or game menus that require absolute pointer positions.
 
 Use the same latest Soft KVM EXE on both PCs. Games that reject Windows synthetic input through anti-cheat protection are not supported.
 
