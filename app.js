@@ -31,7 +31,7 @@ const translations = {
     "hero.trustHelp": "Trust setup files:",
     "hero.signatureVerified": "Private publisher signature verified",
     "hero.hashAvailable": "SHA-256 available",
-    "hero.zipDownload": "Download complete ZIP · 44 MB",
+    "hero.zipDownload": "Download complete ZIP · 45 MB",
     "hero.zipHelp": "EXE and trust files in one folder",
     "hero.recommended": "RECOMMENDED",
     "hero.guide": "View setup guide",
@@ -79,11 +79,11 @@ const translations = {
     "setup.step4.title": "Confirm and connect",
     "setup.step4.body": "Check the pairing code on both PCs, then approve the connection.",
     "download.label": "CURRENT RELEASE",
-    "download.facts": "v1.7b · Windows 10/11 x64 · 111 MB · Single EXE · Private publisher signature",
+    "download.facts": "v1.8b · Windows 10/11 x64 · 111 MB · Single EXE · Private publisher signature",
     "download.exeAction": "Download EXE · 111 MB",
     "download.trustFiles": "One-time trust setup files",
     "download.trustHelp": "Keep both files in the same folder as the EXE for first launch.",
-    "download.bundleAction": "Download complete ZIP · 44 MB",
+    "download.bundleAction": "Download complete ZIP · 45 MB",
     "download.bundleContents": "EXE, checksum, trust setup, and documents",
     "download.hashFile": "Checksum file",
     "download.copyHash": "Copy",
@@ -181,7 +181,7 @@ const translations = {
     "footer.contact": "Contact",
     "footer.license": "License",
     "footer.privacy": "Privacy",
-    "footer.release": "Release v1.7b"
+    "footer.release": "Release v1.8b"
   },
   ja: {
     "aria.home": "Soft KVM ホーム",
@@ -211,7 +211,7 @@ const translations = {
     "hero.trustHelp": "信頼設定ファイル:",
     "hero.signatureVerified": "プライベート発行者証明書の署名を確認済み",
     "hero.hashAvailable": "SHA-256を提供",
-    "hero.zipDownload": "一式ZIPをダウンロード · 44 MB",
+    "hero.zipDownload": "一式ZIPをダウンロード · 45 MB",
     "hero.zipHelp": "EXEと信頼設定ファイルを同じフォルダーに同梱",
     "hero.recommended": "推奨",
     "hero.guide": "セットアップを見る",
@@ -259,11 +259,11 @@ const translations = {
     "setup.step4.title": "確認して接続",
     "setup.step4.body": "両方のPCに表示されるペアリングコードを確認して、接続を承認します。",
     "download.label": "現在のリリース",
-    "download.facts": "v1.7b · Windows 10/11 x64 · 111 MB · 単一EXE · プライベート発行者証明書で署名",
+    "download.facts": "v1.8b · Windows 10/11 x64 · 111 MB · 単一EXE · プライベート発行者証明書で署名",
     "download.exeAction": "EXEをダウンロード · 111 MB",
     "download.trustFiles": "初回のみ必要な信頼設定ファイル",
     "download.trustHelp": "初回起動のため、これらのファイルをEXEと同じフォルダーに置いてください。",
-    "download.bundleAction": "一式ZIPをダウンロード · 44 MB",
+    "download.bundleAction": "一式ZIPをダウンロード · 45 MB",
     "download.bundleContents": "EXE、チェックサム、信頼設定、文書を同梱",
     "download.hashFile": "チェックサムファイル",
     "download.copyHash": "コピー",
@@ -361,7 +361,7 @@ const translations = {
     "footer.contact": "お問い合わせ",
     "footer.license": "ライセンス",
     "footer.privacy": "プライバシー",
-    "footer.release": "リリース v1.7b"
+    "footer.release": "リリース v1.8b"
   },
   ko: {
     "aria.home": "Soft KVM 홈",
@@ -391,7 +391,7 @@ const translations = {
     "hero.trustHelp": "신뢰 설정 파일:",
     "hero.signatureVerified": "개인 게시자 서명 확인",
     "hero.hashAvailable": "SHA-256 제공",
-    "hero.zipDownload": "전체 ZIP 다운로드 · 44 MB",
+    "hero.zipDownload": "전체 ZIP 다운로드 · 45 MB",
     "hero.zipHelp": "EXE와 신뢰 설정 파일을 한 폴더에 포함",
     "hero.recommended": "권장",
     "hero.guide": "설치 방법 보기",
@@ -439,11 +439,11 @@ const translations = {
     "setup.step4.title": "확인 후 연결",
     "setup.step4.body": "양쪽 PC의 페어링 코드를 확인하고 연결을 승인합니다.",
     "download.label": "현재 릴리즈",
-    "download.facts": "v1.7b · Windows 10/11 x64 · 111 MB · 단일 EXE · 개인 게시자 서명",
+    "download.facts": "v1.8b · Windows 10/11 x64 · 111 MB · 단일 EXE · 개인 게시자 서명",
     "download.exeAction": "EXE 다운로드 · 111 MB",
     "download.trustFiles": "최초 1회 신뢰 설정 파일",
     "download.trustHelp": "최초 실행을 위해 두 파일을 EXE와 같은 폴더에 두세요.",
-    "download.bundleAction": "전체 ZIP 다운로드 · 44 MB",
+    "download.bundleAction": "전체 ZIP 다운로드 · 45 MB",
     "download.bundleContents": "EXE, 체크섬, 신뢰 설정, 문서 포함",
     "download.hashFile": "체크섬 파일",
     "download.copyHash": "복사",
@@ -541,7 +541,7 @@ const translations = {
     "footer.contact": "문의",
     "footer.license": "라이선스",
     "footer.privacy": "개인정보",
-    "footer.release": "릴리즈 v1.7b"
+    "footer.release": "릴리즈 v1.8b"
   }
 };
 
