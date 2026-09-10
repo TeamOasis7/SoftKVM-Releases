@@ -89,13 +89,3 @@ Soft KVMは、同じ信頼できるローカルネットワーク上の2台のWi
 各PCは保存済みのRSAデバイス識別鍵で、一時P-256 ECDH公開鍵、役割、プロトコルバージョン、nonce、デバイス証明書を含むハンドシェイクに署名します。両者は認証済みのECDH共有秘密から方向別のAES-256-GCMキーを生成します。初回接続時は両方の画面に表示される6桁のコードで相互確認し、その後の接続では保存済みのペアリング相手を確認します。
 
 2桁の接続コードと **Connection group** はPCを検出するための情報であり、パスワードではありません。信頼できるローカルネットワークでのみ使用し、Soft KVMの検出ポートや待受ポートをインターネットへ直接公開しないでください。脅威モデルについては [SECURITY.md](SECURITY.md) を参照してください。
-
-## ビルド
-
-リリース作成には.NET SDK `10.0.302` とリポジトリのリリース作成スクリプトを使用します。
-
-```powershell
-.\publish-release.ps1
-```
-
-公開されるWindows x64 EXEは自己完結型で、.NETを別途インストールする必要はありません。検証手順は [CODING_GUARDRAILS.md](CODING_GUARDRAILS.md)、バージョンとアセットの規則は [VERSIONING.md](VERSIONING.md)、署名キーの復旧とリリース準備は [SIGNING_KEY_RECOVERY.md](SIGNING_KEY_RECOVERY.md) を参照してください。

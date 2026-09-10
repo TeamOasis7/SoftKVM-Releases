@@ -90,18 +90,3 @@ Use the same latest Soft KVM EXE on both PCs. Games that reject Windows syntheti
 Each PC signs a handshake containing its one-time P-256 ECDH public key, role, protocol version, nonce, and device certificate with its saved RSA device identity. Both sides derive direction-specific AES-256-GCM keys from the authenticated ECDH shared secret. The first connection binds those identities to the 6-digit code shown on both screens; later connections verify the saved paired PC.
 
 The 2-digit connection code and **Connection group** help find the intended PC; they are not passwords. Keep using Soft KVM on a trusted local network, and do not expose its discovery or listening ports directly to the internet. See [SECURITY.md](SECURITY.md) for the threat model.
-
-## Build
-
-Release publishing uses .NET SDK `10.0.302` and the repository publishing
-script:
-
-```powershell
-.\publish-release.ps1
-```
-
-The published Windows x64 EXE is self-contained and does not require a separate .NET installation.
-See [CODING_GUARDRAILS.md](CODING_GUARDRAILS.md) for the verification sequence,
-[VERSIONING.md](VERSIONING.md) for version and asset rules, and
-[SIGNING_KEY_RECOVERY.md](SIGNING_KEY_RECOVERY.md) for signing-key recovery and
-release-upload preparation.
