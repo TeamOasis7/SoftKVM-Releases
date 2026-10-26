@@ -57,6 +57,7 @@ const translations = {
     "tour.eyebrow": "ACTUAL APP",
     "tour.title": "Keyboard and mouse sharing without cloud accounts.",
     "tour.body": "The compact bar keeps Wait and Control one click away. Open Settings only when you need pairing, input, Swap mode, or startup options.",
+    "tour.clipboard": "Optional bidirectional clipboard sharing supports text, images, and one file up to 100 MiB in Free. Pro adds larger or multiple files and manual sending. Clipboard sharing is off by default.",
     "tour.quick": "Quick bar",
     "tour.control": "Control",
     "tour.settings": "Full settings",
@@ -69,7 +70,7 @@ const translations = {
     "tour.settingsBody": "Pairing, monitor choice, input controls, Swap mode, startup, manual, and updates stay together.",
     "setup.eyebrow": "QUICK SETUP",
     "setup.title": "Set up local Windows PC control in a few minutes.",
-    "setup.lead": "Use the same release files on both computers. One PC waits; the other controls.",
+    "setup.lead": "Install the same current release on both PCs before connecting; older releases are incompatible. One PC waits; the other controls.",
     "setup.step1.title": "Download the release",
     "setup.step1.body": "Download the complete ZIP, or keep the EXE, certificate, and setup CMD in the same folder.",
     "setup.step2.title": "Complete trust setup once",
@@ -79,7 +80,7 @@ const translations = {
     "setup.step4.title": "Confirm and connect",
     "setup.step4.body": "Check the pairing code on both PCs, then approve the connection.",
     "download.label": "CURRENT RELEASE",
-    "download.facts": "v1.8b · Windows 10/11 x64 · 111 MB · Single EXE · Private publisher signature",
+    "download.facts": "v1.9e · Windows 10/11 x64 · 111 MB · Single EXE · Private publisher signature",
     "download.exeAction": "Download EXE · 111 MB",
     "download.trustFiles": "One-time trust setup files",
     "download.trustHelp": "Keep both files in the same folder as the EXE for first launch.",
@@ -130,7 +131,7 @@ const translations = {
     "compare.title": "A software KVM for local Windows desks.",
     "compare.lead": "Soft KVM is built for people who want one keyboard and mouse across two nearby Windows PCs without a hardware switch, remote desktop session, cloud relay, or account.",
     "compare.hardware.title": "Compared with a hardware KVM",
-    "compare.hardware.body": "No USB or HDMI switching box is required. Both PCs stay on the network and Soft KVM moves only keyboard and mouse input.",
+    "compare.hardware.body": "No USB or HDMI switching box is required. Soft KVM shares keyboard and mouse input over the local network, with optional clipboard and file sharing.",
     "compare.remote.title": "Compared with Remote Desktop",
     "compare.remote.body": "Soft KVM does not stream the screen or log in to a remote session. You keep using each PC's own monitor.",
     "compare.synergy.title": "Compared with Synergy or Barrier",
@@ -181,7 +182,7 @@ const translations = {
     "footer.contact": "Contact",
     "footer.license": "License",
     "footer.privacy": "Privacy",
-    "footer.release": "Release v1.8b"
+    "footer.release": "Release v1.9e"
   },
   ja: {
     "aria.home": "Soft KVM ホーム",
@@ -237,6 +238,7 @@ const translations = {
     "tour.eyebrow": "実際のアプリ",
     "tour.title": "クラウドアカウントなしでキーボードとマウスを共有。",
     "tour.body": "小さなバーから Wait と Control をすぐ選べます。ペアリング、入力、Swap mode、起動オプションが必要な時だけ Settings を開きます。",
+    "tour.clipboard": "任意の双方向クリップボード共有は、Freeでテキスト、画像、100MiB以下のファイル1個に対応します。Proは大容量・複数ファイルと手動送信に対応します。クリップボード共有は初期状態でOFFです。",
     "tour.quick": "クイックバー",
     "tour.control": "Control",
     "tour.settings": "全設定",
@@ -249,7 +251,7 @@ const translations = {
     "tour.settingsBody": "ペアリング、モニター選択、入力制御、Swap mode、自動起動、マニュアル、アップデートをまとめて管理できます。",
     "setup.eyebrow": "クイックセットアップ",
     "setup.title": "数分で、ローカルのWindows PCの操作を始められます。",
-    "setup.lead": "2台のPCで同じリリースファイルを使います。一方を待機側、もう一方を操作側にします。",
+    "setup.lead": "接続前に両方のPCに同じ最新リリースをインストールしてください。以前のリリースとは接続できません。一方を待機側、もう一方を操作側にします。",
     "setup.step1.title": "リリースをダウンロード",
     "setup.step1.body": "一式ZIPをダウンロードするか、EXE、証明書、セットアップCMDを同じフォルダーに置きます。",
     "setup.step2.title": "信頼設定を一度だけ完了",
@@ -259,7 +261,7 @@ const translations = {
     "setup.step4.title": "確認して接続",
     "setup.step4.body": "両方のPCに表示されるペアリングコードを確認して、接続を承認します。",
     "download.label": "現在のリリース",
-    "download.facts": "v1.8b · Windows 10/11 x64 · 111 MB · 単一EXE · プライベート発行者証明書で署名",
+    "download.facts": "v1.9e · Windows 10/11 x64 · 111 MB · 単一EXE · プライベート発行者証明書で署名",
     "download.exeAction": "EXEをダウンロード · 111 MB",
     "download.trustFiles": "初回のみ必要な信頼設定ファイル",
     "download.trustHelp": "初回起動のため、これらのファイルをEXEと同じフォルダーに置いてください。",
@@ -310,7 +312,7 @@ const translations = {
     "compare.title": "ローカルのWindows環境向けソフトウェアKVM。",
     "compare.lead": "Soft KVMは、ハードウェアスイッチ、リモートデスクトップセッション、クラウド中継、アカウントなしで、近くにある2台のWindows PCをキーボードとマウス1組で使いたい人のためのツールです。",
     "compare.hardware.title": "ハードウェアKVMとの比較",
-    "compare.hardware.body": "USBやHDMIの切替器は不要です。2台のPCはネットワーク上に残したまま、Soft KVMはキーボードとマウス入力だけを移動します。",
+    "compare.hardware.body": "USBやHDMIの切替器は不要です。Soft KVMはローカルネットワークでキーボードとマウスを共有し、任意でクリップボードとファイルも共有できます。",
     "compare.remote.title": "リモートデスクトップとの比較",
     "compare.remote.body": "Soft KVMは画面をストリーミングしたり、リモートセッションにログインしたりしません。それぞれのPCの実際のモニターを使い続けます。",
     "compare.synergy.title": "Synergy / Barrierとの比較",
@@ -361,7 +363,7 @@ const translations = {
     "footer.contact": "お問い合わせ",
     "footer.license": "ライセンス",
     "footer.privacy": "プライバシー",
-    "footer.release": "リリース v1.8b"
+    "footer.release": "リリース v1.9e"
   },
   ko: {
     "aria.home": "Soft KVM 홈",
@@ -417,6 +419,7 @@ const translations = {
     "tour.eyebrow": "실제 앱 화면",
     "tour.title": "클라우드 계정 없이 키보드와 마우스를 공유합니다.",
     "tour.body": "작은 바에서 Wait와 Control을 바로 선택합니다. 페어링, 입력, Swap mode, 시작 옵션이 필요할 때만 Settings를 엽니다.",
+    "tour.clipboard": "선택형 양방향 클립보드 공유는 Free에서 텍스트·이미지와 100MiB 이하 파일 1개를 지원합니다. Pro는 대용량·다중 파일과 수동 보내기를 제공합니다. 클립보드 공유는 기본 OFF입니다.",
     "tour.quick": "빠른 실행 바",
     "tour.control": "Control",
     "tour.settings": "전체 설정",
@@ -429,7 +432,7 @@ const translations = {
     "tour.settingsBody": "페어링, 모니터, 입력 제어, Swap mode, 자동 시작, 설명서와 업데이트를 함께 관리합니다.",
     "setup.eyebrow": "빠른 설치",
     "setup.title": "몇 분이면 로컬 Windows PC 제어를 시작할 수 있습니다.",
-    "setup.lead": "두 컴퓨터에서 같은 릴리즈 파일을 사용합니다. 한쪽은 대기하고, 다른 쪽에서 제어합니다.",
+    "setup.lead": "연결 전에 두 PC에 같은 최신 릴리스를 설치하세요. 이전 릴리스와는 연결되지 않습니다. 한쪽은 대기하고, 다른 쪽에서 제어합니다.",
     "setup.step1.title": "릴리즈 파일 다운로드",
     "setup.step1.body": "전체 ZIP을 받거나 EXE, 인증서, 설치 CMD를 같은 폴더에 둡니다.",
     "setup.step2.title": "신뢰 설정 1회 완료",
@@ -439,7 +442,7 @@ const translations = {
     "setup.step4.title": "확인 후 연결",
     "setup.step4.body": "양쪽 PC의 페어링 코드를 확인하고 연결을 승인합니다.",
     "download.label": "현재 릴리즈",
-    "download.facts": "v1.8b · Windows 10/11 x64 · 111 MB · 단일 EXE · 개인 게시자 서명",
+    "download.facts": "v1.9e · Windows 10/11 x64 · 111 MB · 단일 EXE · 개인 게시자 서명",
     "download.exeAction": "EXE 다운로드 · 111 MB",
     "download.trustFiles": "최초 1회 신뢰 설정 파일",
     "download.trustHelp": "최초 실행을 위해 두 파일을 EXE와 같은 폴더에 두세요.",
@@ -490,7 +493,7 @@ const translations = {
     "compare.title": "로컬 Windows 책상을 위한 소프트웨어 KVM.",
     "compare.lead": "Soft KVM은 하드웨어 스위치, 원격 데스크톱 세션, 클라우드 중계, 계정 없이 가까운 Windows PC 두 대를 키보드와 마우스 하나로 쓰려는 사람을 위한 도구입니다.",
     "compare.hardware.title": "하드웨어 KVM과 비교",
-    "compare.hardware.body": "USB나 HDMI 전환 장비가 필요하지 않습니다. 두 PC는 네트워크에 그대로 있고 Soft KVM은 키보드와 마우스 입력만 이동합니다.",
+    "compare.hardware.body": "USB나 HDMI 전환 장비가 필요하지 않습니다. Soft KVM은 로컬 네트워크에서 키보드와 마우스를 공유하며, 선택적으로 클립보드와 파일도 공유합니다.",
     "compare.remote.title": "원격 데스크톱과 비교",
     "compare.remote.body": "Soft KVM은 화면을 스트리밍하거나 원격 세션에 로그인하지 않습니다. 각 PC의 실제 모니터를 그대로 사용합니다.",
     "compare.synergy.title": "Synergy 또는 Barrier와 비교",
@@ -541,7 +544,7 @@ const translations = {
     "footer.contact": "문의",
     "footer.license": "라이선스",
     "footer.privacy": "개인정보",
-    "footer.release": "릴리즈 v1.8b"
+    "footer.release": "릴리즈 v1.9e"
   }
 };
 

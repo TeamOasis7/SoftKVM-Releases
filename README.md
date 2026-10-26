@@ -18,6 +18,20 @@ Japanese has a static `/ja/` page for language-specific SEO. The language switch
 navigates between those URLs. Add future languages to `app.js` and create
 matching static language pages.
 
+Keep the language selector as real `a href` links so crawlers and browsers without
+JavaScript can follow the language URLs. Keep the static HTML title and the
+matching title in `app.js` aligned. The sitemap lists the three canonical landing
+pages with reciprocal language alternatives; legal and installation documents
+remain linked from the pages without being sitemap targets. Omit `lastmod` unless
+it can be kept equal to the actual date of a significant page change.
+
+This is a GitHub Pages project site. Its `/SoftKVM-Releases/robots.txt` is not the
+host-root robots file Google uses; only `https://teamoasis7.github.io/robots.txt`
+can control this host. A missing host-root robots file does not block crawling.
+Submit the full sitemap URL directly in the matching Search Console property.
+Do not treat a successful live URL test as proof that sitemap processing or
+search indexing has completed.
+
 The product demo is rendered as HTML/CSS from the current development desktop app layout and
 color values. It includes the compact bar, Control entry, and Settings without
 upscaling low-resolution screenshots. Keep public demos free of connection-group
