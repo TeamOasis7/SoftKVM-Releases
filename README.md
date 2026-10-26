@@ -10,7 +10,11 @@ Latest public release: https://github.com/TeamOasis7/SoftKVM-Releases/releases/l
 
 This README describes the latest version of Soft KVM. Use the latest official release on both PCs.
 
-The website source is in [website/index.html](website/index.html).
+See the [official Soft KVM website](https://teamoasis7.github.io/SoftKVM-Releases/) for downloads and installation information.
+
+## Clipboard and file sharing
+
+Optional bidirectional clipboard sharing supports Unicode text, images, and one regular file up to 100 MiB in Personal Free. Business Pro adds larger/multiple files and **Send files** with receiver approval, destination selection, progress and cancellation. **Share clipboard** is off by default. Install the same current release on both PCs; this release cannot connect to the older v1.8b release.
 
 ## Quick start
 

@@ -10,7 +10,11 @@ Soft KVM은 같은 신뢰할 수 있는 로컬 네트워크의 Windows PC 두 �
 
 이 README는 Soft KVM 최신 버전을 기준으로 설명합니다. 양쪽 PC에서 최신 공식 릴리즈를 사용하십시오.
 
-웹사이트 소스는 [website/index.html](website/index.html)에 있습니다.
+[공식 Soft KVM 웹사이트](https://teamoasis7.github.io/SoftKVM-Releases/ko/)에서 다운로드와 설치 안내를 확인할 수 있습니다.
+
+## 클립보드와 파일 공유
+
+선택적으로 켜는 양방향 클립보드 공유는 Personal Free에서 Unicode 텍스트, 이미지, 100MiB 이하의 일반 파일 1개를 지원합니다. Business Pro는 대용량·다중 파일과 수신 승인, 저장 위치 선택, 진행률·취소가 있는 **Send files**를 제공합니다. **Share clipboard**는 기본 OFF입니다. 양쪽 PC에 같은 최신 릴리스를 설치해야 하며, 이번 버전은 이전 v1.8b와 연결되지 않습니다.
 
 ## 빠른 시작
 

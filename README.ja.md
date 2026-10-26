@@ -10,7 +10,11 @@ Soft KVMは、同じ信頼できるローカルネットワーク上の2台のWi
 
 このREADMEはSoft KVMの最新バージョンを基準にしています。両方のPCで最新の公式リリースを使用してください。
 
-ウェブサイトのソースは [website/ja/index.html](website/ja/index.html) にあります。
+[Soft KVM公式サイト](https://teamoasis7.github.io/SoftKVM-Releases/ja/)でダウンロードとインストール方法を確認できます。
+
+## クリップボードとファイルの共有
+
+任意で有効にする双方向クリップボード共有は、Personal FreeでUnicodeテキスト、画像、100MiB以下の通常ファイル1個に対応します。Business Proは大容量・複数ファイルと、受信承認、保存先選択、進行状況、キャンセルに対応する **Send files** を提供します。**Share clipboard** は初期状態でOFFです。両方のPCに同じ最新リリースをインストールしてください。このバージョンは以前のv1.8bには接続できません。
 
 ## クイックスタート
 
