@@ -267,7 +267,10 @@ a {
   display: none;
 }
 
-.language-menu button {
+.language-menu [data-lang] {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
   min-height: 34px;
   padding: 0 10px;
   color: var(--ink-soft);
@@ -281,12 +284,12 @@ a {
   white-space: nowrap;
 }
 
-.language-menu button:hover {
+.language-menu [data-lang]:hover {
   color: var(--blue-dark);
   background: var(--blue-soft);
 }
 
-.language-menu button[aria-checked="true"] {
+.language-menu [data-lang][aria-checked="true"] {
   color: var(--surface);
   background: var(--charcoal);
 }

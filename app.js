@@ -813,7 +813,6 @@ function setLanguage(language) {
   languageButtons.forEach((button) => {
     const isCurrent = button.dataset.lang === language;
     button.setAttribute("aria-checked", String(isCurrent));
-    button.setAttribute("aria-pressed", String(isCurrent));
   });
 
   if (languageCurrent) {
@@ -821,15 +820,15 @@ function setLanguage(language) {
   }
 
   if (language === "ko") {
-    document.title = "Soft KVM - Windows PC 두 대를 위한 소프트웨어 KVM";
+    document.title = "SoftKVM | Windows PC 두 대 키보드·마우스 공유 - TeamOasis7";
     description.content = "Soft KVM은 같은 로컬 네트워크에서 Windows PC 두 대를 키보드와 마우스 하나로 제어하는 소프트웨어 KVM입니다. 계정, 클라우드, 중계 서버가 필요하지 않습니다.";
   }
   else if (language === "ja") {
-    document.title = "Soft KVM - 2台のWindows PC向けのソフトウェアKVM";
+    document.title = "SoftKVM | Windows PC間でキーボード・マウスを共有 - TeamOasis7";
     description.content = "Soft KVMは、同じローカルネットワーク上の2台のWindows PCをキーボードとマウス1組で操作するソフトウェアKVMです。アカウント、クラウド、中継サーバーは不要です。";
   }
   else {
-    document.title = "Soft KVM - Windows software KVM for one keyboard and mouse";
+    document.title = "SoftKVM by TeamOasis7 | Windows Keyboard and Mouse Sharing";
     description.content = "Soft KVM is a Windows software KVM for sharing one keyboard and mouse between two PCs on the same local network. No account, cloud, or relay server required.";
   }
 
@@ -975,16 +974,8 @@ languageToggle?.addEventListener("click", () => {
   }
 });
 
-languageButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    if (button.dataset.langUrl) {
-      window.location.href = button.dataset.langUrl;
-      return;
-    }
-
-    setLanguage(button.dataset.lang);
-    closeLanguageMenu();
-  });
+languageButtons.forEach((link) => {
+  link.addEventListener("click", closeLanguageMenu);
 });
 
 function closeMobileMenu() {
